@@ -112,7 +112,7 @@ export function VibesVoicesContent() {
                 className="flex h-full flex-col items-center gap-2 rounded-2xl border border-line bg-paper px-4 py-5 text-center transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <cta.icon className="text-forest" size={20} />
-                <span className="text-xs font-medium text-ink-soft">{t(cta.label)}</span>
+                <span className="text-[13px] font-medium text-ink-soft">{t(cta.label)}</span>
               </a>
             </Reveal>
           ))}
@@ -147,10 +147,10 @@ export function VibesVoicesContent() {
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel tone="light">{t({ nl: "Onze missie", en: "Our mission" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl sm:text-4xl">
+            <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
               {t({ nl: "Verbinding door verhalen", en: "Connection through stories" })}
             </h2>
-            <p className="mt-6 whitespace-pre-line text-sage-100/85">
+            <p className="mt-7 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               {t({
                 nl: "Vibes & Voices is er voor iedereen die wil leren spreken met impact.\nWe geloven dat echtheid meer raakt dan perfectie.\nBij ons vind je ruimte om te oefenen, geïnspireerd te raken en je stem te laten horen.",
                 en: "Vibes & Voices is there for everyone who wants to learn to speak with impact.\nWe believe authenticity moves people more than perfection.\nWith us you'll find space to practice, to get inspired and to let your voice be heard.",
@@ -160,7 +160,7 @@ export function VibesVoicesContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <PortraitFrame
             src={asset("/images/phaedra-desk.jpg")}
@@ -172,14 +172,14 @@ export function VibesVoicesContent() {
             className="mx-auto w-full max-w-sm"
           />
           <Reveal delay={0.1}>
-            <div className="space-y-4 text-sm leading-relaxed text-ink-soft">
+            <div className="space-y-5 text-[15px] leading-[1.75] text-ink-soft">
               <p>
                 {t({
                   nl: "Als Lisa Nichols Certified Transformational Trainer wilde ik direct aan de slag als spreekster. Ik heb immers genoeg verhalen te delen en ben opgeleid door één van de beste uit de internationale sprekerswereld.",
                   en: "As a Lisa Nichols Certified Transformational Trainer I wanted to start working as a speaker right away. After all, I have plenty of stories to share and was trained by one of the best in the international speaking world.",
                 })}
               </p>
-              <p className="font-display text-xl text-ink">
+              <p className="font-display text-[1.5rem] leading-snug text-ink">
                 {t({
                   nl: "Er was slechts één probleem: niemand kent mij dus niemand boekt mij.",
                   en: "There was just one problem: nobody knows me, so nobody books me.",
@@ -197,10 +197,10 @@ export function VibesVoicesContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({
                 nl: "Vibes & Voices - Storytelling Pop up café",
                 en: "Vibes & Voices - Storytelling Pop up café",
@@ -220,10 +220,10 @@ export function VibesVoicesContent() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
                   <Coffee size={22} />
                 </div>
-                <h3 className="font-display mt-6 text-2xl text-ink">
+                <h3 className="font-display mt-6 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">
                   {t({ nl: "Avondje uit", en: "A night out" })}
                 </h3>
-                <div className="mt-3 flex-1 space-y-3 text-sm leading-relaxed text-ink-soft">
+                <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
                     {t({
                       nl: "Elke eerste vrijdagavond van de maand organiseren we het Vibes & Voices Pop-up Café: een open mic voor echte verhalen.",
@@ -256,10 +256,10 @@ export function VibesVoicesContent() {
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sage-700">
                   5 minutes of fame
                 </p>
-                <h3 className="font-display mt-3 text-2xl text-ink">
+                <h3 className="font-display mt-3 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">
                   {t({ nl: "Pak je moment", en: "Take your moment" })}
                 </h3>
-                <div className="mt-3 flex-1 space-y-3 text-sm leading-relaxed text-ink-soft">
+                <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
                     {t({
                       nl: "Durf jij het aan om 5 minuten op het podium te staan? Of ben je reeds ervaren en wil je komen inspireren?",
@@ -295,8 +295,8 @@ export function VibesVoicesContent() {
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sage-700">
                   Spotlight Talk
                 </p>
-                <h3 className="font-display mt-3 text-2xl text-ink">Phaedra La Reine</h3>
-                <div className="mt-3 flex-1 space-y-3 text-sm leading-relaxed text-ink-soft">
+                <h3 className="font-display mt-3 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">Phaedra La Reine</h3>
+                <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
                     {t({
                       nl: "Tijdens de Spotlight Talk neemt Phaedra La Reine je zo’n 20 minuten mee in een inspirerende keynote.",
@@ -321,18 +321,18 @@ export function VibesVoicesContent() {
         </div>
       </section>
 
-      <section id="workshop" className="bg-forest py-20 text-cream">
+      <section id="workshop" className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
               <SectionLabel tone="light">{t({ nl: "Workshop", en: "Workshop" })}</SectionLabel>
-              <h2 className="font-display mt-3 text-3xl sm:text-4xl">
+              <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
                 {t({
                   nl: "Workshop - Get ready to shine",
                   en: "Workshop - Get ready to shine",
                 })}
               </h2>
-              <p className="mt-4 text-sage-100/85">
+              <p className="mt-5 text-[1.0625rem] leading-[1.8] text-sage-100/85">
                 {t({
                   nl: "Hulp nodig bij de voorbereiding van jouw “5 minutes of fame” in ons pop up café? We got you!",
                   en: "Need help preparing your “5 minutes of fame” in our pop-up café? We got you!",
@@ -340,7 +340,7 @@ export function VibesVoicesContent() {
               </p>
             </div>
 
-            <div className="mx-auto mt-8 max-w-xl space-y-4 text-sm leading-relaxed text-sage-100/90">
+            <div className="mx-auto mt-9 max-w-xl space-y-5 text-[15px] leading-[1.75] text-sage-100/90">
               <p>
                 {t({
                   nl: "Sta jij binnenkort op het podium bij Vibes & Voices? Of wil je gewoon krachtiger leren spreken in het openbaar? In de online workshop “Get ready to shine” help ik je om zelfverzekerd, helder en met impact jouw verhaal te brengen in slechts 5 minuten.",
@@ -378,16 +378,16 @@ export function VibesVoicesContent() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <SectionLabel>{t({ nl: "Onze sprekers", en: "Our speakers" })}</SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({
               nl: "Op zoek naar nieuwe stemmen met impact?",
               en: "Looking for new voices with impact?",
             })}
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+          <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">
             {t({
               nl: "Deze sprekers stonden op het podium van Vibes & Voices. Sommige zijn reeds te boeken als ervaren sprekers, anderen stonden er eenmalig. Interesse in een van de sprekers? Neem contact met ons op voor meer informatie.",
               en: "These speakers have stood on the Vibes & Voices stage. Some are already bookable as experienced speakers, others were there once. Interested in one of the speakers? Get in touch with us for more information.",
@@ -405,12 +405,12 @@ export function VibesVoicesContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Blijf op de hoogte", en: "Stay updated" })}
           </h2>
-          <p className="mt-3 text-ink-soft">
+          <p className="mt-4 text-[1.0625rem] leading-[1.8] text-ink-soft">
             {t({
               nl: "Blijf op de hoogte van nieuwe events en tips voor sprekers",
               en: "Stay updated on new events and tips for speakers",

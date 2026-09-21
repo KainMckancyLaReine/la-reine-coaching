@@ -173,13 +173,13 @@ export function HomeContent() {
             priority
           />
           <Reveal delay={0.1}>
-            <h2 className="text-balance font-display text-3xl leading-snug text-ink sm:text-4xl">
+            <h2 className="text-balance font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
               {t({
                 nl: "Je weet dat er meer in je zit",
                 en: "You know there's more in you",
               })}
             </h2>
-            <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+            <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p>{t({ nl: "Je voelt het al een tijd.", en: "You've been feeling it for a while." })}</p>
               <p>
                 {t({
@@ -205,7 +205,7 @@ export function HomeContent() {
                   en: "But in the meantime…\n\nyou stay in the background.",
                 })}
               </p>
-              <p className="font-display text-xl text-forest">
+              <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
                 {t({
                   nl: "En diep vanbinnen weet je: dit ben ik niet.",
                   en: "And deep down you know: this isn't me.",
@@ -216,13 +216,13 @@ export function HomeContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel>{t({ nl: "Drie lagen", en: "Three layers" })}</SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Je stem werkt op drie niveaus", en: "Your voice works on three levels" })}
           </h2>
-          <div className="mt-6 space-y-4 whitespace-pre-line text-ink-soft">
+          <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
               {t({
                 nl: "Als je jezelf inhoudt, zit dat niet op één plek.",
@@ -238,17 +238,17 @@ export function HomeContent() {
             <p>{t({ nl: "Daarom werk ik met drie lagen.", en: "That's why I work with three layers." })}</p>
           </div>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {VOICES.map((voice, i) => (
             <Reveal key={voice.title.nl} delay={i * 0.1}>
               <div className="h-full rounded-3xl border border-line bg-paper p-8 transition-transform duration-300 hover:-translate-y-1">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
                   <voice.icon size={22} />
                 </div>
-                <h3 className="font-display mt-6 text-2xl text-ink">
+                <h3 className="font-display mt-6 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">
                   {t(voice.title)}
                 </h3>
-                <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+                <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.75] text-ink-soft">
                   {t(voice.description)}
                 </p>
               </div>
@@ -257,7 +257,7 @@ export function HomeContent() {
         </div>
         <Reveal delay={0.2}>
           <div className="mx-auto mt-14 max-w-2xl text-center">
-            <p className="font-display whitespace-pre-line text-2xl leading-snug text-ink">
+            <p className="font-display whitespace-pre-line text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
               {t({
                 nl: "Als je deze drie lagen samenbrengt,\nverandert niet alleen hoe je spreekt,\nmaar hoe je jezelf laat zien.",
                 en: "When you bring these three layers together,\nnot only how you speak changes,\nbut how you show yourself.",
@@ -272,16 +272,16 @@ export function HomeContent() {
         </Reveal>
       </section>
 
-      <section className="bg-forest py-20 text-cream">
+      <section className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel tone="light">
               {t({ nl: "De V.O.I.C.E. methode", en: "The V.O.I.C.E. method" })}
             </SectionLabel>
-            <h2 className="font-display mt-3 text-3xl text-cream sm:text-4xl">
+            <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-cream sm:text-[3rem]">
               {t({ nl: "Dit is hoe je je stem terugpakt", en: "This is how you take your voice back" })}
             </h2>
-            <div className="mt-6 space-y-4 whitespace-pre-line text-sage-100/85">
+            <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               <p>{t({ nl: "Je hoeft jezelf niet te fixen.", en: "You don't have to fix yourself." })}</p>
               <p>
                 {t({
@@ -314,7 +314,7 @@ export function HomeContent() {
           </Reveal>
           <Reveal delay={0.25}>
             <div className="mx-auto mt-14 max-w-2xl text-center">
-              <p className="font-display text-2xl text-cream">
+              <p className="font-display text-[2rem] leading-[1.25] text-cream">
                 {t({ nl: "Klaar om je stem te gebruiken?", en: "Ready to use your voice?" })}
               </p>
               <div className="mt-6">
@@ -346,12 +346,12 @@ export function HomeContent() {
         </Button>
       </HomeSignatureMoment>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Werk met mij", en: "Work with me" })}
           </h2>
-          <div className="mt-6 space-y-4 whitespace-pre-line text-ink-soft">
+          <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
               {t({
                 nl: "Je hoeft het niet alleen te doen.\nJe hoeft ook niet te blijven waar je nu bent.",
@@ -366,7 +366,7 @@ export function HomeContent() {
             </p>
           </div>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {OFFERS.map((offer, i) => (
             <OfferCard
               key={offer.title.nl}
@@ -382,7 +382,7 @@ export function HomeContent() {
         </div>
         <Reveal delay={0.2}>
           <div className="mx-auto mt-14 max-w-2xl text-center">
-            <p className="font-display whitespace-pre-line text-2xl leading-snug text-ink">
+            <p className="font-display whitespace-pre-line text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
               {t({
                 nl: "Je hoeft niet alles in één keer te weten.\nJe hoeft alleen te beginnen.",
                 en: "You don't have to know everything at once.\nYou only have to begin.",
@@ -397,14 +397,14 @@ export function HomeContent() {
         </Reveal>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({ nl: "Wat anderen ervaren", en: "What others experience" })}
             </h2>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((testimonial, i) => (
               <Testimonial
                 key={testimonial.name}

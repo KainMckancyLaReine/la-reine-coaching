@@ -34,11 +34,11 @@ export function OfferCard({
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-forest transition-colors group-hover:bg-forest group-hover:text-cream">
           <Icon size={22} />
         </div>
-        <h3 className="font-display mt-6 text-2xl text-ink">{title}</h3>
-        <p className="mt-3 flex-1 whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+        <h3 className="font-display mt-6 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">{title}</h3>
+        <p className="mt-4 flex-1 whitespace-pre-line text-[15px] leading-[1.75] text-ink-soft">
           {description}
         </p>
-        <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-forest">
+        <span className="mt-7 inline-flex items-center gap-1 text-[15px] font-medium text-forest">
           {cta}
           <ArrowUpRight
             size={16}

@@ -76,7 +76,7 @@ export function WerkMetMijContent() {
             className="mx-auto w-full max-w-xs"
           />
           <Reveal delay={0.1}>
-            <p className="max-w-lg font-display text-3xl leading-snug text-ink sm:text-4xl">
+            <p className="max-w-lg font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
               {t({
                 nl: "Dit zijn de manieren waarop je met mij kunt werken.",
                 en: "These are the ways you can work with me.",
@@ -86,19 +86,19 @@ export function WerkMetMijContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-24 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 pb-28 lg:px-8">
         <div className="space-y-8">
           {WAYS.map((way, i) => (
             <Reveal key={way.title.nl} delay={i * 0.08}>
-              <div className="grid gap-8 rounded-3xl border border-line bg-paper p-8 sm:p-10 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+              <div className="grid gap-8 rounded-3xl border border-line bg-paper p-9 sm:p-12 lg:grid-cols-[auto_1fr_auto] lg:items-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sage-100 text-forest">
                   <way.icon size={26} />
                 </div>
                 <div>
-                  <h2 className="font-display text-2xl text-ink sm:text-3xl">
+                  <h2 className="font-display text-[1.9rem] leading-snug tracking-[-0.015em] text-ink sm:text-[2.2rem]">
                     {t(way.title)}
                   </h2>
-                  <p className="mt-3 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+                  <p className="mt-4 max-w-2xl whitespace-pre-line text-[15px] leading-[1.75] text-ink-soft">
                     {t(way.description)}
                   </p>
                 </div>
@@ -113,9 +113,9 @@ export function WerkMetMijContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20 text-center">
+      <section className="bg-sage-50 py-24 text-center lg:py-32">
         <Reveal>
-          <p className="mx-auto max-w-xl whitespace-pre-line font-display text-2xl leading-snug text-ink sm:text-3xl">
+          <p className="mx-auto max-w-2xl whitespace-pre-line font-display text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
             {t({
               nl: "Je hoeft niet alles in één keer te weten.\nJe hoeft alleen te beginnen.",
               en: "You don't have to know everything at once.\nYou only have to begin.",

@@ -111,7 +111,7 @@ export function SprekerContent() {
       <section className="mx-auto max-w-6xl px-6 pb-20 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="whitespace-pre-line font-display text-3xl leading-snug text-ink sm:text-[2.5rem]">
+            <p className="whitespace-pre-line font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
               {t({
                 nl: "Geen standaard verhaal.\nMaar een ervaring die mensen laat voelen\nwat er mogelijk is wanneer ze hun stem gebruiken.",
                 en: "No standard story.\nBut an experience that makes people feel\nwhat's possible when they use their voice.",
@@ -131,17 +131,17 @@ export function SprekerContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel>{t({ nl: "Voor wie", en: "For whom" })}</SectionLabel>
-            <h2 className="font-display mt-3 whitespace-pre-line text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display mt-4 whitespace-pre-line text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({
                 nl: "Voor organisaties en events\ndie meer willen dan inspiratie",
                 en: "For organizations and events\nthat want more than inspiration",
               })}
             </h2>
-            <p className="mt-6 text-ink-soft">
+            <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">
               {t({ nl: "Voor teams en groepen die:", en: "For teams and groups that:" })}
             </p>
           </div>
@@ -152,7 +152,7 @@ export function SprekerContent() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
                     <item.icon size={24} />
                   </div>
-                  <p className="text-balance font-display text-xl leading-snug text-ink">
+                  <p className="text-balance font-display text-[1.35rem] leading-snug text-ink">
                     {t(item.label)}
                   </p>
                 </div>
@@ -167,19 +167,19 @@ export function SprekerContent() {
         </div>
       </section>
 
-      <section className="bg-forest py-20 text-cream">
+      <section className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel tone="light">
               {t({ nl: "Resultaten die spreken", en: "Results that speak" })}
             </SectionLabel>
-            <p className="mt-6 text-sage-100/85">
+            <p className="mt-7 text-[1.0625rem] leading-[1.8] text-sage-100/85">
               {t({
                 nl: "De impact van een keynote of workshop van Phaedra La Reine:",
                 en: "The impact of a keynote or workshop by Phaedra La Reine:",
               })}
             </p>
-            <p className="font-display mt-4 text-2xl leading-snug sm:text-3xl">
+            <p className="font-display mt-5 text-[2rem] leading-[1.25] sm:text-[2.4rem]">
               {t({
                 nl: "Mensen luisteren niet alleen. Ze voelen wat er voor hen mogelijk is en gaan bewegen.",
                 en: "People don't just listen. They feel what's possible for them and start moving.",
@@ -189,14 +189,14 @@ export function SprekerContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel>{t({ nl: "Thema's", en: "Themes" })}</SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Thema's waar ik over spreek", en: "Themes I speak about" })}
           </h2>
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {THEMES.map((theme, i) => (
             <Reveal key={theme.nl} delay={i * 0.08}>
               <div className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5">
@@ -223,14 +223,14 @@ export function SprekerContent() {
         </Reveal>
       </section>
 
-      <section id="fragment" className="bg-sage-50 py-20">
+      <section id="fragment" className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel>{t({ nl: "Bekijk een fragment", en: "Watch a clip" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({ nl: "Alle informatie op één plek", en: "All information in one place" })}
             </h2>
-            <p className="mt-6 text-ink-soft">
+            <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">
               {t({
                 nl: "Download de sprekerskit van Phaedra La Reine in het Nederlands of in het Engels. Of bekijk de video om een indruk te krijgen van Phaedra als spreker / trainer.",
                 en: "Download Phaedra La Reine's speaker kit in Dutch or in English. Or watch the video to get an impression of Phaedra as a speaker / trainer.",
@@ -261,7 +261,7 @@ export function SprekerContent() {
                 className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5 transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <FileDown size={20} className="shrink-0 text-forest" />
-                <span className="text-sm font-medium text-ink">
+                <span className="text-[15px] font-medium text-ink">
                   {t({ nl: "Sprekerskit Nederlands", en: "Sprekerskit Nederlands" })}
                 </span>
               </a>
@@ -274,7 +274,7 @@ export function SprekerContent() {
                 className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5 transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <PlayCircle size={20} className="shrink-0 text-forest" />
-                <span className="text-sm font-medium text-ink">
+                <span className="text-[15px] font-medium text-ink">
                   {t({ nl: "Impressie video (NL)", en: "Impressie video (NL)" })}
                 </span>
               </a>
@@ -287,13 +287,13 @@ export function SprekerContent() {
                 className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5 transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <FileDown size={20} className="shrink-0 text-forest" />
-                <span className="text-sm font-medium text-ink">Speakerskit English</span>
+                <span className="text-[15px] font-medium text-ink">Speakerskit English</span>
               </a>
             </Reveal>
             <Reveal delay={0.25}>
               <div className="flex h-full items-center gap-3 rounded-2xl border border-dashed border-line bg-paper/60 p-5">
                 <PlayCircle size={20} className="shrink-0 text-ink-faint" />
-                <span className="text-sm font-medium text-ink-faint">
+                <span className="text-[15px] font-medium text-ink-faint">
                   Speakers Reel (EN) (soon)
                 </span>
               </div>
@@ -302,30 +302,30 @@ export function SprekerContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Veelgestelde vragen", en: "Frequently asked questions" })}
           </h2>
         </div>
         <div className="mt-12 space-y-4">
           {FAQ.map((item, i) => (
             <Reveal key={item.q.nl} delay={i * 0.06}>
-              <div className="rounded-2xl border border-line bg-paper p-6">
-                <p className="font-display text-lg text-ink">{t(item.q)}</p>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{t(item.a)}</p>
+              <div className="rounded-2xl border border-line bg-paper px-7 py-6">
+                <p className="font-display text-xl leading-snug text-ink">{t(item.q)}</p>
+                <p className="mt-3 text-[15px] leading-[1.75] text-ink-soft">{t(item.a)}</p>
               </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20 text-center">
+      <section className="bg-sage-50 py-24 text-center lg:py-32">
         <Reveal>
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Op zoek naar een spreker die raakt?", en: "Looking for a speaker who moves people?" })}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+          <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.8] text-ink-soft">
             {t({
               nl: "Laten we samen kijken wat past bij jouw event.",
               en: "Let's look together at what fits your event.",

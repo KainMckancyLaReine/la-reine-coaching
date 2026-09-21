@@ -54,8 +54,8 @@ export function CoachingContent() {
       <section className="mx-auto max-w-6xl px-6 pb-20 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <div className="space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
-              <p className="font-display text-3xl leading-snug text-ink sm:text-4xl">
+            <div className="max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
+              <p className="font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
                 {t({
                   nl: "Je hebt al veel gedaan.\nVeel gedragen.\nVeel opgelost.",
                   en: "You've already done a lot.\nCarried a lot.\nSolved a lot.",
@@ -87,16 +87,16 @@ export function CoachingContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({
                 nl: "Je hoeft niet harder je best te doen",
                 en: "You don't have to try harder",
               })}
             </h2>
-            <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+            <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p>
                 {t({
                   nl: "Veel vrouwen denken dat ze sterker moeten worden.\nZelfverzekerder.\nBeter in spreken.",
@@ -115,7 +115,7 @@ export function CoachingContent() {
                   en: "It's in constantly adapting.\nDoubting.\nHolding yourself back.",
                 })}
               </p>
-              <p className="font-display text-xl text-forest">
+              <p className="font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
                 {t({ nl: "En dat kost energie.", en: "And that costs energy." })}
               </p>
             </div>
@@ -123,18 +123,18 @@ export function CoachingContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel>{t({ nl: "Mijn aanpak", en: "My approach" })}</SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({
               nl: "Niet alleen aan wat je zegt. Maar aan hoe je jezelf laat zien.",
               en: "Not only what you say. But how you show yourself.",
             })}
           </h2>
-          <p className="mt-6 text-ink-soft">{t({ nl: "We kijken naar:", en: "We look at:" })}</p>
+          <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">{t({ nl: "We kijken naar:", en: "We look at:" })}</p>
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {APPROACH.map((item, i) => (
             <Reveal key={item.label.nl} delay={i * 0.08}>
               <div className="flex h-full items-center gap-4 rounded-2xl border border-line bg-paper px-6 py-6">
@@ -147,7 +147,7 @@ export function CoachingContent() {
           ))}
         </div>
         <Reveal delay={0.2}>
-          <p className="mx-auto mt-10 max-w-xl whitespace-pre-line text-center font-display text-2xl leading-snug text-ink">
+          <p className="mx-auto mt-12 max-w-2xl whitespace-pre-line text-center font-display text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
             {t({
               nl: "Zodat wat je denkt, voelt en zegt\nweer met elkaar klopt.",
               en: "So that what you think, feel and say\nadds up again.",
@@ -156,19 +156,19 @@ export function CoachingContent() {
         </Reveal>
       </section>
 
-      <section className="bg-forest py-20 text-cream">
+      <section className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
               <SectionLabel tone="light">{t({ nl: "Begin hier", en: "Start here" })}</SectionLabel>
-              <h2 className="font-display mt-3 text-3xl sm:text-4xl">
+              <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
                 {t({
                   nl: "Start met de Stop Playing Small Challenge",
                   en: "Start with the Stop Playing Small Challenge",
                 })}
               </h2>
             </div>
-            <div className="mx-auto mt-8 max-w-xl space-y-4 whitespace-pre-line text-sage-100/85">
+            <div className="mx-auto mt-9 max-w-xl space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               <p>
                 {t({
                   nl: "Soms hoef je niet meteen het hele antwoord te hebben.\nJe hoeft alleen een eerste stap te zetten.",
@@ -185,7 +185,7 @@ export function CoachingContent() {
                 {t({ nl: "Zo ontdek je:", en: "This is how you discover:" })}
               </p>
             </div>
-            <ul className="mx-auto mt-4 max-w-xl space-y-2 text-sm text-sage-100/90">
+            <ul className="mx-auto mt-5 max-w-xl space-y-3 text-[15px] leading-[1.7] text-sage-100/90">
               {CHALLENGE_RESULTS.map((r) => (
                 <li key={r.nl} className="flex items-start gap-2">
                   <Check size={16} className="mt-0.5 shrink-0 text-gold-200" />
@@ -207,10 +207,10 @@ export function CoachingContent() {
 
       <section className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
         <Reveal>
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Klaar voor de volgende stap?", en: "Ready for the next step?" })}
           </h2>
-          <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+          <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
               {t({
                 nl: "Voor vrouwen die dieper willen werken,\nbied ik persoonlijke coachingtrajecten aan.",
@@ -244,18 +244,18 @@ export function CoachingContent() {
         </Reveal>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel>{t({ nl: "Wat er verandert", en: "What changes" })}</SectionLabel>
-            <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+            <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p>
                 {t({
                   nl: "Je gaat jezelf niet ineens veranderen in iemand anders.",
                   en: "You're not suddenly going to turn into someone else.",
                 })}
               </p>
-              <p className="font-display text-2xl text-ink">
+              <p className="font-display text-[1.9rem] leading-[1.3] text-ink">
                 {t({
                   nl: "Maar je gaat jezelf wel minder tegenhouden.",
                   en: "But you will hold yourself back less.",
@@ -286,13 +286,13 @@ export function CoachingContent() {
       <section className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
         <Reveal>
           <SectionLabel>{t({ nl: "Je investering", en: "Your investment" })}</SectionLabel>
-          <p className="font-display mt-4 text-3xl text-ink sm:text-4xl">
+          <p className="font-display mt-5 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({
               nl: "Coachingtrajecten starten vanaf €1.997",
               en: "Coaching programmes start from €1,997",
             })}
           </p>
-          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+          <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.8] text-ink-soft">
             {t({
               nl: "Omdat ieder traject persoonlijk maatwerk is, bespreken we samen wat past bij waar jij nu staat.",
               en: "Because every programme is personal and tailor-made, we discuss together what fits where you are now.",

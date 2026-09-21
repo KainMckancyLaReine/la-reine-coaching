@@ -85,13 +85,13 @@ export function ShopContent() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <span className="absolute right-3 top-3 rounded-full bg-paper/90 px-3 py-1 font-display text-sm text-forest shadow-sm">
+                    <span className="absolute right-3 top-3 rounded-full bg-paper/90 px-3 py-1 font-display text-[15px] text-forest shadow-sm">
                       {price}
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-lg text-ink">{title}</h3>
-                    <p className="mt-2 flex-1 whitespace-pre-line text-xs leading-relaxed text-ink-soft">
+                    <h3 className="font-display text-xl leading-snug text-ink">{title}</h3>
+                    <p className="mt-3 flex-1 whitespace-pre-line text-[14px] leading-[1.7] text-ink-soft">
                       {t(product.description)}
                     </p>
                     <div className="mt-5">

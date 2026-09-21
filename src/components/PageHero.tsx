@@ -19,7 +19,7 @@ export function PageHero({
   align = "center",
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden pb-20 pt-20 lg:pb-28 lg:pt-28">
+    <section className="relative overflow-hidden pb-24 pt-24 lg:pb-32 lg:pt-32">
       <div
         aria-hidden
         className="absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-sage-200/50 blur-3xl animate-float"
@@ -39,7 +39,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-xs font-semibold uppercase tracking-[0.3em] text-sage-700"
+          className="text-[11px] font-semibold uppercase tracking-[0.32em] text-sage-700"
         >
           {eyebrow}
         </motion.p>
@@ -47,7 +47,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-balance font-display mt-4 text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl"
+          className="text-balance font-display mt-5 text-[2.5rem] leading-[1.06] tracking-[-0.025em] text-ink sm:text-[3.5rem] lg:text-[4.25rem]"
         >
           {title}
         </motion.h1>
@@ -55,7 +55,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className={`mt-6 whitespace-pre-line text-lg leading-relaxed text-ink-soft ${
+          className={`mt-7 whitespace-pre-line text-[1.1875rem] leading-[1.75] text-ink-soft sm:text-xl ${
             align === "center" ? "mx-auto max-w-2xl" : "max-w-2xl"
           }`}
         >
@@ -66,7 +66,7 @@ export function PageHero({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className={`mt-10 flex flex-wrap gap-4 ${
+            className={`mt-11 flex flex-wrap gap-4 ${
               align === "center" ? "justify-center" : "justify-start"
             }`}
           >

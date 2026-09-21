@@ -88,7 +88,7 @@ export function StopPlayingSmallContent() {
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="whitespace-pre-line font-display text-3xl leading-snug text-ink sm:text-4xl">
+            <p className="whitespace-pre-line font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
               {t({
                 nl: "Je hebt een stem.\nMaar ergens gebruik je die nog niet volledig.",
                 en: "You have a voice.\nBut somewhere you're not using it fully yet.",
@@ -107,23 +107,23 @@ export function StopPlayingSmallContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel>{t({ nl: "Je herkent dit", en: "You recognize this" })}</SectionLabel>
-            <h2 className="text-balance font-display mt-3 text-3xl text-ink sm:text-4xl">
+            <h2 className="text-balance font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({
                 nl: "Niet alleen in wat je zegt, maar ook in wat je mist.",
                 en: "Not only in what you say, but also in what you miss.",
               })}
             </h2>
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {RECOGNITIONS.map((text, i) => (
               <Reveal key={text.nl} delay={i * 0.08}>
                 <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-paper p-5">
                   <CircleSlash className="mt-0.5 shrink-0 text-gold-500" size={18} />
-                  <p className="whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+                  <p className="whitespace-pre-line text-[15px] leading-[1.75] text-ink-soft">
                     {t(text)}
                   </p>
                 </div>
@@ -133,12 +133,12 @@ export function StopPlayingSmallContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel>
             {t({ nl: "Het ligt niet aan je stem", en: "It's not about your voice" })}
           </SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Het zit in wat eronder ligt.", en: "It's in what lies underneath." })}
           </h2>
         </div>
@@ -149,7 +149,7 @@ export function StopPlayingSmallContent() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
                   <cause.icon size={24} />
                 </div>
-                <h3 className="text-balance font-display text-2xl leading-snug text-ink sm:text-[1.75rem]">
+                <h3 className="text-balance font-display text-[1.7rem] leading-snug tracking-[-0.01em] text-ink sm:text-[1.9rem]">
                   {t(cause.title)}
                 </h3>
               </div>
@@ -158,13 +158,13 @@ export function StopPlayingSmallContent() {
         </div>
       </section>
 
-      <section className="bg-forest py-20 text-cream">
+      <section className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel tone="light">
               {t({ nl: "Dit is waar het verandert", en: "This is where it changes" })}
             </SectionLabel>
-            <div className="mx-auto mt-6 max-w-2xl space-y-4 whitespace-pre-line text-sage-100/85">
+            <div className="mx-auto mt-7 max-w-2xl space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               <p>
                 {t({
                   nl: "Niet door harder je best te doen…\nmaar door te zien waar je jezelf inhoudt.\nEn daar stap voor stap doorheen te bewegen.",
@@ -185,7 +185,7 @@ export function StopPlayingSmallContent() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
                 {t({ nl: "Begin hier", en: "Start here" })}
               </p>
-              <div className="mt-4 space-y-4 whitespace-pre-line text-sm leading-relaxed text-sage-100/90">
+              <div className="mt-5 space-y-5 whitespace-pre-line text-[15px] leading-[1.75] text-sage-100/90">
                 <p>
                   {t({
                     nl: "Je hoeft het niet alleen te doen.\nEn je hoeft ook niet te blijven waar je nu bent.",
@@ -208,7 +208,7 @@ export function StopPlayingSmallContent() {
                   {t({ nl: "Na deze sessies:", en: "After these sessions:" })}
                 </p>
               </div>
-              <ul className="mt-4 space-y-2 text-sm text-sage-100/90">
+              <ul className="mt-5 space-y-3 text-[15px] leading-[1.7] text-sage-100/90">
                 {RESULTS.map((r) => (
                   <li key={r.nl} className="flex items-start gap-2">
                     <Check size={16} className="mt-0.5 shrink-0 text-gold-200" />
@@ -228,7 +228,7 @@ export function StopPlayingSmallContent() {
           </Reveal>
 
           <Reveal delay={0.25}>
-            <p className="mt-10 whitespace-pre-line font-display text-xl italic text-gold-100">
+            <p className="mt-12 whitespace-pre-line font-display text-[1.6rem] italic leading-[1.4] text-gold-100 sm:text-[1.9rem]">
               {t({
                 nl: "Je hoeft het niet perfect te doen.\nJe hoeft alleen te beginnen.",
                 en: "You don't have to do it perfectly.\nYou only have to begin.",
@@ -238,14 +238,14 @@ export function StopPlayingSmallContent() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl text-ink sm:text-4xl">
+            <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({ nl: "Wat anderen zeggen", en: "What others say" })}
             </h2>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((testimonial, i) => (
               <Testimonial
                 key={testimonial.name}

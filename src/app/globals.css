@@ -112,6 +112,19 @@ body {
   color: var(--color-forest-deep);
 }
 
+p {
+  text-wrap: pretty;
+}
+
+.font-display {
+  font-optical-sizing: auto;
+}
+
+.statement {
+  border-left: 2px solid var(--color-gold-300);
+  padding-left: 1.5rem;
+}
+
 .text-balance {
   text-wrap: balance;
 }

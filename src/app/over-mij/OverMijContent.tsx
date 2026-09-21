@@ -65,8 +65,8 @@ export function OverMijContent() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="space-y-4 text-sm leading-relaxed text-ink-soft">
-              <h2 className="font-display text-2xl text-ink">
+            <div className="space-y-5 text-[15px] leading-[1.75] text-ink-soft">
+              <h2 className="font-display text-[1.75rem] leading-snug tracking-[-0.01em] text-ink">
                 {t({ nl: "Mijn naam is Phaedra La Reine.", en: "My name is Phaedra La Reine." })}
               </h2>
               <p>
@@ -117,7 +117,7 @@ export function OverMijContent() {
         </div>
       </section>
 
-      <section className="bg-sage-50 py-20">
+      <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:px-8">
           <PortraitFrame
             src={asset("/images/phaedra-curacao.jpg")}
@@ -133,12 +133,12 @@ export function OverMijContent() {
               <SectionLabel>
                 {t({ nl: "Het moment waarop alles veranderde", en: "The moment everything changed" })}
               </SectionLabel>
-              <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+              <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
                 {t({ nl: "Ik dacht dat ik alles wel aankon.", en: "I thought I could handle anything." })}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+              <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
                 <p>
                   {t({
                     nl: "Ik was tienermoeder geweest.\nIk had schulden gehad.\nEen burn-out.\nGebroken relaties.",
@@ -146,7 +146,7 @@ export function OverMijContent() {
                   })}
                 </p>
                 <p>{t({ nl: "En toch bleef ik doorgaan.", en: "And still I kept going." })}</p>
-                <p className="font-display text-xl text-forest">
+                <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
                   {t({ nl: "Tot ik hoorde: “Ik wil scheiden.”", en: "Until I heard: “I want a divorce.”" })}
                 </p>
                 <p>
@@ -179,7 +179,7 @@ export function OverMijContent() {
                     en: "What began as personal growth eventually became my mission.",
                   })}
                 </p>
-                <p className="font-display text-xl text-forest">
+                <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
                   {t({
                     nl: "Ik besloot mezelf niet langer klein te houden.",
                     en: "I decided to stop keeping myself small.",
@@ -191,12 +191,12 @@ export function OverMijContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
+      <section className="mx-auto max-w-3xl px-6 py-24 lg:px-8 lg:py-32">
         <Reveal>
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+          <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({ nl: "Wat ik nu doe", en: "What I do now" })}
           </h2>
-          <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+          <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
               {t({
                 nl: "Vandaag werk ik als spreker en coach met mensen die voelen dat ze zichzelf nog inhouden.",
@@ -225,17 +225,17 @@ export function OverMijContent() {
         </Reveal>
       </section>
 
-      <section className="bg-forest py-20 text-cream">
+      <section className="bg-forest py-24 text-cream lg:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl sm:text-4xl">
+            <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
               {t({ nl: "Dit ben ik ook", en: "This is also me" })}
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {TRAITS.map((trait, i) => (
               <Reveal key={trait.nl} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-cream/15 bg-cream/5 p-5 text-sm text-sage-100/90">
+                <div className="h-full rounded-2xl border border-cream/15 bg-cream/5 p-6 text-[15px] leading-[1.7] text-sage-100/90">
                   {t(trait)}
                 </div>
               </Reveal>
@@ -246,13 +246,13 @@ export function OverMijContent() {
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-8">
         <Reveal>
-          <p className="whitespace-pre-line font-display text-2xl italic text-ink sm:text-3xl">
+          <p className="whitespace-pre-line font-display text-[2rem] italic leading-[1.25] text-ink sm:text-[2.4rem]">
             {t({
               nl: "Je stem verandert meer\ndan alleen wat je zegt.",
               en: "Your voice changes more\nthan only what you say.",
             })}
           </p>
-          <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-ink-soft">
+          <p className="mx-auto mt-5 max-w-xl whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             {t({
               nl: "Het verandert hoe je jezelf laat zien.\nHoe je binnenkomt en hoeveel ruimte je jezelf geeft.",
               en: "It changes how you show yourself.\nHow you walk in and how much space you give yourself.",

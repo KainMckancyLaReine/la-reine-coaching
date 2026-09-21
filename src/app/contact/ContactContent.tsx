@@ -68,8 +68,8 @@ export function ContactContent() {
             <Reveal key={opt.title.nl} delay={i * 0.08}>
               <div className="h-full rounded-2xl border border-line bg-paper p-6">
                 <opt.icon className="text-forest" size={20} />
-                <p className="mt-3 text-sm font-semibold text-ink">{t(opt.title)}</p>
-                <p className="mt-1 text-xs leading-relaxed text-ink-soft">
+                <p className="mt-4 text-base font-semibold text-ink">{t(opt.title)}</p>
+                <p className="mt-2 text-[14px] leading-[1.7] text-ink-soft">
                   {t(opt.description)}
                 </p>
               </div>
@@ -78,7 +78,7 @@ export function ContactContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
           <PortraitFrame
             src={asset("/images/phaedra-hero.jpg")}
@@ -91,10 +91,10 @@ export function ContactContent() {
           />
           <div>
             <Reveal>
-              <h2 className="font-display text-2xl text-ink sm:text-3xl">
+              <h2 className="font-display text-[2rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.4rem]">
                 {t({ nl: "Stuur me een bericht", en: "Send me a message" })}
               </h2>
-              <div className="mt-4 space-y-3 whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+              <div className="mt-5 space-y-5 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
                 <p>
                   {t({
                     nl: "Ik lees alles persoonlijk en kom bij je terug.",
