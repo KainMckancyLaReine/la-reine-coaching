@@ -44,7 +44,7 @@ export function OverMijContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "Over mij", en: "About me" })}
+        eyebrow="Phaedra La Reine"
         title={t({ nl: "Over mij", en: "About me" })}
         subtitle={t({
           nl: "Ik help mensen stoppen met zichzelf klein houden,\nzodat ze hun stem durven gebruiken.",
@@ -193,7 +193,9 @@ export function OverMijContent() {
 
       <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
         <Reveal>
-          <SectionLabel>{t({ nl: "Wat ik nu doe", en: "What I do now" })}</SectionLabel>
+          <h2 className="font-display text-3xl text-ink sm:text-4xl">
+            {t({ nl: "Wat ik nu doe", en: "What I do now" })}
+          </h2>
           <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
             <p>
               {t({

@@ -275,7 +275,9 @@ export function HomeContent() {
       <section className="bg-forest py-20 text-cream">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>{t({ nl: "De V.O.I.C.E. methode", en: "The V.O.I.C.E. method" })}</SectionLabel>
+            <SectionLabel tone="light">
+              {t({ nl: "De V.O.I.C.E. methode", en: "The V.O.I.C.E. method" })}
+            </SectionLabel>
             <h2 className="font-display mt-3 text-3xl text-cream sm:text-4xl">
               {t({ nl: "Dit is hoe je je stem terugpakt", en: "This is how you take your voice back" })}
             </h2>
@@ -346,7 +348,6 @@ export function HomeContent() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel>{t(COMMON.workWithMe)}</SectionLabel>
           <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
             {t({ nl: "Werk met mij", en: "Work with me" })}
           </h2>

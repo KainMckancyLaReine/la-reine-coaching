@@ -49,7 +49,10 @@ export function WerkMetMijContent() {
   return (
     <>
       <PageHero
-        eyebrow={t(COMMON.workWithMe)}
+        eyebrow={t({
+          nl: "Coaching · Keynotes · Events",
+          en: "Coaching · Keynotes · Events",
+        })}
         title={t({ nl: "Werk met mij", en: "Work with me" })}
         subtitle={t({
           nl: "Je hoeft het niet alleen te doen.\nJe hoeft ook niet te blijven waar je nu bent.",
@@ -62,7 +65,7 @@ export function WerkMetMijContent() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <PortraitFrame
             src={asset("/images/phaedra-desk.jpg")}
             alt="Phaedra La Reine aan het werk"
@@ -70,10 +73,10 @@ export function WerkMetMijContent() {
             rotate={-2}
             width={1400}
             height={1400}
-            className="mx-auto w-full max-w-sm"
+            className="mx-auto w-full max-w-xs"
           />
           <Reveal delay={0.1}>
-            <p className="text-balance font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="max-w-lg font-display text-3xl leading-snug text-ink sm:text-4xl">
               {t({
                 nl: "Dit zijn de manieren waarop je met mij kunt werken.",
                 en: "These are the ways you can work with me.",

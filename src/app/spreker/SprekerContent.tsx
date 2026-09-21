@@ -111,7 +111,7 @@ export function SprekerContent() {
       <section className="mx-auto max-w-6xl px-6 pb-20 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="text-balance whitespace-pre-line font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="whitespace-pre-line font-display text-3xl leading-snug text-ink sm:text-[2.5rem]">
               {t({
                 nl: "Geen standaard verhaal.\nMaar een ervaring die mensen laat voelen\nwat er mogelijk is wanneer ze hun stem gebruiken.",
                 en: "No standard story.\nBut an experience that makes people feel\nwhat's possible when they use their voice.",
@@ -148,11 +148,13 @@ export function SprekerContent() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {AUDIENCE.map((item, i) => (
               <Reveal key={item.label.nl} delay={i * 0.1}>
-                <div className="flex h-full flex-col items-center rounded-3xl border border-line bg-paper p-8 text-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
-                    <item.icon size={22} />
+                <div className="flex h-full min-h-[13rem] flex-col items-center justify-center gap-5 rounded-3xl border border-line bg-paper px-8 py-10 text-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
+                    <item.icon size={24} />
                   </div>
-                  <p className="mt-5 text-sm leading-relaxed text-ink-soft">{t(item.label)}</p>
+                  <p className="text-balance font-display text-xl leading-snug text-ink">
+                    {t(item.label)}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -168,7 +170,9 @@ export function SprekerContent() {
       <section className="bg-forest py-20 text-cream">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel>{t({ nl: "Resultaten die spreken", en: "Results that speak" })}</SectionLabel>
+            <SectionLabel tone="light">
+              {t({ nl: "Resultaten die spreken", en: "Results that speak" })}
+            </SectionLabel>
             <p className="mt-6 text-sage-100/85">
               {t({
                 nl: "De impact van een keynote of workshop van Phaedra La Reine:",
@@ -235,7 +239,7 @@ export function SprekerContent() {
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 overflow-hidden rounded-3xl border border-line bg-paper shadow-[0_24px_60px_-24px_rgba(43,38,32,0.25)]">
+            <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-3xl border border-line bg-paper shadow-[0_24px_60px_-24px_rgba(43,38,32,0.25)]">
               <div className="relative aspect-video w-full">
                 <iframe
                   src={IMPRESSION_VIDEO}

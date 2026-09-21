@@ -88,17 +88,12 @@ export function StopPlayingSmallContent() {
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="text-balance whitespace-pre-line font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="whitespace-pre-line font-display text-3xl leading-snug text-ink sm:text-4xl">
               {t({
                 nl: "Je hebt een stem.\nMaar ergens gebruik je die nog niet volledig.",
                 en: "You have a voice.\nBut somewhere you're not using it fully yet.",
               })}
             </p>
-            <div className="mt-8">
-              <Button href={CALENDLY_URL} external variant="primary">
-                {t({ nl: "Start jouw eerste stap", en: "Start your first step" })}
-              </Button>
-            </div>
           </Reveal>
           <PortraitFrame
             src={asset("/images/phaedra-lifestyle-call.jpg")}
@@ -116,7 +111,7 @@ export function StopPlayingSmallContent() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel>{t({ nl: "Je herkent dit", en: "You recognize this" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
+            <h2 className="text-balance font-display mt-3 text-3xl text-ink sm:text-4xl">
               {t({
                 nl: "Niet alleen in wat je zegt, maar ook in wat je mist.",
                 en: "Not only in what you say, but also in what you miss.",
@@ -147,14 +142,16 @@ export function StopPlayingSmallContent() {
             {t({ nl: "Het zit in wat eronder ligt.", en: "It's in what lies underneath." })}
           </h2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
           {ROOT_CAUSES.map((cause, i) => (
-            <Reveal key={cause.title.nl} delay={i * 0.1}>
-              <div className="flex h-full flex-col items-center rounded-3xl border border-line bg-paper p-8 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
-                  <cause.icon size={22} />
+            <Reveal key={cause.title.nl} delay={i * 0.1} className="h-full">
+              <div className="flex h-full min-h-[15rem] flex-col items-center justify-center gap-6 rounded-3xl border border-line bg-paper px-8 py-12 text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
+                  <cause.icon size={24} />
                 </div>
-                <h3 className="font-display mt-6 text-2xl text-ink">{t(cause.title)}</h3>
+                <h3 className="text-balance font-display text-2xl leading-snug text-ink sm:text-[1.75rem]">
+                  {t(cause.title)}
+                </h3>
               </div>
             </Reveal>
           ))}
@@ -164,7 +161,7 @@ export function StopPlayingSmallContent() {
       <section className="bg-forest py-20 text-cream">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel>
+            <SectionLabel tone="light">
               {t({ nl: "Dit is waar het verandert", en: "This is where it changes" })}
             </SectionLabel>
             <div className="mx-auto mt-6 max-w-2xl space-y-4 whitespace-pre-line text-sage-100/85">

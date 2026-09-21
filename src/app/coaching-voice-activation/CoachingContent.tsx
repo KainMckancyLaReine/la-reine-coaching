@@ -39,7 +39,7 @@ export function CoachingContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" })}
+        eyebrow={t({ nl: "Eén-op-één traject", en: "One-on-one programme" })}
         title={t({ nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" })}
         subtitle={t({
           nl: "Voor vrouwen die voelen dat ze zichzelf nog inhouden.",
@@ -55,7 +55,7 @@ export function CoachingContent() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
             <div className="space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
-              <p className="font-display text-2xl leading-snug text-ink sm:text-3xl">
+              <p className="font-display text-3xl leading-snug text-ink sm:text-4xl">
                 {t({
                   nl: "Je hebt al veel gedaan.\nVeel gedragen.\nVeel opgelost.",
                   en: "You've already done a lot.\nCarried a lot.\nSolved a lot.",
@@ -137,11 +137,11 @@ export function CoachingContent() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {APPROACH.map((item, i) => (
             <Reveal key={item.label.nl} delay={i * 0.08}>
-              <div className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-gold-600">
-                  <item.icon size={18} />
+              <div className="flex h-full items-center gap-4 rounded-2xl border border-line bg-paper px-6 py-6">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-gold-600">
+                  <item.icon size={20} />
                 </div>
-                <p className="text-sm text-ink-soft">{t(item.label)}</p>
+                <p className="font-display text-lg leading-snug text-ink">{t(item.label)}</p>
               </div>
             </Reveal>
           ))}
@@ -160,7 +160,7 @@ export function CoachingContent() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
-              <SectionLabel>{t({ nl: "Begin hier", en: "Start here" })}</SectionLabel>
+              <SectionLabel tone="light">{t({ nl: "Begin hier", en: "Start here" })}</SectionLabel>
               <h2 className="font-display mt-3 text-3xl sm:text-4xl">
                 {t({
                   nl: "Start met de Stop Playing Small Challenge",

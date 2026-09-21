@@ -146,7 +146,7 @@ export function VibesVoicesContent() {
       <section className="bg-forest py-16 text-cream">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel>{t({ nl: "Onze missie", en: "Our mission" })}</SectionLabel>
+            <SectionLabel tone="light">{t({ nl: "Onze missie", en: "Our mission" })}</SectionLabel>
             <h2 className="font-display mt-3 text-3xl sm:text-4xl">
               {t({ nl: "Verbinding door verhalen", en: "Connection through stories" })}
             </h2>
@@ -325,7 +325,7 @@ export function VibesVoicesContent() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
-              <SectionLabel>{t({ nl: "Workshop", en: "Workshop" })}</SectionLabel>
+              <SectionLabel tone="light">{t({ nl: "Workshop", en: "Workshop" })}</SectionLabel>
               <h2 className="font-display mt-3 text-3xl sm:text-4xl">
                 {t({
                   nl: "Workshop - Get ready to shine",
