@@ -14,41 +14,31 @@ const WAYS = [
   {
     icon: Sparkles,
     title: { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" },
-    tagline: {
-      nl: "Voor wie klaar is om te stoppen met klein spelen",
-      en: "For those ready to stop playing small",
-    },
     description: {
-      nl: "Je werkt één-op-één met mij aan je innerlijke stem, zichtbaarheid en de manier waarop je spreekt. Zodat je niet alleen weet wat je wilt zeggen — maar het ook daadwerkelijk doet.",
-      en: "You work one-on-one with me on your inner voice, visibility and the way you speak. So you not only know what you want to say — but actually do it.",
+      nl: "Voor als je er klaar voor bent\nom niet langer klein te blijven spelen.\n\nJe werkt één-op-één met mij aan je inner voice,\nje zichtbaarheid en hoe je spreekt.\n\nZodat je niet alleen weet wat je wilt zeggen.\nMaar het ook daadwerkelijk doet.",
+      en: "For when you're ready\nto stop playing small.\n\nYou work one-on-one with me on your inner voice,\nyour visibility and how you speak.\n\nSo you not only know what you want to say.\nBut actually do it.",
     },
-    cta: COMMON.planFirstStep,
-    href: CALENDLY_URL,
-    external: true,
+    cta: { nl: "Werk met mij", en: "Work with me" },
+    href: "/coaching-voice-activation",
   },
   {
     icon: Mic2,
     title: { nl: "Spreker & Keynotes", en: "Speaker & Keynotes" },
-    tagline: {
-      nl: "Voor organisaties en events die impact willen",
-      en: "For organizations and events that want impact",
-    },
     description: {
-      nl: "Geen standaardverhaal, maar een keynote die raakt en beweegt. Voor teams en publieken die een boodschap nodig hebben die blijft hangen.",
-      en: "No standard story, but a keynote that resonates and moves people. For teams and audiences who need a message that sticks.",
+      nl: "Voor organisaties en events\ndie impact willen maken met een boodschap die blijft hangen.\n\nGeen standaard verhaal.\nMaar een keynote die raakt en in beweging zet.",
+      en: "For organizations and events\nthat want to make impact with a message that sticks.\n\nNo standard story.\nBut a keynote that moves people into action.",
     },
-    cta: COMMON.contact,
-    href: "/contact",
+    cta: { nl: "Boek mij als spreker", en: "Book me as a speaker" },
+    href: "/spreker",
   },
   {
     icon: MessageCircle,
     title: { nl: "Vibes & Voices", en: "Vibes & Voices" },
-    tagline: { nl: "De plek waar je je stem oefent", en: "The place where you practice your voice" },
     description: {
-      nl: "In een veilige, ontspannen setting oefen je met authentieke expressie — tussen mensen die hetzelfde willen: hun stem echt laten horen.",
-      en: "In a safe, relaxed setting you practice authentic expression — among people who want the same thing: to truly let their voice be heard.",
+      nl: "De plek waar je je stem oefent.\n\nIn een veilige, ontspannen setting krijg je de ruimte om te spreken en jezelf te laten zien.\n\nNiet perfect. Wel echt.",
+      en: "The place where you practice your voice.\n\nIn a safe, relaxed setting you get the space to speak and to show yourself.\n\nNot perfect. But real.",
     },
-    cta: { nl: "Ontdek Vibes & Voices", en: "Discover Vibes & Voices" },
+    cta: { nl: "Ontdek het event", en: "Discover the event" },
     href: "/vibes-voices",
   },
 ];
@@ -60,12 +50,16 @@ export function WerkMetMijContent() {
     <>
       <PageHero
         eyebrow={t(COMMON.workWithMe)}
-        title={t({ nl: "Je hoeft het niet alleen te doen", en: "You don't have to do it alone" })}
+        title={t({ nl: "Werk met mij", en: "Work with me" })}
         subtitle={t({
-          nl: "Je hoeft niet te blijven waar je nu bent. Dit zijn de manieren waarop je met mij kunt werken.",
-          en: "You don't have to stay where you are now. Here are the ways you can work with me.",
+          nl: "Je hoeft het niet alleen te doen.\nJe hoeft ook niet te blijven waar je nu bent.",
+          en: "You don't have to do it alone.\nAnd you don't have to stay where you are now.",
         })}
-      />
+      >
+        <Button href={CALENDLY_URL} external variant="primary">
+          {t(COMMON.planFirstStep)}
+        </Button>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
@@ -81,14 +75,8 @@ export function WerkMetMijContent() {
           <Reveal delay={0.1}>
             <p className="text-balance font-display text-2xl leading-snug text-ink sm:text-3xl">
               {t({
-                nl: "Elke manier van werken begint bij hetzelfde: jouw stem, echt gehoord.",
-                en: "Every way of working starts with the same thing: your voice, truly heard.",
-              })}
-            </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
-              {t({
-                nl: "Of je nu één-op-één werkt aan je innerlijke stem, het podium op gaat als spreker, of oefent tussen gelijkgestemden bij Vibes & Voices — het uitgangspunt blijft: niet perfect, wel echt.",
-                en: "Whether you work one-on-one on your inner voice, step on stage as a speaker, or practice among like-minded people at Vibes & Voices — the starting point stays the same: not perfect, but real.",
+                nl: "Dit zijn de manieren waarop je met mij kunt werken.",
+                en: "These are the ways you can work with me.",
               })}
             </p>
           </Reveal>
@@ -104,18 +92,15 @@ export function WerkMetMijContent() {
                   <way.icon size={26} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sage-700">
-                    {t(way.tagline)}
-                  </p>
-                  <h2 className="font-display mt-2 text-2xl text-ink sm:text-3xl">
+                  <h2 className="font-display text-2xl text-ink sm:text-3xl">
                     {t(way.title)}
                   </h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft">
+                  <p className="mt-3 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-ink-soft">
                     {t(way.description)}
                   </p>
                 </div>
                 <div className="lg:justify-self-end">
-                  <Button href={way.href} external={way.external} variant="primary">
+                  <Button href={way.href} variant="primary">
                     {t(way.cta)}
                   </Button>
                 </div>
@@ -127,13 +112,10 @@ export function WerkMetMijContent() {
 
       <section className="bg-sage-50 py-20 text-center">
         <Reveal>
-          <h2 className="font-display text-3xl text-ink sm:text-4xl">
-            {t({ nl: "Niet zeker welke stap bij jou past?", en: "Not sure which step fits you?" })}
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+          <p className="mx-auto max-w-xl whitespace-pre-line font-display text-2xl leading-snug text-ink sm:text-3xl">
             {t({
-              nl: "Plan een vrijblijvend gesprek — samen kijken we wat jij nu nodig hebt.",
-              en: "Book a no-obligation call — together we'll look at what you need right now.",
+              nl: "Je hoeft niet alles in één keer te weten.\nJe hoeft alleen te beginnen.",
+              en: "You don't have to know everything at once.\nYou only have to begin.",
             })}
           </p>
           <div className="mt-8">

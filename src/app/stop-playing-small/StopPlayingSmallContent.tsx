@@ -1,7 +1,7 @@
 "use client";
 import { asset } from "@/lib/asset";
 
-import { HelpCircle, EyeOff, Clock3, CircleSlash } from "lucide-react";
+import { HelpCircle, EyeOff, Clock3, CircleSlash, Check } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -14,52 +14,46 @@ import { COMMON } from "@/lib/common-dict";
 
 const RECOGNITIONS = [
   {
-    nl: "Je denkt na voordat je spreekt — en houdt jezelf in.",
-    en: "You think before you speak — and hold yourself back.",
+    nl: "Je denkt na voordat je iets zegt.\nJe houdt je in.\nJe kiest je woorden zorgvuldig.",
+    en: "You think before you say something.\nYou hold yourself back.\nYou choose your words carefully.",
   },
   {
-    nl: "Je kiest je woorden zorgvuldig, maar zegt niet alles wat je wil zeggen.",
-    en: "You choose your words carefully, but don't say everything you want to say.",
+    nl: "En toch…\nzeg je niet alles wat je eigenlijk wilt zeggen.",
+    en: "And still…\nyou don't say everything you actually want to say.",
   },
   {
-    nl: "Je wacht op het juiste moment, of op meer zekerheid.",
-    en: "You wait for the right moment, or for more certainty.",
+    nl: "Misschien wacht je op het juiste moment.\nOf tot je meer zekerheid voelt.\n\nMaar dat moment blijft uit.",
+    en: "Maybe you're waiting for the right moment.\nOr until you feel more certain.\n\nBut that moment never comes.",
   },
   {
-    nl: "Je speelt kleiner dan wie je werkelijk bent.",
-    en: "You play smaller than who you really are.",
+    nl: "En ondertussen speel je kleiner dan je bent.\n\nEn diep vanbinnen weet je: dit klopt niet.",
+    en: "And in the meantime you play smaller than you are.\n\nAnd deep down you know: this isn't right.",
   },
 ];
 
 const ROOT_CAUSES = [
-  {
-    icon: HelpCircle,
-    title: { nl: "Twijfel", en: "Doubt" },
-    detail: {
-      nl: "De stem in je hoofd die zegt: is dit wel goed genoeg?",
-      en: "The voice in your head that says: is this even good enough?",
-    },
-  },
-  {
-    icon: EyeOff,
-    title: { nl: "Overtuigingen", en: "Beliefs" },
-    detail: {
-      nl: "Oude ideeën over wie jij mag zijn en wat je mag innemen.",
-      en: "Old ideas about who you're allowed to be and how much space you're allowed to take up.",
-    },
-  },
+  { icon: HelpCircle, title: { nl: "Twijfel", en: "Doubt" } },
+  { icon: EyeOff, title: { nl: "Overtuigingen", en: "Beliefs" } },
   {
     icon: Clock3,
-    title: { nl: "Momenten", en: "Moments" },
-    detail: {
-      nl: "De specifieke situaties waarin je jezelf keer op keer tegenhoudt.",
-      en: "The specific situations where you hold yourself back, time and again.",
+    title: {
+      nl: "Momenten waarop je jezelf tegenhoudt",
+      en: "Moments where you hold yourself back",
     },
   },
 ];
 
+const RESULTS = [
+  { nl: "zie je waar je jezelf tegenhoudt", en: "you see where you hold yourself back" },
+  { nl: "begrijp je wat er speelt", en: "you understand what's going on" },
+  { nl: "zet je een eerste stap die klopt", en: "you take a first step that feels right" },
+];
+
 const TESTIMONIALS = [
-  { quote: { nl: "Ik hield mezelf klein. Nu niet meer.", en: "I kept myself small. Not anymore." }, name: "Amara Rahman" },
+  {
+    quote: { nl: "Ik hield mezelf klein. Nu niet meer.", en: "I kept myself small. Not anymore." },
+    name: "Amara Rahman",
+  },
   {
     quote: {
       nl: "Ik spreek me uit zonder mezelf kleiner te maken.",
@@ -79,12 +73,12 @@ export function StopPlayingSmallContent() {
         eyebrow={t({ nl: "De challenge", en: "The challenge" })}
         title="Stop Playing Small"
         subtitle={t({
-          nl: "Je weet dat er meer in je zit. De vraag is: wat houdt je nog tegen?",
-          en: "You know there's more in you. The question is: what's still holding you back?",
+          nl: "Je weet dat er meer in je zit.\nDe vraag is: wat houdt je nog tegen?",
+          en: "You know there's more in you.\nThe question is: what's still holding you back?",
         })}
       >
         <Button href={CALENDLY_URL} external variant="primary">
-          {t({ nl: "Begin hier", en: "Start here" })}
+          {t({ nl: "Start jouw eerste stap", en: "Start your first step" })}
         </Button>
         <Button href="/contact" variant="secondary">
           {t(COMMON.contact)}
@@ -94,18 +88,17 @@ export function StopPlayingSmallContent() {
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="text-balance font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="text-balance whitespace-pre-line font-display text-2xl leading-snug text-ink sm:text-3xl">
               {t({
-                nl: "Je hebt een stem. Maar ergens gebruik je die nog niet volledig.",
-                en: "You have a voice. But somewhere, you're not using it fully yet.",
+                nl: "Je hebt een stem.\nMaar ergens gebruik je die nog niet volledig.",
+                en: "You have a voice.\nBut somewhere you're not using it fully yet.",
               })}
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
-              {t({
-                nl: "Niet omdat je niets te zeggen hebt — maar omdat er iets is dat je nog inhoudt. De challenge helpt je precies te zien wat dat is.",
-                en: "Not because you have nothing to say — but because something is still holding you back. The challenge helps you see exactly what that is.",
-              })}
-            </p>
+            <div className="mt-8">
+              <Button href={CALENDLY_URL} external variant="primary">
+                {t({ nl: "Start jouw eerste stap", en: "Start your first step" })}
+              </Button>
+            </div>
           </Reveal>
           <PortraitFrame
             src={asset("/images/phaedra-lifestyle-call.jpg")}
@@ -125,17 +118,19 @@ export function StopPlayingSmallContent() {
             <SectionLabel>{t({ nl: "Je herkent dit", en: "You recognize this" })}</SectionLabel>
             <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
               {t({
-                nl: "Niet alleen in wat je zegt, maar ook in wat je mist",
-                en: "Not just in what you say, but in what you miss",
+                nl: "Niet alleen in wat je zegt, maar ook in wat je mist.",
+                en: "Not only in what you say, but also in what you miss.",
               })}
             </h2>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {RECOGNITIONS.map((text, i) => (
               <Reveal key={text.nl} delay={i * 0.08}>
-                <div className="flex items-start gap-3 rounded-2xl border border-line bg-paper p-5">
+                <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-paper p-5">
                   <CircleSlash className="mt-0.5 shrink-0 text-gold-500" size={18} />
-                  <p className="text-sm leading-relaxed text-ink-soft">{t(text)}</p>
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-ink-soft">
+                    {t(text)}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -145,24 +140,21 @@ export function StopPlayingSmallContent() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel>{t({ nl: "Het ligt niet aan je stem", en: "It's not about your voice" })}</SectionLabel>
+          <SectionLabel>
+            {t({ nl: "Het ligt niet aan je stem", en: "It's not about your voice" })}
+          </SectionLabel>
           <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
-            {t({ nl: "Drie dingen houden je echt tegen", en: "Three things really hold you back" })}
+            {t({ nl: "Het zit in wat eronder ligt.", en: "It's in what lies underneath." })}
           </h2>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {ROOT_CAUSES.map((cause, i) => (
             <Reveal key={cause.title.nl} delay={i * 0.1}>
-              <div className="h-full rounded-3xl border border-line bg-paper p-8 text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
+              <div className="flex h-full flex-col items-center rounded-3xl border border-line bg-paper p-8 text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
                   <cause.icon size={22} />
                 </div>
-                <h3 className="font-display mt-6 text-2xl text-ink">
-                  {t(cause.title)}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {t(cause.detail)}
-                </p>
+                <h3 className="font-display mt-6 text-2xl text-ink">{t(cause.title)}</h3>
               </div>
             </Reveal>
           ))}
@@ -172,45 +164,77 @@ export function StopPlayingSmallContent() {
       <section className="bg-forest py-20 text-cream">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel>{t({ nl: "Dit is waar het verandert", en: "This is where it changes" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl sm:text-4xl">
-              {t({ nl: "Niet harder proberen. Anders kijken.", en: "Not trying harder. Looking differently." })}
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-sage-100/85">
-              {t({
-                nl: "Verandering komt niet door harder je best te doen, maar door de patronen te herkennen die je klein houden — en daar stap voor stap doorheen te bewegen.",
-                en: "Change doesn't come from trying harder, but from recognizing the patterns that keep you small — and moving through them, step by step.",
-              })}
-            </p>
+            <SectionLabel>
+              {t({ nl: "Dit is waar het verandert", en: "This is where it changes" })}
+            </SectionLabel>
+            <div className="mx-auto mt-6 max-w-2xl space-y-4 whitespace-pre-line text-sage-100/85">
+              <p>
+                {t({
+                  nl: "Niet door harder je best te doen…\nmaar door te zien waar je jezelf inhoudt.\nEn daar stap voor stap doorheen te bewegen.",
+                  en: "Not by trying harder…\nbut by seeing where you hold yourself back.\nAnd moving through it, step by step.",
+                })}
+              </p>
+              <p>
+                {t({
+                  nl: "Zodat wat je denkt, voelt en zegt\nweer op een lijn komt.",
+                  en: "So that what you think, feel and say\ncomes into alignment again.",
+                })}
+              </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="mx-auto mt-12 max-w-xl rounded-3xl border border-cream/15 bg-cream/5 p-8 backdrop-blur-sm">
+            <div className="mx-auto mt-12 max-w-xl rounded-3xl border border-cream/15 bg-cream/5 p-8 text-left backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
                 {t({ nl: "Begin hier", en: "Start here" })}
               </p>
-              <h3 className="font-display mt-3 text-2xl">
-                {t({ nl: "De gratis challenge", en: "The free challenge" })}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-sage-100/85">
-                {t({
-                  nl: "5x één-op-één met mij. Je ziet waar je jezelf tegenhoudt, je begrijpt wat er speelt, en je zet een eerste stap die klopt.",
-                  en: "5x one-on-one with me. You see where you hold yourself back, you understand what's going on, and you take a first step that feels right.",
-                })}
-              </p>
+              <div className="mt-4 space-y-4 whitespace-pre-line text-sm leading-relaxed text-sage-100/90">
+                <p>
+                  {t({
+                    nl: "Je hoeft het niet alleen te doen.\nEn je hoeft ook niet te blijven waar je nu bent.",
+                    en: "You don't have to do it alone.\nAnd you don't have to stay where you are now.",
+                  })}
+                </p>
+                <p>
+                  {t({
+                    nl: "In mijn gratis challenge werk je 5x één-op-één met mij.\nOnline, persoonlijk en zonder druk.",
+                    en: "In my free challenge you work one-on-one with me 5 times.\nOnline, personal and without pressure.",
+                  })}
+                </p>
+                <p>
+                  {t({
+                    nl: "Geen theorie.\nMaar directe begeleiding waarin je ontdekt waar jij jezelf inhoudt en wat er verandert als je je stem wél gebruikt.",
+                    en: "No theory.\nBut direct guidance in which you discover where you hold yourself back and what changes when you do use your voice.",
+                  })}
+                </p>
+                <p className="font-semibold text-cream">
+                  {t({ nl: "Na deze sessies:", en: "After these sessions:" })}
+                </p>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm text-sage-100/90">
+                {RESULTS.map((r) => (
+                  <li key={r.nl} className="flex items-start gap-2">
+                    <Check size={16} className="mt-0.5 shrink-0 text-gold-200" />
+                    {t(r)}
+                  </li>
+                ))}
+              </ul>
               <div className="mt-6">
                 <Button href={CALENDLY_URL} external variant="ghost">
-                  {t(COMMON.planFirstStep)}
+                  {t({
+                    nl: "Stop playing small - Plan je eerste stap",
+                    en: "Stop playing small - Book your first step",
+                  })}
                 </Button>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.25}>
-            <p className="mt-10 font-display text-xl italic text-gold-100">
+            <p className="mt-10 whitespace-pre-line font-display text-xl italic text-gold-100">
               {t({
-                nl: "Je hoeft het niet perfect te doen. Je hoeft alleen te beginnen.",
-                en: "You don't have to do it perfectly. You just have to begin.",
+                nl: "Je hoeft het niet perfect te doen.\nJe hoeft alleen te beginnen.",
+                en: "You don't have to do it perfectly.\nYou only have to begin.",
               })}
             </p>
           </Reveal>
@@ -220,9 +244,8 @@ export function StopPlayingSmallContent() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>{t({ nl: "Wat anderen zeggen", en: "What others say" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
-              {t({ nl: "Zij stopten met klein spelen", en: "They stopped playing small" })}
+            <h2 className="font-display text-3xl text-ink sm:text-4xl">
+              {t({ nl: "Wat anderen zeggen", en: "What others say" })}
             </h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">

@@ -12,19 +12,29 @@ import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
 const TRAITS = [
-  { nl: "Tienermoeder op mijn 18e", en: "Teenage mother at 18" },
   {
-    nl: "Carrièreswitch na mijn 40e, na 16+ jaar in vastgoed",
-    en: "Career switch after turning 40, after 16+ years in real estate",
+    nl: "Ik was 18 toen ik ontdekte dat ik 6 maanden zwanger was",
+    en: "I was 18 when I found out I was 6 months pregnant",
   },
   {
-    nl: "Een opleiding volgen ondanks financiële onzekerheid",
-    en: "Pursuing an education despite financial uncertainty",
+    nl: "Ik maakte na mijn 40ste een complete carrièreswitch",
+    en: "After turning 40 I made a complete career switch",
   },
-  { nl: "Doorzetten wanneer anderen twijfelden", en: "Persisting when others doubted" },
   {
-    nl: "Motto: vallen is niet erg, blijven liggen wel",
-    en: "Motto: falling isn't terrible, staying down is",
+    nl: "Meer dan 16 jaar werkte ik in de vastgoedwereld",
+    en: "For more than 16 years I worked in real estate",
+  },
+  {
+    nl: "Toen niemand meer in mij geloofde, ging ik toch door",
+    en: "When nobody believed in me anymore, I kept going anyway",
+  },
+  {
+    nl: "Ik begon aan een studie zonder te weten hoe ik het zou betalen",
+    en: "I started a study without knowing how I would pay for it",
+  },
+  {
+    nl: "Mijn motto: vallen is niet erg, blijven liggen wel",
+    en: "My motto: falling is fine, staying down is not",
   },
 ];
 
@@ -35,20 +45,17 @@ export function OverMijContent() {
     <>
       <PageHero
         eyebrow={t({ nl: "Over mij", en: "About me" })}
-        title={t({
-          nl: "Ik help mensen stoppen met zichzelf klein maken",
-          en: "I help people stop making themselves small",
-        })}
+        title={t({ nl: "Over mij", en: "About me" })}
         subtitle={t({
-          nl: "Zodat ze hun stem echt kunnen gebruiken.",
-          en: "So they can truly use their voice.",
+          nl: "Ik help mensen stoppen met zichzelf klein houden,\nzodat ze hun stem durven gebruiken.",
+          en: "I help people stop keeping themselves small,\nso they dare to use their voice.",
         })}
         align="left"
       />
 
       <section className="mx-auto max-w-5xl px-6 pb-20 lg:px-8">
         <Reveal>
-          <div className="flex flex-col gap-6 rounded-3xl border border-line bg-paper p-8 sm:flex-row sm:items-center sm:p-10">
+          <div className="flex flex-col gap-6 rounded-3xl border border-line bg-paper p-8 sm:flex-row sm:items-start sm:p-10">
             <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full ring-4 ring-sage-100">
               <Image
                 src={asset("/images/phaedra-headshot.jpg")}
@@ -58,14 +65,20 @@ export function OverMijContent() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div>
+            <div className="space-y-4 text-sm leading-relaxed text-ink-soft">
               <h2 className="font-display text-2xl text-ink">
-                Phaedra La Reine
+                {t({ nl: "Mijn naam is Phaedra La Reine.", en: "My name is Phaedra La Reine." })}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              <p>
                 {t({
-                  nl: "Spreker en voice activation coach. Ik weet wat het is om jezelf te verliezen terwijl je alles op de rit probeert te houden.",
-                  en: "Speaker and voice activation coach. I know what it's like to lose yourself while trying to keep everything together.",
+                  nl: "Ik ben spreker, voice activation coach en de enige Lisa Nichols Certified Transformational Trainer in Nederland.",
+                  en: "I'm a speaker, voice activation coach and the only Lisa Nichols Certified Transformational Trainer in the Netherlands.",
+                })}
+              </p>
+              <p>
+                {t({
+                  nl: "Maar boven alles ben ik iemand die weet hoe het voelt om jezelf kwijt te raken, terwijl je probeert alles bij elkaar te houden.",
+                  en: "But above all I'm someone who knows how it feels to lose yourself, while trying to keep everything together.",
                 })}
               </p>
             </div>
@@ -93,12 +106,12 @@ export function OverMijContent() {
             })}
             eyebrow={t({ nl: "Erkenning", en: "Recognition" })}
             title={t({
-              nl: "Een unieke, internationale erkenning",
-              en: "A unique, international recognition",
+              nl: "Lisa Nichols Certified Transformational Trainer",
+              en: "Lisa Nichols Certified Transformational Trainer",
             })}
             description={t({
-              nl: "Phaedra is de enige Lisa Nichols Certified Transformational Trainer in Nederland — een erkenning voor werk dat mensen daadwerkelijk laat transformeren, van binnenuit.",
-              en: "Phaedra is the only Lisa Nichols Certified Transformational Trainer in the Netherlands — a recognition for work that truly transforms people, from the inside out.",
+              nl: "Ik ben spreker, voice activation coach en de enige Lisa Nichols Certified Transformational Trainer in Nederland.",
+              en: "I'm a speaker, voice activation coach and the only Lisa Nichols Certified Transformational Trainer in the Netherlands.",
             })}
           />
         </div>
@@ -121,21 +134,55 @@ export function OverMijContent() {
                 {t({ nl: "Het moment waarop alles veranderde", en: "The moment everything changed" })}
               </SectionLabel>
               <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
-                &ldquo;{t({ nl: "Ik wil scheiden", en: "I want a divorce" })}&rdquo;
+                {t({ nl: "Ik dacht dat ik alles wel aankon.", en: "I thought I could handle anything." })}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-6 space-y-4 text-ink-soft leading-relaxed">
+              <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
                 <p>
                   {t({
-                    nl: "Tienermoederschap, schulden, burn-out en relatieproblemen — het waren geen aparte hoofdstukken, maar één lange periode van overleven. Het kantelpunt kwam toen ik de woorden hoorde: “Ik wil scheiden.” Dat moment liet me beseffen dat ik al lang aan het overleven was, niet aan het leven.",
-                    en: "Teenage motherhood, debt, burnout and relationship struggles — they weren't separate chapters, but one long period of surviving. The turning point came when I heard the words: “I want a divorce.” That moment made me realize I'd been surviving for a long time, not living.",
+                    nl: "Ik was tienermoeder geweest.\nIk had schulden gehad.\nEen burn-out.\nGebroken relaties.",
+                    en: "I had been a teenage mother.\nI had been in debt.\nA burnout.\nBroken relationships.",
+                  })}
+                </p>
+                <p>{t({ nl: "En toch bleef ik doorgaan.", en: "And still I kept going." })}</p>
+                <p className="font-display text-xl text-forest">
+                  {t({ nl: "Tot ik hoorde: “Ik wil scheiden.”", en: "Until I heard: “I want a divorce.”" })}
+                </p>
+                <p>
+                  {t({
+                    nl: "Dat was het moment waarop ik besefte dat ik jarenlang vooral had overleefd.",
+                    en: "That was the moment I realized I had mostly been surviving for years.",
                   })}
                 </p>
                 <p>
                   {t({
-                    nl: "“Ik was bezig met zorgen, oplossen en doorgaan, maar niet meer met mezelf.” Die realisatie zette me aan het denken — over gelukswetenschap, over het werk van Lisa Nichols, en uiteindelijk over hoe ik mijn eigen groei kon omzetten in mijn professionele missie.",
-                    en: "“I was busy worrying, solving and pushing on, but no longer with myself.” That realization set me thinking — about the science of happiness, about Lisa Nichols' work, and eventually about how I could turn my own growth into my professional mission.",
+                    nl: "Ik was bezig met zorgen, oplossen en doorgaan,\nmaar niet meer met mezelf.",
+                    en: "I was busy caring, solving and pushing on,\nbut no longer with myself.",
+                  })}
+                </p>
+                <p>
+                  {t({
+                    nl: "Ik wilde niet alleen doorgaan.\nIk wilde leven.",
+                    en: "I didn't just want to keep going.\nI wanted to live.",
+                  })}
+                </p>
+                <p>
+                  {t({
+                    nl: "In mijn zoektocht naar geluk, rust en richting ontdekte ik de science of happiness en kwam ik in aanraking met het werk van Lisa Nichols.",
+                    en: "In my search for happiness, calm and direction I discovered the science of happiness and came across the work of Lisa Nichols.",
+                  })}
+                </p>
+                <p>
+                  {t({
+                    nl: "Wat begon als persoonlijke groei, werd uiteindelijk mijn missie.",
+                    en: "What began as personal growth eventually became my mission.",
+                  })}
+                </p>
+                <p className="font-display text-xl text-forest">
+                  {t({
+                    nl: "Ik besloot mezelf niet langer klein te houden.",
+                    en: "I decided to stop keeping myself small.",
                   })}
                 </p>
               </div>
@@ -147,33 +194,46 @@ export function OverMijContent() {
       <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
         <Reveal>
           <SectionLabel>{t({ nl: "Wat ik nu doe", en: "What I do now" })}</SectionLabel>
-          <h2 className="font-display mt-3 text-3xl text-ink sm:text-4xl">
-            {t({
-              nl: "Persoonlijke ontwikkeling, voice activation en transformatie",
-              en: "Personal development, voice activation and transformation",
-            })}
-          </h2>
-          <p className="mt-6 text-ink-soft leading-relaxed">
-            {t({
-              nl: "Ik werk met mensen die zichzelf tegenhouden — niet omdat ze tekortschieten, maar omdat ze twijfelen aan hun eigen stem. Mijn aanpak combineert persoonlijke ontwikkeling, voice activation en transformatiecoaching, zodat je niet alleen weet wat je waard bent, maar het ook laat zien.",
-              en: "I work with people who hold themselves back — not because they fall short, but because they doubt their own voice. My approach combines personal development, voice activation and transformation coaching, so you not only know your worth, but show it too.",
-            })}
-          </p>
+          <div className="mt-6 space-y-4 whitespace-pre-line leading-relaxed text-ink-soft">
+            <p>
+              {t({
+                nl: "Vandaag werk ik als spreker en coach met mensen die voelen dat ze zichzelf nog inhouden.",
+                en: "Today I work as a speaker and coach with people who feel they're still holding themselves back.",
+              })}
+            </p>
+            <p>
+              {t({
+                nl: "Niet omdat ze niets te zeggen hebben.\nMaar omdat ze zijn gaan twijfelen aan hun eigen stem.",
+                en: "Not because they have nothing to say.\nBut because they've started doubting their own voice.",
+              })}
+            </p>
+            <p>
+              {t({
+                nl: "In mijn werk combineer ik persoonlijke ontwikkeling, voice activation en transformatie.",
+                en: "In my work I combine personal development, voice activation and transformation.",
+              })}
+            </p>
+            <p>
+              {t({
+                nl: "Zodat mensen zichzelf niet langer kleiner maken dan nodig is.",
+                en: "So people stop making themselves smaller than they need to be.",
+              })}
+            </p>
+          </div>
         </Reveal>
       </section>
 
       <section className="bg-forest py-20 text-cream">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Reveal>
-            <SectionLabel>{t({ nl: "Dit ben ik ook", en: "This is also me" })}</SectionLabel>
-            <h2 className="font-display mt-3 text-3xl sm:text-4xl">
-              {t({ nl: "Zes dingen die mij vormden", en: "Six things that shaped me" })}
+            <h2 className="font-display text-3xl sm:text-4xl">
+              {t({ nl: "Dit ben ik ook", en: "This is also me" })}
             </h2>
           </Reveal>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {TRAITS.map((trait, i) => (
               <Reveal key={trait.nl} delay={i * 0.06}>
-                <div className="rounded-2xl border border-cream/15 bg-cream/5 p-5 text-sm text-sage-100/90">
+                <div className="h-full rounded-2xl border border-cream/15 bg-cream/5 p-5 text-sm text-sage-100/90">
                   {t(trait)}
                 </div>
               </Reveal>
@@ -184,16 +244,16 @@ export function OverMijContent() {
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-8">
         <Reveal>
-          <p className="font-display text-2xl italic text-ink sm:text-3xl">
+          <p className="whitespace-pre-line font-display text-2xl italic text-ink sm:text-3xl">
             {t({
-              nl: "Je stem verandert meer dan alleen wat je zegt.",
-              en: "Your voice changes more than just what you say.",
+              nl: "Je stem verandert meer\ndan alleen wat je zegt.",
+              en: "Your voice changes more\nthan only what you say.",
             })}
           </p>
-          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+          <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-ink-soft">
             {t({
-              nl: "Het beïnvloedt hoe je jezelf presenteert, hoe je een ruimte binnenkomt, en hoeveel ruimte je durft in te nemen.",
-              en: "It influences how you present yourself, how you enter a room, and how much space you dare to take up.",
+              nl: "Het verandert hoe je jezelf laat zien.\nHoe je binnenkomt en hoeveel ruimte je jezelf geeft.",
+              en: "It changes how you show yourself.\nHow you walk in and how much space you give yourself.",
             })}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

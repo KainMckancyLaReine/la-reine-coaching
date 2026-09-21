@@ -35,7 +35,7 @@ export function OfferCard({
           <Icon size={22} />
         </div>
         <h3 className="font-display mt-6 text-2xl text-ink">{title}</h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
+        <p className="mt-3 flex-1 whitespace-pre-line text-sm leading-relaxed text-ink-soft">
           {description}
         </p>
         <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-forest">

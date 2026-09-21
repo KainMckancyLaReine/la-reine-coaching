@@ -55,7 +55,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className={`mt-6 text-lg leading-relaxed text-ink-soft ${
+          className={`mt-6 whitespace-pre-line text-lg leading-relaxed text-ink-soft ${
             align === "center" ? "mx-auto max-w-2xl" : "max-w-2xl"
           }`}
         >

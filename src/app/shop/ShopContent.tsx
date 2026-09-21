@@ -48,8 +48,8 @@ const PRODUCTS = [
     title: "LIVE.LOVE.PROSPER",
     price: "€22,50",
     description: {
-      nl: "Een samenwerkingsboek van Authors Who Care, voorwoord van Lisa Nichols.",
-      en: "A collaboration book by Authors Who Care, foreword by Lisa Nichols.",
+      nl: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. Een bundel met echte verhalen van 30 auteurs over hoe zij omgingen met verdriet, angst, pijn en tegenslag.",
+      en: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. A collection of real-life stories from 30 authors on how they dealt with heartbreak, anxiety, pain and struggle.",
     },
     cta: COMMON.contact,
     href: "/contact",
@@ -91,7 +91,7 @@ export function ShopContent() {
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-display text-lg text-ink">{title}</h3>
-                    <p className="mt-2 flex-1 text-xs leading-relaxed text-ink-soft">
+                    <p className="mt-2 flex-1 whitespace-pre-line text-xs leading-relaxed text-ink-soft">
                       {t(product.description)}
                     </p>
                     <div className="mt-5">

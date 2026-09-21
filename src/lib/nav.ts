@@ -2,6 +2,8 @@ export const NAV_LINKS = [
   { label: { nl: "Home", en: "Home" }, href: "/" },
   { label: { nl: "Stop Playing Small", en: "Stop Playing Small" }, href: "/stop-playing-small" },
   { label: { nl: "Werk met mij", en: "Work with me" }, href: "/werk-met-mij" },
+  { label: { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" }, href: "/coaching-voice-activation" },
+  { label: { nl: "Spreker", en: "Speaker" }, href: "/spreker" },
   { label: { nl: "Vibes & Voices", en: "Vibes & Voices" }, href: "/vibes-voices" },
   { label: { nl: "Over mij", en: "About me" }, href: "/over-mij" },
   { label: { nl: "Contact", en: "Contact" }, href: "/contact" },

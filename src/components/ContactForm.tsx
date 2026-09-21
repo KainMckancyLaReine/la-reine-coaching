@@ -88,7 +88,7 @@ export function ContactForm() {
           className="rounded-xl border border-line bg-cream px-4 py-2.5 text-sm outline-none focus:border-sage-500"
         >
           <option value="" disabled>
-            {t({ nl: "Kies een onderwerp", en: "Choose a subject" })}
+            {t({ nl: "Kies een optie", en: "Choose an option" })}
           </option>
           {SUBJECTS.map((s) => (
             <option key={s.nl} value={s.nl}>
@@ -99,7 +99,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5 sm:col-span-2">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Bericht", en: "Message" })}
+          {t({ nl: "Laat een bericht achter", en: "Leave a message" })}
         </label>
         <textarea
           required

@@ -7,6 +7,8 @@ const ROUTES = [
   "",
   "stop-playing-small",
   "werk-met-mij",
+  "coaching-voice-activation",
+  "spreker",
   "vibes-voices",
   "over-mij",
   "contact",

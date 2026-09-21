@@ -4,7 +4,7 @@ import { OverMijContent } from "./OverMijContent";
 export const metadata: Metadata = {
   title: "Over mij",
   description:
-    "Phaedra La Reine — spreker en voice activation coach. De enige Lisa Nichols Certified Transformational Trainer in Nederland.",
+    "Ik help mensen stoppen met zichzelf klein houden, zodat ze hun stem durven gebruiken. Phaedra La Reine — spreker, voice activation coach en de enige Lisa Nichols Certified Transformational Trainer in Nederland.",
 };
 
 export default function OverMijPage() {

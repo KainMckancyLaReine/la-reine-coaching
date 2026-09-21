@@ -4,7 +4,7 @@ import { VibesVoicesContent } from "./VibesVoicesContent";
 export const metadata: Metadata = {
   title: "Vibes & Voices",
   description:
-    "Jij brengt de Vibes, wij de Voices! Voor (beginnende) sprekers die willen groeien, verbinden en impact maken. Open mic events in Amsterdam.",
+    "Vibes & Voices is het platform voor (beginnende) sprekers die willen groeien, verbinden en impact maken. Open mic pop-up café in Amsterdam Noord.",
 };
 
 export default function VibesVoicesPage() {
