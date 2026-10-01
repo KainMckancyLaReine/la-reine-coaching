@@ -29,13 +29,13 @@ export function TransformationRings({
   const speed = hovered ? 0.45 : 1;
 
   const badge = (
-    <div className="relative h-48 w-48 sm:h-56 sm:w-56">
+    <div className="relative h-40 w-40 sm:h-44 sm:w-44">
       <Image
         src={src}
         alt={alt}
         fill
         className="object-contain drop-shadow-[0_18px_35px_rgba(75,46,131,0.35)]"
-        sizes="14rem"
+        sizes="11rem"
       />
       {href && (
         <motion.span
@@ -59,7 +59,7 @@ export function TransformationRings({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       whileHover={reduceMotion ? undefined : { scale: 1.03 }}
-      className="relative mx-auto flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80"
+      className="relative mx-auto flex h-60 w-60 items-center justify-center sm:h-64 sm:w-64"
     >
       {/* ambient glow */}
       <motion.div
@@ -101,7 +101,7 @@ export function TransformationRings({
       {/* middle dashed ring, counter-rotating */}
       <motion.div
         aria-hidden
-        className="absolute inset-6 rounded-full border-2 border-dashed border-plum-300/70"
+        className="absolute inset-5 rounded-full border-2 border-dashed border-plum-300/70"
         animate={reduceMotion ? undefined : { rotate: -360 }}
         transition={{ duration: 34 * speed, repeat: Infinity, ease: "linear" }}
       />
@@ -109,7 +109,7 @@ export function TransformationRings({
       {/* inner gradient ring */}
       <motion.div
         aria-hidden
-        className="absolute inset-12 rounded-full p-[2px]"
+        className="absolute inset-10 rounded-full p-[2px]"
         style={{
           background: "conic-gradient(from 90deg, #c96bb0, #7c4dbc, #ede4fa, #c96bb0)",
         }}

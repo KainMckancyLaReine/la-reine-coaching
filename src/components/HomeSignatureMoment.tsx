@@ -103,7 +103,7 @@ export function HomeSignatureMoment({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: words.length * 0.15 + 0.1 }}
-            className="mt-6 max-w-md text-ink-soft leading-relaxed"
+            className="mt-6 max-w-md whitespace-pre-line text-ink-soft leading-relaxed"
           >
             {statement}
           </motion.p>

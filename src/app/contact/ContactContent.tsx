@@ -81,13 +81,13 @@ export function ContactContent() {
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
           <PortraitFrame
-            src={asset("/images/phaedra-hero.jpg")}
-            alt="Phaedra La Reine"
+            src={asset("/images/foto-10-contact.jpg")}
+            alt="Phaedra La Reine aan de telefoon"
             accent="sage"
             rotate={2}
-            width={563}
-            height={763}
-            className="mx-auto hidden w-full max-w-sm lg:block"
+            width={1800}
+            height={1200}
+            className="mx-auto w-full max-w-md lg:mt-4"
           />
           <div>
             <Reveal>

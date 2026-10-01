@@ -27,20 +27,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sage-100 ring-1 ring-inset ring-sage-300/50">
-                <Image
-                  src={asset("/images/lion-mark.png")}
-                  alt=""
-                  width={28}
-                  height={20}
-                  className="h-5 w-7 object-contain"
-                />
-              </span>
-              <p className="font-display text-2xl text-forest">
-                La Reine <span className="text-gold-500 italic">Coaching</span>
-              </p>
-            </div>
+            <Image
+              src={asset("/images/logo-la-reine.png")}
+              alt="La Reine Coaching"
+              width={327}
+              height={277}
+              className="h-24 w-auto"
+            />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">
               {t(COMMON.footerTagline)}
             </p>

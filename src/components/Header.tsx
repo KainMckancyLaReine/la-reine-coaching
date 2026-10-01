@@ -81,29 +81,21 @@ export function Header() {
             : "border-transparent bg-cream/0 px-3 py-3 sm:px-4"
         }`}
       >
-        <Link href="/" className="group flex shrink-0 items-center gap-2.5">
+        <Link href="/" aria-label="La Reine Coaching – home" className="flex shrink-0 items-center">
           <motion.span
-            whileHover={{ rotate: -6, scale: 1.05 }}
+            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sage-100 ring-1 ring-inset ring-sage-300/50"
+            className="block"
           >
             <Image
-              src={asset("/images/lion-mark.png")}
-              alt=""
-              width={26}
-              height={18}
-              className="h-[18px] w-[26px] object-contain"
+              src={asset("/images/logo-la-reine.png")}
+              alt="La Reine Coaching"
+              width={327}
+              height={277}
+              className={`w-auto transition-all duration-500 ${scrolled ? "h-12" : "h-14 sm:h-16"}`}
               priority
             />
           </motion.span>
-          <span className="font-display leading-tight text-forest">
-            <span className="block text-base tracking-tight sm:text-lg">
-              La Reine
-            </span>
-            <span className="-mt-0.5 block text-[11px] italic tracking-[0.08em] text-gold-600">
-              Coaching
-            </span>
-          </span>
         </Link>
 
         <nav
@@ -260,20 +252,15 @@ export function Header() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="mb-8 flex items-center gap-2.5"
+                className="mb-8"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sage-100 ring-1 ring-inset ring-sage-300/50">
-                  <Image
-                    src={asset("/images/lion-mark.png")}
-                    alt=""
-                    width={28}
-                    height={20}
-                    className="h-5 w-7 object-contain"
-                  />
-                </span>
-                <span className="font-display text-lg text-forest">
-                  La Reine <span className="italic text-gold-600">Coaching</span>
-                </span>
+                <Image
+                  src={asset("/images/logo-la-reine.png")}
+                  alt="La Reine Coaching"
+                  width={327}
+                  height={277}
+                  className="h-20 w-auto"
+                />
               </motion.div>
 
               <nav className="flex flex-col gap-1">

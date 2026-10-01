@@ -1,7 +1,7 @@
 "use client";
 import { asset } from "@/lib/asset";
 
-import { Sparkles, Mic2, MessageCircle } from "lucide-react";
+import { Sparkles, Mic2, Star } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -32,7 +32,7 @@ const WAYS = [
     href: "/spreker",
   },
   {
-    icon: MessageCircle,
+    icon: Star,
     title: { nl: "Vibes & Voices", en: "Vibes & Voices" },
     description: {
       nl: "De plek waar je je stem oefent.\n\nIn een veilige, ontspannen setting krijg je de ruimte om te spreken en jezelf te laten zien.\n\nNiet perfect. Wel echt.",
@@ -67,13 +67,13 @@ export function WerkMetMijContent() {
       <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <PortraitFrame
-            src={asset("/images/phaedra-desk.jpg")}
-            alt="Phaedra La Reine aan het werk"
+            src={asset("/images/foto-4-workshop.jpg")}
+            alt="Phaedra La Reine tijdens een workshop"
             accent="gold"
             rotate={-2}
-            width={1400}
-            height={1400}
-            className="mx-auto w-full max-w-xs"
+            width={1800}
+            height={1200}
+            className="mx-auto w-full max-w-md"
           />
           <Reveal delay={0.1}>
             <p className="max-w-lg font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">

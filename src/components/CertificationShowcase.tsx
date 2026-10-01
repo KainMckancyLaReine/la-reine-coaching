@@ -37,7 +37,7 @@ export function CertificationShowcase({
   verifyLabel: string;
   eyebrow: string;
   title: string;
-  description: ReactNode;
+  description?: ReactNode;
   extraLine: string;
 }) {
   return (
@@ -46,7 +46,7 @@ export function CertificationShowcase({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="mx-auto flex max-w-xl flex-col items-center text-center"
+      className="mx-auto flex max-w-lg flex-col items-center text-center"
     >
       <motion.div variants={item}>
         <TransformationRings src={photoSrc} alt={photoAlt} href={verifyHref} />
@@ -54,7 +54,7 @@ export function CertificationShowcase({
 
       <motion.p
         variants={item}
-        className="mt-7 font-display text-lg italic text-plum-700"
+        className="mt-5 font-display text-lg italic text-plum-700"
       >
         {extraLine}
       </motion.p>
@@ -72,19 +72,21 @@ export function CertificationShowcase({
 
       <motion.p
         variants={item}
-        className="mt-8 text-xs font-semibold uppercase tracking-[0.3em] text-plum-500"
+        className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-plum-500"
       >
         {eyebrow}
       </motion.p>
       <motion.h2
         variants={item}
-        className="font-display mt-3 text-3xl text-ink sm:text-4xl"
+        className="font-display mt-3 text-2xl text-ink sm:text-3xl"
       >
         {title}
       </motion.h2>
-      <motion.div variants={item} className="mt-4 text-ink-soft leading-relaxed">
-        {description}
-      </motion.div>
+      {description && (
+        <motion.div variants={item} className="mt-4 text-ink-soft leading-relaxed">
+          {description}
+        </motion.div>
+      )}
     </motion.div>
   );
 }

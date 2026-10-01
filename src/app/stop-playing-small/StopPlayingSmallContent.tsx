@@ -1,14 +1,15 @@
 "use client";
 import { asset } from "@/lib/asset";
 
-import { HelpCircle, EyeOff, Clock3, CircleSlash, Check } from "lucide-react";
+import Image from "next/image";
+import { CircleSlash, Check } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Testimonial } from "@/components/Testimonial";
 import { PortraitFrame } from "@/components/PortraitFrame";
-import { CALENDLY_URL } from "@/lib/nav";
+import { CALENDLY_URL, REVIEW_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
@@ -18,24 +19,24 @@ const RECOGNITIONS = [
     en: "You think before you say something.\nYou hold yourself back.\nYou choose your words carefully.",
   },
   {
-    nl: "En toch…\nzeg je niet alles wat je eigenlijk wilt zeggen.",
-    en: "And still…\nyou don't say everything you actually want to say.",
+    nl: "Je zegt niet alles wat je eigenlijk wilt zeggen.",
+    en: "You don't say everything you actually want to say.",
   },
   {
-    nl: "Misschien wacht je op het juiste moment.\nOf tot je meer zekerheid voelt.\n\nMaar dat moment blijft uit.",
-    en: "Maybe you're waiting for the right moment.\nOr until you feel more certain.\n\nBut that moment never comes.",
+    nl: "Je wacht op het juiste moment.\nOf tot je meer zekerheid voelt.\nMaar dat moment blijft uit.",
+    en: "You wait for the right moment.\nOr until you feel more certain.\nBut that moment never comes.",
   },
   {
-    nl: "En ondertussen speel je kleiner dan je bent.\n\nEn diep vanbinnen weet je: dit klopt niet.",
-    en: "And in the meantime you play smaller than you are.\n\nAnd deep down you know: this isn't right.",
+    nl: "Je speelt kleiner dan je bent.",
+    en: "You play smaller than you are.",
   },
 ];
 
 const ROOT_CAUSES = [
-  { icon: HelpCircle, title: { nl: "Twijfel", en: "Doubt" } },
-  { icon: EyeOff, title: { nl: "Overtuigingen", en: "Beliefs" } },
+  { icon: "/images/icons/twijfel.png", title: { nl: "Twijfel", en: "Doubt" } },
+  { icon: "/images/icons/overtuigingen.png", title: { nl: "Overtuigingen", en: "Beliefs" } },
   {
-    icon: Clock3,
+    icon: "/images/icons/tegenhouden.png",
     title: {
       nl: "Momenten waarop je jezelf tegenhoudt",
       en: "Moments where you hold yourself back",
@@ -96,12 +97,12 @@ export function StopPlayingSmallContent() {
             </p>
           </Reveal>
           <PortraitFrame
-            src={asset("/images/phaedra-lifestyle-call.jpg")}
+            src={asset("/images/foto-3-open-armen.jpg")}
             alt="Phaedra La Reine"
             accent="gold"
             rotate={-2}
-            width={1600}
-            height={1066}
+            width={1800}
+            height={1200}
             className="mx-auto w-full max-w-md"
           />
         </div>
@@ -113,10 +114,16 @@ export function StopPlayingSmallContent() {
             <SectionLabel>{t({ nl: "Je herkent dit", en: "You recognize this" })}</SectionLabel>
             <h2 className="text-balance font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
               {t({
+                nl: "Diep van binnen weet je: dit klopt niet.",
+                en: "Deep down you know: this isn't right.",
+              })}
+            </h2>
+            <p className="mt-5 text-balance font-display text-[1.4rem] leading-[1.35] text-ink-soft sm:text-[1.6rem]">
+              {t({
                 nl: "Niet alleen in wat je zegt, maar ook in wat je mist.",
                 en: "Not only in what you say, but also in what you miss.",
               })}
-            </h2>
+            </p>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {RECOGNITIONS.map((text, i) => (
@@ -146,9 +153,13 @@ export function StopPlayingSmallContent() {
           {ROOT_CAUSES.map((cause, i) => (
             <Reveal key={cause.title.nl} delay={i * 0.1} className="h-full">
               <div className="flex h-full min-h-[15rem] flex-col items-center justify-center gap-6 rounded-3xl border border-line bg-paper px-8 py-12 text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
-                  <cause.icon size={24} />
-                </div>
+                <Image
+                  src={asset(cause.icon)}
+                  alt=""
+                  width={80}
+                  height={80}
+                  className="h-20 w-20 object-contain"
+                />
                 <h3 className="text-balance font-display text-[1.7rem] leading-snug tracking-[-0.01em] text-ink sm:text-[1.9rem]">
                   {t(cause.title)}
                 </h3>
@@ -254,6 +265,11 @@ export function StopPlayingSmallContent() {
                 delay={i * 0.1}
               />
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button href={REVIEW_URL} external={REVIEW_URL.startsWith("http")} variant="secondary">
+              {t({ nl: "Laat een review achter", en: "Leave a review" })}
+            </Button>
           </div>
         </div>
       </section>

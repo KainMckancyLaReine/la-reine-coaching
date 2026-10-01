@@ -5,7 +5,6 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const WORD = "La Reine Coaching";
 const MIN_DURATION = 1400;
 
 export function Preloader() {
@@ -39,44 +38,20 @@ export function Preloader() {
             className="flex flex-col items-center"
           >
             <motion.span
-              initial={{ scale: 0.7, opacity: 0, rotate: -8 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              initial={{ scale: 0.85, opacity: 0, y: 8 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-sage-100 ring-1 ring-inset ring-sage-300/50"
+              className="block"
             >
-              <motion.span
-                aria-hidden
-                className="absolute inset-0 rounded-2xl bg-gold-200/40"
-                animate={{ opacity: [0.6, 0, 0.6], scale: [1, 1.35, 1] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-              />
               <Image
-                src={asset("/images/lion-mark.png")}
-                alt=""
-                width={44}
-                height={31}
-                className="relative h-[31px] w-11 object-contain"
+                src={asset("/images/logo-la-reine.png")}
+                alt="La Reine Coaching"
+                width={327}
+                height={277}
+                className="h-32 w-auto sm:h-36"
                 priority
               />
             </motion.span>
-
-            <div className="mt-5 flex overflow-hidden">
-              {WORD.split("").map((char, i) => (
-                <motion.span
-                  key={`${char}-${i}`}
-                  initial={{ y: "100%", opacity: 0 }}
-                  animate={{ y: "0%", opacity: 1 }}
-                  transition={{
-                    delay: 0.35 + i * 0.025,
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="font-display text-lg text-forest sm:text-xl"
-                >
-                  {char === " " ? " " : char}
-                </motion.span>
-              ))}
-            </div>
 
             <div className="relative mt-5 h-[2px] w-40 overflow-hidden rounded-full bg-line">
               <motion.span

@@ -1,7 +1,8 @@
 "use client";
 import { asset } from "@/lib/asset";
+import Image from "next/image";
 
-import { Ear, Eye, Repeat, HeartHandshake, Check } from "lucide-react";
+import { Heart, Eye, Repeat, HeartHandshake, Check } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -12,7 +13,7 @@ import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
 const APPROACH = [
-  { icon: Ear, label: { nl: "je inner voice", en: "your inner voice" } },
+  { icon: Heart, label: { nl: "je inner voice", en: "your inner voice" } },
   { icon: Eye, label: { nl: "je zichtbaarheid", en: "your visibility" } },
   { icon: Repeat, label: { nl: "je patronen", en: "your patterns" } },
   {
@@ -76,12 +77,12 @@ export function CoachingContent() {
             </div>
           </Reveal>
           <PortraitFrame
-            src={asset("/images/phaedra-lifestyle-call.jpg")}
-            alt="Phaedra La Reine tijdens een coachingsessie"
+            src={asset("/images/foto-5-curacao.jpg")}
+            alt="Phaedra La Reine"
             accent="gold"
             rotate={-2}
-            width={1600}
-            height={1066}
+            width={1800}
+            height={1200}
             className="mx-auto w-full max-w-md"
           />
         </div>
@@ -128,7 +129,7 @@ export function CoachingContent() {
           <SectionLabel>{t({ nl: "Mijn aanpak", en: "My approach" })}</SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
             {t({
-              nl: "Niet alleen aan wat je zegt. Maar aan hoe je jezelf laat zien.",
+              nl: "Niet alleen wat je zegt. Maar hoe je jezelf laat zien.",
               en: "Not only what you say. But how you show yourself.",
             })}
           </h2>
@@ -153,6 +154,20 @@ export function CoachingContent() {
               en: "So that what you think, feel and say\nadds up again.",
             })}
           </p>
+        </Reveal>
+        <Reveal delay={0.25}>
+          <div className="mx-auto mt-14 max-w-xl">
+            <Image
+              src={asset("/images/voice-methode.png")}
+              alt={t({
+                nl: "De V.O.I.C.E. methode: Voice awareness, Own your story, Inner alignment, Confidence, Embodied presence",
+                en: "The V.O.I.C.E. method: Voice awareness, Own your story, Inner alignment, Confidence, Embodied presence",
+              })}
+              width={937}
+              height={1000}
+              className="h-auto w-full"
+            />
+          </div>
         </Reveal>
       </section>
 

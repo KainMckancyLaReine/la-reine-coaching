@@ -13,26 +13,32 @@ import { COMMON } from "@/lib/common-dict";
 
 const TRAITS = [
   {
+    icon: "/images/icons/zwanger.png",
     nl: "Ik was 18 toen ik ontdekte dat ik 6 maanden zwanger was",
     en: "I was 18 when I found out I was 6 months pregnant",
   },
   {
+    icon: "/images/icons/carriere.png",
     nl: "Ik maakte na mijn 40ste een complete carrièreswitch",
     en: "After turning 40 I made a complete career switch",
   },
   {
+    icon: "/images/icons/vastgoed.png",
     nl: "Meer dan 16 jaar werkte ik in de vastgoedwereld",
     en: "For more than 16 years I worked in real estate",
   },
   {
+    icon: "/images/icons/doorgaan.png",
     nl: "Toen niemand meer in mij geloofde, ging ik toch door",
     en: "When nobody believed in me anymore, I kept going anyway",
   },
   {
+    icon: "/images/icons/studie.png",
     nl: "Ik begon aan een studie zonder te weten hoe ik het zou betalen",
     en: "I started a study without knowing how I would pay for it",
   },
   {
+    icon: "/images/icons/motto.png",
     nl: "Mijn motto: vallen is niet erg, blijven liggen wel",
     en: "My motto: falling is fine, staying down is not",
   },
@@ -58,11 +64,11 @@ export function OverMijContent() {
           <div className="flex flex-col gap-6 rounded-3xl border border-line bg-paper p-8 sm:flex-row sm:items-start sm:p-10">
             <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full ring-4 ring-sage-100">
               <Image
-                src={asset("/images/phaedra-headshot.jpg")}
+                src={asset("/images/foto-9-headshot.jpg")}
                 alt="Phaedra La Reine"
                 width={200}
                 height={200}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </div>
             <div className="space-y-5 text-[15px] leading-[1.75] text-ink-soft">
@@ -86,7 +92,7 @@ export function OverMijContent() {
         </Reveal>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-plum-50 via-cream to-cream py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-plum-50 via-cream to-cream py-16 lg:py-20">
         <div
           aria-hidden
           className="absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-plum-300/20 blur-3xl"
@@ -108,10 +114,6 @@ export function OverMijContent() {
             title={t({
               nl: "Lisa Nichols Certified Transformational Trainer",
               en: "Lisa Nichols Certified Transformational Trainer",
-            })}
-            description={t({
-              nl: "Ik ben spreker, voice activation coach en de enige Lisa Nichols Certified Transformational Trainer in Nederland.",
-              en: "I'm a speaker, voice activation coach and the only Lisa Nichols Certified Transformational Trainer in the Netherlands.",
             })}
           />
         </div>
@@ -235,8 +237,17 @@ export function OverMijContent() {
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {TRAITS.map((trait, i) => (
               <Reveal key={trait.nl} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-cream/15 bg-cream/5 p-6 text-[15px] leading-[1.7] text-sage-100/90">
-                  {t(trait)}
+                <div className="flex h-full items-center gap-5 rounded-2xl border border-cream/15 bg-cream/5 p-6 text-[15px] leading-[1.7] text-sage-100/90">
+                  <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-cream">
+                    <Image
+                      src={asset(trait.icon)}
+                      alt=""
+                      width={44}
+                      height={44}
+                      className="h-11 w-11 object-contain"
+                    />
+                  </span>
+                  <span>{t(trait)}</span>
                 </div>
               </Reveal>
             ))}

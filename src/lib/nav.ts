@@ -26,3 +26,7 @@ export const SOCIAL_LINKS = [
 export const SITE_URL = "https://www.lareinecoaching.nl";
 
 export const KM_DEV_URL = "https://kainmckancylareine.github.io/KM-DEV/index.html";
+
+// Link naar de review-tool (reviews worden eerst door Phaedra goedgekeurd).
+// Vervang deze link zodra de definitieve review-link bekend is.
+export const REVIEW_URL = "/contact";

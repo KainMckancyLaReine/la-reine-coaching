@@ -32,6 +32,12 @@ const AUDIENCE = [
   },
 ];
 
+const RESULTS = [
+  { nl: "Een verhaal dat raakt en blijft hangen.", en: "A story that moves you and stays with you." },
+  { nl: "Interactie en herkenning.", en: "Interaction and recognition." },
+  { nl: "Een verhaal dat je in beweging brengt.", en: "A story that sets you in motion." },
+];
+
 const THEMES = [
   { nl: "Stop Playing Small", en: "Stop Playing Small" },
   { nl: "Je stem gebruiken met impact", en: "Using your voice with impact" },
@@ -119,13 +125,13 @@ export function SprekerContent() {
             </p>
           </Reveal>
           <PortraitFrame
-            src={asset("/images/phaedra-hero.jpg")}
-            alt="Phaedra La Reine op het podium"
+            src={asset("/images/foto-7-spreker.jpg")}
+            alt="Phaedra La Reine aan het woord"
             accent="gold"
             rotate={-2}
-            width={563}
-            height={763}
-            className="mx-auto w-full max-w-sm"
+            width={1800}
+            height={1200}
+            className="mx-auto w-full max-w-md"
             priority
           />
         </div>
@@ -186,6 +192,16 @@ export function SprekerContent() {
               })}
             </p>
           </Reveal>
+          <div className="mt-12 grid gap-4 text-left sm:grid-cols-3">
+            {RESULTS.map((r, i) => (
+              <Reveal key={r.nl} delay={0.1 + i * 0.08} className="h-full">
+                <div className="flex h-full items-start gap-3 rounded-2xl border border-cream/15 bg-cream/5 p-5">
+                  <Check size={18} className="mt-0.5 shrink-0 text-gold-200" />
+                  <p className="text-[15px] leading-[1.6] text-sage-100/90">{t(r)}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

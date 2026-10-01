@@ -1,7 +1,7 @@
 "use client";
 import { asset } from "@/lib/asset";
 
-import { Ear, Megaphone, Users2, Sparkles, Compass, MessageCircle } from "lucide-react";
+import { Heart, Megaphone, Users2, Sparkles, Compass, Star } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -11,13 +11,13 @@ import { Testimonial } from "@/components/Testimonial";
 import { PortraitFrame } from "@/components/PortraitFrame";
 import { VoiceMethodLoop } from "@/components/VoiceMethodLoop";
 import { HomeSignatureMoment } from "@/components/HomeSignatureMoment";
-import { CALENDLY_URL } from "@/lib/nav";
+import { CALENDLY_URL, REVIEW_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
 const VOICES = [
   {
-    icon: Ear,
+    icon: Heart,
     title: { nl: "Inner Voice", en: "Inner Voice" },
     description: {
       nl: "Dit is waar het begint.\n\nDe gedachten die je tegenhouden.\nDe twijfel.\nDe overtuigingen die je klein houden.\n\nHier doorbreek je de patronen waardoor je jezelf blijft inhouden.",
@@ -36,8 +36,8 @@ const VOICES = [
     icon: Users2,
     title: { nl: "Collective Voice", en: "Collective Voice" },
     description: {
-      nl: "Dit is waar je impact maakt.\n\nJe gebruikt je stem\nom anderen te raken, te verbinden\nen beweging te creëren.\n\nOmdat jouw stem verder reikt dan jij.",
-      en: "This is where you make impact.\n\nYou use your voice\nto move others, to connect\nand to create momentum.\n\nBecause your voice reaches further than you.",
+      nl: "Dit is waar je impact maakt.\n\nJe gebruikt je stem om anderen te raken,\nte verbinden en beweging te creëren.\n\nOmdat jouw stem verder reikt dan jij.",
+      en: "This is where you make impact.\n\nYou use your voice to move others,\nto connect and to create momentum.\n\nBecause your voice reaches further than you.",
     },
   },
 ];
@@ -108,7 +108,7 @@ const OFFERS = [
     cta: { nl: "Werk met mij", en: "Work with me" },
   },
   {
-    icon: MessageCircle,
+    icon: Star,
     title: { nl: "Vibes & Voices", en: "Vibes & Voices" },
     description: {
       nl: "De plek waar je je stem oefent.\n\nIn een veilige, ontspannen setting krijg je de ruimte om te spreken, te groeien en jezelf te laten zien.\n\nNiet perfect. Wel echt.",
@@ -164,11 +164,11 @@ export function HomeContent() {
       <section className="mx-auto max-w-6xl px-6 pb-24 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.1fr]">
           <PortraitFrame
-            src={asset("/images/phaedra-profile.jpg")}
+            src={asset("/images/foto-1-hero.jpg")}
             alt="Phaedra La Reine, voice activation coach"
             accent="gold"
-            width={1490}
-            height={1517}
+            width={1200}
+            height={1800}
             className="mx-auto w-full max-w-sm"
             priority
           />
@@ -201,8 +201,8 @@ export function HomeContent() {
               </p>
               <p>
                 {t({
-                  nl: "Maar ondertussen…\n\nblijf je op de achtergrond.",
-                  en: "But in the meantime…\n\nyou stay in the background.",
+                  nl: "Maar ondertussen…\nblijf je op de achtergrond.",
+                  en: "But in the meantime…\nyou stay in the background.",
                 })}
               </p>
               <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
@@ -303,6 +303,28 @@ export function HomeContent() {
               </p>
             </div>
           </div>
+          <Reveal delay={0.1}>
+            <div className="mx-auto mt-14 max-w-2xl space-y-6 whitespace-pre-line text-center font-display text-[1.5rem] leading-[1.4] text-cream sm:text-[1.75rem]">
+              <p>
+                {t({
+                  nl: "Je stem zit niet alleen in wat je zegt.",
+                  en: "Your voice isn't only in what you say.",
+                })}
+              </p>
+              <p>
+                {t({
+                  nl: "Het zit in hoe je jezelf laat zien.\nHoe je binnenkomt.",
+                  en: "It's in how you show yourself.\nHow you walk in.",
+                })}
+              </p>
+              <p>
+                {t({
+                  nl: "En in wat je uitstraalt, nog voordat je iets zegt.",
+                  en: "And in what you radiate, before you even say a word.",
+                })}
+              </p>
+            </div>
+          </Reveal>
           <Reveal delay={0.15} className="mt-14">
             <VoiceMethodLoop
               steps={METHOD_STEPS.map((s) => ({
@@ -328,7 +350,7 @@ export function HomeContent() {
       </section>
 
       <HomeSignatureMoment
-        src={asset("/images/phaedra-hero.jpg")}
+        src={asset("/images/foto-2-portret.jpg")}
         alt="Phaedra La Reine"
         eyebrow={t({ nl: "In haar eigen woorden", en: "In her own words" })}
         words={[
@@ -337,8 +359,8 @@ export function HomeContent() {
           t({ nl: "Impact", en: "Impact" }),
         ]}
         statement={t({
-          nl: "Je stem zit niet alleen in wat je zegt. Het zit in hoe je jezelf laat zien. Hoe je binnenkomt. En in wat je uitstraalt, nog voordat je iets zegt.",
-          en: "Your voice isn't only in what you say. It's in how you show yourself. How you walk in. And in what you radiate, before you even say a word.",
+          nl: "Je stem verandert meer dan alleen wat je zegt.\nHet verandert hoe je jezelf laat zien.\nHoe je binnenkomt en hoeveel ruimte je jezelf geeft.",
+          en: "Your voice changes more than just what you say.\nIt changes how you show yourself.\nHow you walk in and how much space you give yourself.",
         })}
       >
         <Button href="/over-mij" variant="secondary">
@@ -414,9 +436,12 @@ export function HomeContent() {
               />
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button href={CALENDLY_URL} external variant="primary">
               {t(COMMON.planFirstStep)}
+            </Button>
+            <Button href={REVIEW_URL} external={REVIEW_URL.startsWith("http")} variant="secondary">
+              {t({ nl: "Laat een review achter", en: "Leave a review" })}
             </Button>
           </div>
         </div>

@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Testimonial } from "@/components/Testimonial";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { SpeakerMarquee } from "@/components/SpeakerMarquee";
+import { SpeakerWall } from "@/components/SpeakerWall";
 import { PortraitFrame } from "@/components/PortraitFrame";
 import { EventShowcase } from "@/components/EventShowcase";
 import { CALENDLY_URL } from "@/lib/nav";
@@ -163,12 +163,12 @@ export function VibesVoicesContent() {
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <PortraitFrame
-            src={asset("/images/phaedra-desk.jpg")}
+            src={asset("/images/foto-8-vibes.jpg")}
             alt="Phaedra La Reine"
             accent="gold"
             rotate={-2}
-            width={1400}
-            height={1400}
+            width={1201}
+            height={1800}
             className="mx-auto w-full max-w-sm"
           />
           <Reveal delay={0.1}>
@@ -389,14 +389,18 @@ export function VibesVoicesContent() {
           </h2>
           <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">
             {t({
-              nl: "Deze sprekers stonden op het podium van Vibes & Voices. Sommige zijn reeds te boeken als ervaren sprekers, anderen stonden er eenmalig. Interesse in een van de sprekers? Neem contact met ons op voor meer informatie.",
-              en: "These speakers have stood on the Vibes & Voices stage. Some are already bookable as experienced speakers, others were there once. Interested in one of the speakers? Get in touch with us for more information.",
+              nl: "Deze sprekers stonden op het podium van Vibes & Voices. Sommige zijn reeds te boeken als ervaren sprekers, anderen stonden er eenmalig. Klik op een foto om hem groter te bekijken. Interesse in een van de sprekers? Neem contact met ons op voor meer informatie.",
+              en: "These speakers have stood on the Vibes & Voices stage. Some are already bookable as experienced speakers, others were there once. Click a photo to view it larger. Interested in one of the speakers? Get in touch with us for more information.",
             })}
           </p>
         </div>
-        <div className="mt-10 space-y-3">
-          <SpeakerMarquee names={KEYNOTE_SPEAKERS} />
-          <SpeakerMarquee names={FAME_SPEAKERS} reverse />
+        <div className="mx-auto mt-12 max-w-6xl px-6 lg:px-8">
+          <SpeakerWall
+            groups={[
+              { title: "20 minutes keynotes", names: KEYNOTE_SPEAKERS },
+              { title: "5 minutes of fame", names: FAME_SPEAKERS },
+            ]}
+          />
         </div>
         <div className="mt-10 text-center">
           <Button href="/contact" variant="secondary">
