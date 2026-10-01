@@ -24,8 +24,8 @@ const OPTIONS = [
     icon: MessageCircleHeart,
     title: { nl: "Korte vraag?", en: "Quick question?" },
     description: {
-      nl: "Gebruik de chat. Ik reageer zo snel mogelijk.",
-      en: "Use the chat. I'll reply as soon as possible.",
+      nl: "Bekijk de veelgestelde vragen in de chat rechtsonder.",
+      en: "Check the frequently asked questions in the chat at the bottom right.",
     },
   },
   {

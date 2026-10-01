@@ -15,7 +15,7 @@ const PRODUCTS = [
     price: "€2,76",
     description: { nl: "Verkrijgbaar via Amazon.", en: "Available via Amazon." },
     cta: { nl: "Bekijk op Amazon", en: "View on Amazon" },
-    href: "https://www.amazon.nl/s?k=Happiness+101",
+    href: "https://www.amazon.nl/dp/B0D6CXN4NT",
     external: true,
   },
   {
@@ -29,8 +29,9 @@ const PRODUCTS = [
       nl: "Een gratis e-book gericht op het loslaten van angst, perfectionisme en twijfel.",
       en: "A free e-book focused on letting go of fear, perfectionism and doubt.",
     },
-    cta: { nl: "Vraag het gratis e-book aan", en: "Request the free e-book" },
-    href: "/contact",
+    cta: { nl: "Download het gratis e-book", en: "Download the free e-book" },
+    href: asset("/downloads/kom-los-van-angst-perfectie-en-twijfel.pdf"),
+    external: true,
   },
   {
     image: asset("/images/products/happiness-planner.png"),
@@ -48,8 +49,8 @@ const PRODUCTS = [
     title: "LIVE.LOVE.PROSPER",
     price: "€22,50",
     description: {
-      nl: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. Een bundel met echte verhalen van 30 auteurs over hoe zij omgingen met verdriet, angst, pijn en tegenslag.",
-      en: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. A collection of real-life stories from 30 authors on how they dealt with heartbreak, anxiety, pain and struggle.",
+      nl: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. Een bundel met echte verhalen van Phaedra La Reine en 29 andere auteurs over hoe zij omgingen met verdriet, angst, pijn en tegenslag.",
+      en: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. A collection of real-life stories from Phaedra La Reine and 29 other authors on how they dealt with heartbreak, anxiety, pain and struggle.",
     },
     cta: COMMON.contact,
     href: "/contact",
