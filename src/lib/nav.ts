@@ -3,15 +3,15 @@ export const NAV_LINKS = [
   { label: { nl: "Stop Playing Small", en: "Stop Playing Small" }, href: "/stop-playing-small" },
   { label: { nl: "Werk met mij", en: "Work with me" }, href: "/werk-met-mij" },
   { label: { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" }, href: "/coaching-voice-activation" },
-  { label: { nl: "Spreker", en: "Speaker" }, href: "/spreker" },
   { label: { nl: "Vibes & Voices", en: "Vibes & Voices" }, href: "/vibes-voices" },
+  { label: { nl: "Spreker", en: "Speaker" }, href: "/spreker" },
   { label: { nl: "Over mij", en: "About me" }, href: "/over-mij" },
   { label: { nl: "Contact", en: "Contact" }, href: "/contact" },
   { label: { nl: "Shop", en: "Shop" }, href: "/shop" },
 ] as const;
 
 // Primary items always shown on one line; the rest live under the "More" menu.
-export const NAV_PRIMARY_HREFS = ["/", "/werk-met-mij", "/vibes-voices", "/contact"];
+export const NAV_PRIMARY_HREFS = ["/", "/werk-met-mij", "/spreker", "/contact"];
 export const NAV_MORE_LABEL = { nl: "Meer", en: "More" };
 
 export const CALENDLY_URL =
