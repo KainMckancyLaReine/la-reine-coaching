@@ -10,10 +10,9 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
-const SPEAKER_KIT_NL =
-  "https://www.lareinecoaching.nl/_files/ugd/5e8b9a_d7bead146c014a63922b3ff9855eaa36.pdf";
-const SPEAKER_KIT_EN =
-  "https://www.lareinecoaching.nl/_files/ugd/5e8b9a_e8cd0e386f5d4535a390141cc220632d.pdf";
+
+const SPEAKER_KIT_NL = asset("/downloads/sprekerskit-phaedra-la-reine-nl.pdf");
+const SPEAKER_KIT_EN = asset("/downloads/speaker-kit-phaedra-la-reine-en.pdf");
 const IMPRESSION_VIDEO = "https://www.youtube.com/embed/Q8U-306eCUA";
 const IMPRESSION_VIDEO_LINK = "https://youtu.be/Q8U-306eCUA";
 
