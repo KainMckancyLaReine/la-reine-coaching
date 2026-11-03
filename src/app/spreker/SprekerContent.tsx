@@ -10,7 +10,6 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
 
-
 const SPEAKER_KIT_NL = asset("/downloads/sprekerskit-phaedra-la-reine-nl.pdf");
 const SPEAKER_KIT_EN = asset("/downloads/speaker-kit-phaedra-la-reine-en.pdf");
 const IMPRESSION_VIDEO = "https://www.youtube.com/embed/Q8U-306eCUA";
@@ -271,8 +270,7 @@ export function SprekerContent() {
             <Reveal delay={0.1}>
               <a
                 href={SPEAKER_KIT_NL}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Sprekerskit Phaedra La Reine NL.pdf"
                 className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5 transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <FileDown size={20} className="shrink-0 text-forest" />
@@ -297,8 +295,7 @@ export function SprekerContent() {
             <Reveal delay={0.2}>
               <a
                 href={SPEAKER_KIT_EN}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Speaker kit Phaedra La Reine EN.pdf"
                 className="flex h-full items-center gap-3 rounded-2xl border border-line bg-paper p-5 transition-all hover:-translate-y-1 hover:border-sage-300"
               >
                 <FileDown size={20} className="shrink-0 text-forest" />
