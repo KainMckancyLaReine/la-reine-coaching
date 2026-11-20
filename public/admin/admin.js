@@ -19,7 +19,10 @@ const maxImageBytes = 768 * 1024;
 const login = document.querySelector("#login");
 const editor = document.querySelector("#editor");
 const status = document.querySelector("#status");
-const section = document.querySelector("#section");
+const pages = document.querySelector("#pages");
+const preview = document.querySelector("#preview");
+const draftStatus = document.querySelector("#draft-status");
+const globalSections = new Set(["nav", "common-dict", "ContactForm", "NewsletterForm", "ChatWidget", "images"]);
 const entries = document.querySelector("#entries");
 const search = document.querySelector("#search");
 const fields = document.querySelector("#fields");
@@ -36,7 +39,85 @@ let content;
 let savedContent;
 let busy = false;
 let imageVersion = "";
-let displayedSection = "";
+let displayedSection = "home";
+let previewLanguage = "nl";
+let currentPage = "home";
+let previewUpdate;
+
+function updatePreview() {
+  cancelAnimationFrame(previewUpdate);
+  previewUpdate = requestAnimationFrame(() => {
+    if (!content || !token) return;
+    preview.contentWindow?.postMessage({
+      type: "la-reine-preview",
+      content,
+      lang: previewLanguage,
+    }, location.origin);
+    const document = preview.contentDocument;
+    if (!document?.head || document.location.origin !== location.origin) return;
+    let styles = document.getElementById("cms-preview-images");
+    if (!styles) {
+      styles = document.createElement("style");
+      styles.id = "cms-preview-images";
+      document.head.append(styles);
+    }
+    const images = new Map([...publishedPreviews].map(([path, url]) => [path, url]));
+    for (const [path, image] of selectedImages) images.set(path, image.url);
+    styles.textContent = [...images].map(([path, url]) => {
+      const source = new URL(`../${path}`, location.href).pathname;
+      return `img[src=${JSON.stringify(source)}] { content: url(${JSON.stringify(url)}); }`;
+    }).join("\n");
+  });
+}
+
+function selectSection(group) {
+  displayedSection = group;
+  search.value = "";
+  fields.scrollTop = 0;
+  for (const button of pages.querySelectorAll("button")) {
+    button.setAttribute("aria-current", String(button.dataset.section === group));
+  }
+  const page = group === "ContactForm" ? "contact"
+    : group === "NewsletterForm" ? "vibes-voices"
+    : globalSections.has(group) ? currentPage : group;
+  currentPage = page;
+  document.querySelector("#page-title").textContent = labels[page];
+  const path = page === "home" ? "../" : `../${page}/`;
+  const url = new URL(path, location.href);
+  url.searchParams.set("cms-preview", "1");
+  if (preview.src !== url.href) preview.src = url.href;
+  document.querySelector("#inspector-title").textContent =
+    group === "images" ? "Foto’s en logo" : `Teksten · ${labels[group]}`;
+  render();
+  updatePreview();
+}
+
+function renderPages() {
+  pages.replaceChildren();
+  for (const [title, global] of [["Pagina’s", false], ["Site-inhoud", true]]) {
+    const heading = document.createElement("h2");
+    heading.textContent = title;
+    pages.append(heading);
+    for (const [key, label] of Object.entries({ ...labels, images: "Foto’s en logo" })) {
+      if (globalSections.has(key) !== global || (key !== "images" && !Object.hasOwn(content, key))) continue;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.section = key;
+      button.textContent = label;
+      button.addEventListener("click", () => selectSection(key));
+      pages.append(button);
+    }
+  }
+}
+
+function setEditing(open) {
+  editor.hidden = !open;
+  draftStatus.hidden = !open;
+  logout.hidden = !open;
+  publish.hidden = !open;
+  if (!open) preview.removeAttribute("src");
+}
+
 
 function message(text, error = false) {
   status.textContent = text;
@@ -49,7 +130,7 @@ function hasChanges() {
 
 function update() {
   const dirty = Boolean(content && hasChanges());
-  document.querySelector("#draft-status").textContent = dirty ? "Ongepubliceerde wijzigingen" : "Geen wijzigingen";
+  draftStatus.textContent = dirty ? "Ongepubliceerde wijzigingen" : "Geen wijzigingen";
   publish.disabled = busy || !token || !dirty;
   fields.disabled = busy;
   logout.disabled = busy;
@@ -70,7 +151,7 @@ async function api(path, body) {
     if (response.status === 401 && path !== "/login") {
       token = undefined;
       login.hidden = false;
-      editor.hidden = true;
+      setEditing(false);
       login.elements.username.focus();
     }
     throw new Error(data.error || "Het beheer is tijdelijk niet bereikbaar.");
@@ -79,22 +160,29 @@ async function api(path, body) {
 }
 
 function render() {
-  const group = section.value;
+  const group = displayedSection;
   const showingImages = group === "images";
-  document.querySelector("#search-label").hidden = showingImages;
+  const query = search.value.trim().toLowerCase();
+  search.placeholder = showingImages ? "Zoek een foto" : "Zoek een woord of zin";
   entries.classList.toggle("images", showingImages);
   entries.replaceChildren();
 
   if (showingImages) {
-    for (const [path, label] of Object.entries(imageLabels)) renderImage(path, label);
+    for (const [path, label] of Object.entries(imageLabels)) {
+      if (label.toLowerCase().includes(query)) renderImage(path, label);
+    }
+    if (!entries.childElementCount) entries.textContent = "Geen foto’s gevonden.";
     return;
   }
-  const query = search.value.trim().toLowerCase();
   for (const [key, text] of Object.entries(content[group])) {
     if (query && !Object.values(text).some((value) => value.toLowerCase().includes(query))) continue;
 
     const pair = document.createElement("div");
     pair.className = "panel text-pair";
+    const heading = document.createElement("h3");
+    const textLabel = key.replaceAll("-", " ");
+    heading.textContent = textLabel.charAt(0).toUpperCase() + textLabel.slice(1);
+    pair.append(heading);
     for (const [lang, name] of Object.entries(languages)) {
       const label = document.createElement("label");
       label.append(name);
@@ -106,6 +194,7 @@ function render() {
       input.addEventListener("input", () => {
         text[lang] = input.value;
         update();
+        updatePreview();
       });
       label.append(input);
       pair.append(label);
@@ -173,6 +262,7 @@ function renderImage(path, title) {
     preview.src = selectedImages.get(path)?.url || publishedPreviews.get(path) || current.href;
     undo.hidden = !selectedImages.has(path);
     update();
+    updatePreview();
   }
 
   file.addEventListener("change", async () => {
@@ -201,11 +291,23 @@ function renderImage(path, title) {
   entries.append(card);
 }
 
-section.addEventListener("change", () => {
-  if (displayedSection !== section.value) search.value = "";
-  displayedSection = section.value;
-  render();
+preview.addEventListener("load", updatePreview);
+window.addEventListener("message", (event) => {
+  if (event.origin === location.origin && event.source === preview.contentWindow &&
+      event.data?.type === "la-reine-preview-ready") updatePreview();
 });
+for (const button of document.querySelectorAll("[data-device], [data-lang]")) {
+  button.addEventListener("click", () => {
+    for (const sibling of button.parentElement.querySelectorAll("button")) {
+      sibling.setAttribute("aria-pressed", String(sibling === button));
+    }
+    if (button.dataset.device) preview.dataset.device = button.dataset.device;
+    if (button.dataset.lang) {
+      previewLanguage = button.dataset.lang;
+      updatePreview();
+    }
+  });
+}
 search.addEventListener("input", render);
 
 login.addEventListener("submit", async (event) => {
@@ -225,20 +327,16 @@ login.addEventListener("submit", async (event) => {
       revision = latest.revision;
       savedContent = JSON.stringify(content);
       imageVersion = revision;
-      section.replaceChildren();
-      for (const [key, label] of Object.entries(labels)) {
-        if (Object.hasOwn(content, key)) section.add(new Option(label, key));
-      }
-      section.add(new Option("Foto’s en logo", "images"));
-      displayedSection = section.value;
-      search.value = "";
+      displayedSection = "home";
+      currentPage = "home";
     }
     login.reset();
     login.hidden = true;
-    editor.hidden = false;
-    render();
+    setEditing(true);
+    renderPages();
+    selectSection(displayedSection);
     update();
-    section.focus();
+    pages.querySelector('[aria-current="true"]')?.focus();
     message("");
   } catch (error) {
     token = undefined;
@@ -256,7 +354,7 @@ logout.addEventListener("click", () => {
   selectedImages.clear();
   publishedPreviews.clear();
   entries.replaceChildren();
-  editor.hidden = true;
+  setEditing(false);
   login.hidden = false;
   login.elements.username.focus();
   message("Je bent uitgelogd.");
