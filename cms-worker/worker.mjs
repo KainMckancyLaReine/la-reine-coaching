@@ -1,4 +1,4 @@
-import editableImages from "../public/admin/images.json";
+import editableImages from "../public/admin/images.json" with { type: "json" };
 
 const contentPath = "src/content/site.json";
 const encoder = new TextEncoder();

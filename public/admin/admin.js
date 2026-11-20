@@ -24,6 +24,7 @@ const entries = document.querySelector("#entries");
 const search = document.querySelector("#search");
 const fields = document.querySelector("#fields");
 const publish = document.querySelector("#publish");
+const confirmPublish = document.querySelector("#confirm-publish");
 const logout = document.querySelector("#logout");
 const selectedImages = new Map();
 const publishedPreviews = new Map();
@@ -261,11 +262,16 @@ logout.addEventListener("click", () => {
   message("Je bent uitgelogd.");
 });
 
-publish.addEventListener("click", async () => {
-  if (!window.confirm("Wil je deze wijzigingen op de website publiceren?")) return;
+publish.addEventListener("click", () => {
+  confirmPublish.returnValue = "";
+  confirmPublish.showModal();
+});
+confirmPublish.addEventListener("close", async () => {
+  if (confirmPublish.returnValue !== "publish") return;
   busy = true;
   update();
   message("Wijzigingen opslaan…");
+  status.scrollIntoView({ block: "nearest" });
   try {
     const images = Object.fromEntries([...selectedImages].map(([path, image]) => [path, image.base64]));
     const payload = { revision, content, images };

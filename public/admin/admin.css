@@ -83,3 +83,13 @@ button:disabled { opacity: 0.5; cursor: default; }
   .filters, .text-pair { grid-template-columns: minmax(0, 1fr); }
   .publish-bar button { width: 100%; }
 }
+
+dialog {
+  width: min(100% - 2rem, 26rem);
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 1.25rem;
+  color: inherit;
+}
+dialog::backdrop { background: rgb(43 38 32 / 50%); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 0.75rem; }
