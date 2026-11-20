@@ -49,17 +49,12 @@ h1, h2, h3 { margin: 0; }
 }
 .brand { text-decoration: none; }
 .brand-name { font: 1.3rem var(--display); color: var(--forest-deep); white-space: nowrap; }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  aspect-ratio: 1;
-  color: var(--forest-deep);
-  background: linear-gradient(145deg, #fbf3e4, #e6cb96);
-  border: 1px solid #d9b679;
-  border-radius: 0.7rem;
-  font: 0.9rem var(--display);
-  box-shadow: inset 0 1px 0 #ffffffb0, 0 4px 14px #124a3b20;
+.brand-logo {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  flex: none;
 }
 .workspace-label { border-left: 1px solid var(--line); padding-left: 0.8rem; }
 .workspace-label, #draft-status, .canvas-toolbar span { font-size: 0.875rem; color: var(--muted); }
