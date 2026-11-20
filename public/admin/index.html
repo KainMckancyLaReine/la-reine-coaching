@@ -9,40 +9,55 @@
   <script type="module" src="./admin.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap bar">
+  <header class="toolbar">
+    <div class="identity">
       <a class="brand" href="../">La Reine Coaching</a>
+      <span>Websitebeheer</span>
+    </div>
+    <div class="actions">
+      <span id="draft-status" hidden>Geen wijzigingen</span>
       <a href="../" target="_blank" rel="noopener">Bekijk website</a>
+      <button type="button" id="logout" class="secondary" hidden>Uitloggen</button>
+      <button type="button" id="publish" disabled hidden>Publiceren</button>
     </div>
   </header>
-  <main class="wrap">
-    <h1>Websitebeheer</h1>
+  <main>
     <p id="status" role="status" aria-live="polite">Beheer laden…</p>
 
     <form id="login" class="panel login" hidden>
-      <h2>Inloggen</h2>
+      <h1>Websitebeheer</h1>
       <label>Gebruikersnaam <input name="username" autocomplete="username" required></label>
       <label>Wachtwoord <input name="password" type="password" autocomplete="current-password" required></label>
       <button>Inloggen</button>
     </form>
 
     <section id="editor" aria-label="Inhoud bewerken" hidden>
-      <div class="bar session">
-        <p id="draft-status">Geen wijzigingen</p>
-        <button type="button" id="logout" class="secondary">Uitloggen</button>
-      </div>
-      <fieldset id="fields" aria-label="Website-inhoud">
-        <div class="panel filters">
-          <label>Onderdeel <select id="section"></select></label>
-          <label id="search-label">Zoek in teksten
-            <input id="search" type="search" placeholder="Zoek een woord of zin">
-          </label>
+      <nav class="sidebar" id="pages" aria-label="Pagina’s en onderdelen"></nav>
+      <section class="canvas" aria-label="Websitevoorbeeld">
+        <header class="canvas-toolbar">
+          <div><h1 id="page-title">Home</h1><span>Websitevoorbeeld</span></div>
+          <div class="preview-controls">
+            <div class="segmented" aria-label="Schermformaat" role="group">
+              <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+              <button type="button" data-device="mobile" aria-pressed="false">Mobiel</button>
+            </div>
+            <div class="segmented" aria-label="Taal van het voorbeeld" role="group">
+              <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+              <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+          </div>
+        </header>
+        <div class="stage">
+          <iframe id="preview" title="Websitevoorbeeld" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
+      </section>
+      <fieldset id="fields" class="inspector" aria-label="Website-inhoud">
+        <h2 id="inspector-title">Teksten</h2>
+        <label id="search-label">Zoeken
+          <input id="search" type="search" placeholder="Zoek een woord of zin">
+        </label>
         <div id="entries" class="entries"></div>
       </fieldset>
-      <div class="publish-bar">
-        <button type="button" id="publish" disabled>Wijzigingen publiceren</button>
-      </div>
     </section>
   </main>
   <dialog id="confirm-publish" aria-labelledby="confirm-title">
