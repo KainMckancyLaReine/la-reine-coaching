@@ -6,6 +6,9 @@ import { ArrowUpRight, ChevronLeft, MessageCircleHeart, X } from "lucide-react";
 import { useState } from "react";
 import { useT } from "@/lib/i18n";
 import { CALENDLY_URL } from "@/lib/nav";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["ChatWidget"];
 
 type Text = { nl: string; en: string };
 type Faq = {
@@ -14,81 +17,48 @@ type Faq = {
   cta: { label: Text; href: string; external?: boolean };
 };
 
-const GREETING: Text = {
-  nl: "Hoi! Fijn dat je er bent. Kies hieronder een vraag, dan geef ik je meteen antwoord.",
-  en: "Hi! Glad you're here. Pick a question below and I'll answer it right away.",
-};
+const GREETING: Text = copy["hoi-fijn-dat-je-er-bent-kies-hieronder-een-vraag-dan-geef-ik-j"];
 
 const FAQS: Faq[] = [
   {
-    question: {
-      nl: "Wat is Voice Activation Coaching?",
-      en: "What is Voice Activation Coaching?",
-    },
-    answer: {
-      nl: "Voice Activation Coaching helpt je stoppen met jezelf klein houden. Phaedra werkt met je aan drie lagen: je inner voice (je gedachten en overtuigingen), je public voice (zichtbaar worden en zeggen wat je echt wilt zeggen) en je collective voice (impact maken). Dat doet ze met haar eigen V.O.I.C.E. methode.",
-      en: "Voice Activation Coaching helps you stop keeping yourself small. Phaedra works with you on three layers: your inner voice (your thoughts and beliefs), your public voice (becoming visible and saying what you really want to say) and your collective voice (making impact). She does this with her own V.O.I.C.E. method.",
-    },
+    question: copy["wat-is-voice-activation-coaching"],
+    answer: copy["voice-activation-coaching-helpt-je-stoppen-met-jezelf-klein-ho"],
     cta: {
-      label: { nl: "Lees meer over coaching", en: "Read more about coaching" },
+      label: copy["lees-meer-over-coaching"],
       href: "/coaching-voice-activation",
     },
   },
   {
-    question: {
-      nl: "Hoe kan ik het beste beginnen?",
-      en: "What's the best way to start?",
-    },
-    answer: {
-      nl: "Start met de gratis Stop Playing Small Challenge. Je werkt vijf keer één-op-één met Phaedra, online, persoonlijk en zonder druk. Je ontdekt waar je jezelf inhoudt en wat er verandert als je je stem wél gebruikt.",
-      en: "Start with the free Stop Playing Small Challenge. You work one-on-one with Phaedra five times, online, personal and without pressure. You discover where you hold yourself back and what changes when you do use your voice.",
-    },
+    question: copy["hoe-kan-ik-het-beste-beginnen"],
+    answer: copy["start-met-de-gratis-stop-playing-small-challenge-je-werkt-vijf"],
     cta: {
-      label: { nl: "Plan je eerste stap", en: "Book your first step" },
+      label: copy["plan-je-eerste-stap"],
       href: CALENDLY_URL,
       external: true,
     },
   },
   {
-    question: {
-      nl: "Wat kost een coachingtraject?",
-      en: "What does a coaching programme cost?",
-    },
-    answer: {
-      nl: "Coachingtrajecten starten vanaf €1.997. Ieder traject is persoonlijk maatwerk, dus in een vrijblijvend kennismakingsgesprek bespreken jullie samen wat past bij waar jij nu staat. Coaching kan online en op locatie.",
-      en: "Coaching programmes start from €1,997. Every programme is tailor-made, so in a free intro call you discuss together what fits where you are now. Coaching is available online and on location.",
-    },
+    question: copy["wat-kost-een-coachingtraject"],
+    answer: copy["coachingtrajecten-starten-vanaf-1-997-ieder-traject-is-persoon"],
     cta: {
-      label: { nl: "Plan een kennismaking", en: "Book an intro call" },
+      label: copy["plan-een-kennismaking"],
       href: CALENDLY_URL,
       external: true,
     },
   },
   {
-    question: {
-      nl: "Kan ik Phaedra boeken als spreker?",
-      en: "Can I book Phaedra as a speaker?",
-    },
-    answer: {
-      nl: "Ja! Phaedra geeft keynotes en workshops, live en online, in het Nederlands en Engels. Een keynote duurt meestal 20 tot 60 minuten en wordt altijd afgestemd op je publiek. De prijs is op aanvraag.",
-      en: "Yes! Phaedra gives keynotes and workshops, live and online, in Dutch and English. A keynote usually lasts 20 to 60 minutes and is always tailored to your audience. Price on request.",
-    },
+    question: copy["kan-ik-phaedra-boeken-als-spreker"],
+    answer: copy["ja-phaedra-geeft-keynotes-en-workshops-live-en-online-in-het-n"],
     cta: {
-      label: { nl: "Bekijk de sprekerspagina", en: "View the speaker page" },
+      label: copy["bekijk-de-sprekerspagina"],
       href: "/spreker",
     },
   },
   {
-    question: {
-      nl: "Wat is Vibes & Voices?",
-      en: "What is Vibes & Voices?",
-    },
-    answer: {
-      nl: "Vibes & Voices is een storytelling pop-up café in Amsterdam Noord, elke eerste vrijdagavond van de maand. Sprekers krijgen 5 minuten op het podium (5 minutes of fame) en het publiek geniet met een drankje van echte verhalen. Je kunt komen luisteren of je aanmelden om zelf te spreken.",
-      en: "Vibes & Voices is a storytelling pop-up café in Amsterdam Noord, every first Friday evening of the month. Speakers get 5 minutes on stage (5 minutes of fame) and the audience enjoys real stories with a drink. You can come and listen or sign up to speak yourself.",
-    },
+    question: copy["wat-is-vibes-voices"],
+    answer: copy["vibes-voices-is-een-storytelling-pop-up-cafe-in-amsterdam-noor"],
     cta: {
-      label: { nl: "Ontdek Vibes & Voices", en: "Discover Vibes & Voices" },
+      label: copy["ontdek-vibes-voices"],
       href: "/vibes-voices",
     },
   },
@@ -103,7 +73,7 @@ export function ChatWidget() {
   return (
     <>
       <motion.button
-        aria-label={t({ nl: "Veelgestelde vragen", en: "Frequently asked questions" })}
+        aria-label={t(copy["veelgestelde-vragen"])}
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-forest text-cream shadow-[0_12px_30px_-8px_rgba(18,74,59,0.55)]"
         whileHover={{ scale: 1.06 }}
@@ -146,15 +116,15 @@ export function ChatWidget() {
             <div className="flex items-center justify-between bg-forest px-5 py-4 text-cream">
               <div>
                 <p className="font-display text-lg">
-                  {t({ nl: "Stel je vraag", en: "Ask a question" })}
+                  {t(copy["stel-je-vraag"])}
                 </p>
                 <p className="text-xs text-sage-100/80">
-                  {t({ nl: "Veelgestelde vragen", en: "Frequently asked questions" })}{" "}
+                  {t(copy["veelgestelde-vragen-2"])}{" "}
                   &middot; La Reine Coaching
                 </p>
               </div>
               <button
-                aria-label={t({ nl: "Sluiten", en: "Close" })}
+                aria-label={t(copy["sluiten"])}
                 onClick={() => setOpen(false)}
                 className="rounded-full p-1 text-cream/80 hover:text-cream"
               >
@@ -209,7 +179,7 @@ export function ChatWidget() {
                     className="inline-flex items-center gap-1 text-xs font-medium text-ink-soft hover:text-forest"
                   >
                     <ChevronLeft size={14} />
-                    {t({ nl: "Andere vraag kiezen", en: "Choose another question" })}
+                    {t(copy["andere-vraag-kiezen"])}
                   </button>
                 </motion.div>
               ) : (
@@ -229,13 +199,13 @@ export function ChatWidget() {
             </div>
 
             <div className="border-t border-line bg-paper px-4 py-3 text-center text-xs text-ink-soft">
-              {t({ nl: "Staat je vraag er niet bij?", en: "Question not listed?" })}{" "}
+              {t(copy["staat-je-vraag-er-niet-bij"])}{" "}
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
                 className="font-medium text-forest underline underline-offset-4"
               >
-                {t({ nl: "Stuur Phaedra een bericht", en: "Send Phaedra a message" })}
+                {t(copy["stuur-phaedra-een-bericht"])}
               </Link>
             </div>
           </motion.div>

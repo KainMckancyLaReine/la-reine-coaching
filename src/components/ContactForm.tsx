@@ -4,13 +4,16 @@ import { useState, type FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { FORM_EMAIL, sendForm } from "@/lib/forms";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["ContactForm"];
 
 const SUBJECTS = [
-  { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" },
-  { nl: "Spreker & Keynotes", en: "Speaker & Keynotes" },
-  { nl: "Vibes & Voices", en: "Vibes & Voices" },
-  { nl: "Shop / bestelling", en: "Shop / order" },
-  { nl: "Iets anders", en: "Something else" },
+  copy["coaching-voice-activation"],
+  copy["spreker-keynotes"],
+  copy["vibes-voices"],
+  copy["shop-bestelling"],
+  copy["iets-anders"],
 ];
 
 export function ContactForm() {
@@ -52,10 +55,7 @@ export function ContactForm() {
       <div className="flex items-start gap-3 rounded-3xl border border-sage-300 bg-sage-50 p-8">
         <CheckCircle2 className="mt-0.5 shrink-0 text-forest" size={22} />
         <p className="text-ink">
-          {t({
-            nl: "Dank je, ik kom zo snel mogelijk bij je terug.",
-            en: "Thank you, I'll get back to you as soon as possible.",
-          })}
+          {t(copy["dank-je-ik-kom-zo-snel-mogelijk-bij-je-terug"])}
         </p>
       </div>
     );
@@ -68,7 +68,7 @@ export function ContactForm() {
     >
       <div className="flex flex-col gap-1.5">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Voornaam", en: "First name" })}
+          {t(copy["voornaam"])}
         </label>
         <input
           name="voornaam"
@@ -79,7 +79,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Achternaam", en: "Last name" })}
+          {t(copy["achternaam"])}
         </label>
         <input
           name="achternaam"
@@ -90,7 +90,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "E-mailadres", en: "Email address" })}
+          {t(copy["e-mailadres"])}
         </label>
         <input
           name="email"
@@ -102,7 +102,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Telefoonnummer (optioneel)", en: "Phone number (optional)" })}
+          {t(copy["telefoonnummer-optioneel"])}
         </label>
         <input
           name="telefoon"
@@ -113,7 +113,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5 sm:col-span-2">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Onderwerp", en: "Subject" })}
+          {t(copy["onderwerp"])}
         </label>
         <select
           name="onderwerp"
@@ -122,7 +122,7 @@ export function ContactForm() {
           className="rounded-xl border border-line bg-cream px-4 py-2.5 text-sm outline-none focus:border-sage-500"
         >
           <option value="" disabled>
-            {t({ nl: "Kies een optie", en: "Choose an option" })}
+            {t(copy["kies-een-optie"])}
           </option>
           {SUBJECTS.map((s) => (
             <option key={s.nl} value={s.nl}>
@@ -133,7 +133,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5 sm:col-span-2">
         <label className="text-xs font-medium text-ink-soft">
-          {t({ nl: "Laat een bericht achter", en: "Leave a message" })}
+          {t(copy["laat-een-bericht-achter"])}
         </label>
         <textarea
           name="bericht"
@@ -158,15 +158,12 @@ export function ContactForm() {
         >
           {sending && <Loader2 size={16} className="animate-spin" />}
           {sending
-            ? t({ nl: "Bezig met versturen…", en: "Sending…" })
-            : t({ nl: "Verstuur mijn bericht", en: "Send my message" })}
+            ? t(copy["bezig-met-versturen"])
+            : t(copy["verstuur-mijn-bericht"])}
         </button>
         {error && (
           <p role="alert" className="mt-4 text-sm text-red-700">
-            {t({
-              nl: "Er ging iets mis bij het versturen. Probeer het opnieuw of mail direct naar ",
-              en: "Something went wrong while sending. Please try again or email ",
-            })}
+            {t(copy["er-ging-iets-mis-bij-het-versturen-probeer-het-opnieuw-of-mail"])}
             <a href={`mailto:${FORM_EMAIL}`} className="underline">
               {FORM_EMAIL}
             </a>

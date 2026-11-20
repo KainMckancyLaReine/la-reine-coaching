@@ -9,6 +9,9 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { PortraitFrame } from "@/components/PortraitFrame";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["spreker"];
 
 const SPEAKER_KIT_NL = asset("/downloads/sprekerskit-phaedra-la-reine-nl.pdf");
 const SPEAKER_KIT_EN = asset("/downloads/speaker-kit-phaedra-la-reine-en.pdf");
@@ -18,76 +21,52 @@ const IMPRESSION_VIDEO_LINK = "https://youtu.be/Q8U-306eCUA";
 const AUDIENCE = [
   {
     icon: Mic2,
-    label: { nl: "hun stem meer willen gebruiken", en: "want to use their voice more" },
+    label: copy["hun-stem-meer-willen-gebruiken"],
   },
-  { icon: Eye, label: { nl: "zichtbaar willen zijn", en: "want to be visible" } },
+  { icon: Eye, label: copy["zichtbaar-willen-zijn"] },
   {
     icon: TrendingUp,
-    label: {
-      nl: "willen groeien in vertrouwen en impact",
-      en: "want to grow in confidence and impact",
-    },
+    label: copy["willen-groeien-in-vertrouwen-en-impact"],
   },
 ];
 
 const RESULTS = [
-  { nl: "Een verhaal dat raakt en blijft hangen.", en: "A story that moves you and stays with you." },
-  { nl: "Interactie en herkenning.", en: "Interaction and recognition." },
-  { nl: "Een verhaal dat je in beweging brengt.", en: "A story that sets you in motion." },
+  copy["een-verhaal-dat-raakt-en-blijft-hangen"],
+  copy["interactie-en-herkenning"],
+  copy["een-verhaal-dat-je-in-beweging-brengt"],
 ];
 
 const THEMES = [
-  { nl: "Stop Playing Small", en: "Stop Playing Small" },
-  { nl: "Je stem gebruiken met impact", en: "Using your voice with impact" },
-  { nl: "Zichtbaarheid en zelfvertrouwen", en: "Visibility and self-confidence" },
-  { nl: "Persoonlijk leiderschap", en: "Personal leadership" },
+  copy["stop-playing-small"],
+  copy["je-stem-gebruiken-met-impact"],
+  copy["zichtbaarheid-en-zelfvertrouwen"],
+  copy["persoonlijk-leiderschap"],
 ];
 
 const FAQ = [
   {
-    q: { nl: "Wat kost een keynote?", en: "What does a keynote cost?" },
-    a: {
-      nl: "Prijs is op aanvraag en afhankelijk van het event.",
-      en: "Price is on request and depends on the event.",
-    },
+    q: copy["wat-kost-een-keynote"],
+    a: copy["prijs-is-op-aanvraag-en-afhankelijk-van-het-event"],
   },
   {
-    q: { nl: "Hoe lang duurt een keynote?", en: "How long is a keynote?" },
-    a: {
-      nl: "Afhankelijk van het programma, meestal 20–60 minuten.",
-      en: "Depending on the programme, usually 20–60 minutes.",
-    },
+    q: copy["hoe-lang-duurt-een-keynote"],
+    a: copy["afhankelijk-van-het-programma-meestal-20-60-minuten"],
   },
   {
-    q: { nl: "Spreekt Phaedra ook online?", en: "Does Phaedra also speak online?" },
-    a: {
-      nl: "Ja. Phaedra spreekt zowel live als online en zorgt ook daar voor interactie, betrokkenheid en impact.",
-      en: "Yes. Phaedra speaks both live and online, and creates interaction, engagement and impact there too.",
-    },
+    q: copy["spreekt-phaedra-ook-online"],
+    a: copy["ja-phaedra-spreekt-zowel-live-als-online-en-zorgt-ook-daar-voo"],
   },
   {
-    q: { nl: "Is maatwerk mogelijk?", en: "Is customization possible?" },
-    a: {
-      nl: "Ja, elke keynote wordt afgestemd op het publiek.",
-      en: "Yes, every keynote is tailored to the audience.",
-    },
+    q: copy["is-maatwerk-mogelijk"],
+    a: copy["ja-elke-keynote-wordt-afgestemd-op-het-publiek"],
   },
   {
-    q: {
-      nl: "In welke talen worden de diensten aangeboden?",
-      en: "In which languages are the services offered?",
-    },
-    a: {
-      nl: "Phaedra spreekt zowel in het Nederlands als in het Engels.",
-      en: "Phaedra speaks both Dutch and English.",
-    },
+    q: copy["in-welke-talen-worden-de-diensten-aangeboden"],
+    a: copy["phaedra-spreekt-zowel-in-het-nederlands-als-in-het-engels"],
   },
   {
-    q: { nl: "Hoe kan ik Phaedra boeken?", en: "How can I book Phaedra?" },
-    a: {
-      nl: "Phaedra is te boeken via het contactformulier.",
-      en: "Phaedra can be booked via the contact form.",
-    },
+    q: copy["hoe-kan-ik-phaedra-boeken"],
+    a: copy["phaedra-is-te-boeken-via-het-contactformulier"],
   },
 ];
 
@@ -97,18 +76,15 @@ export function SprekerContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "Spreker & Keynotes", en: "Speaker & Keynotes" })}
-        title={t({ nl: "Boek Phaedra als spreker", en: "Book Phaedra as a speaker" })}
-        subtitle={t({
-          nl: "Een keynote die raakt.\nEn iets in beweging zet.",
-          en: "A keynote that moves you.\nAnd sets something in motion.",
-        })}
+        eyebrow={t(copy["spreker-keynotes"])}
+        title={t(copy["boek-phaedra-als-spreker"])}
+        subtitle={t(copy["een-keynote-die-raakt-en-iets-in-beweging-zet"])}
       >
         <Button href="/contact" variant="primary">
           {t(COMMON.contact)}
         </Button>
         <Button href="#fragment" variant="secondary">
-          {t({ nl: "Bekijk een fragment", en: "Watch a clip" })}
+          {t(copy["bekijk-een-fragment"])}
         </Button>
       </PageHero>
 
@@ -116,10 +92,7 @@ export function SprekerContent() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
             <p className="whitespace-pre-line font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
-              {t({
-                nl: "Geen standaard verhaal.\nMaar een ervaring die mensen laat voelen\nwat er mogelijk is wanneer ze hun stem gebruiken.",
-                en: "No standard story.\nBut an experience that makes people feel\nwhat's possible when they use their voice.",
-              })}
+              {t(copy["geen-standaard-verhaal-maar-een-ervaring-die-mensen-laat-voele"])}
             </p>
           </Reveal>
           <PortraitFrame
@@ -138,15 +111,12 @@ export function SprekerContent() {
       <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>{t({ nl: "Voor wie", en: "For whom" })}</SectionLabel>
+            <SectionLabel>{t(copy["voor-wie"])}</SectionLabel>
             <h2 className="font-display mt-4 whitespace-pre-line text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({
-                nl: "Voor organisaties en events\ndie meer willen dan inspiratie",
-                en: "For organizations and events\nthat want more than inspiration",
-              })}
+              {t(copy["voor-organisaties-en-events-die-meer-willen-dan-inspiratie"])}
             </h2>
             <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">
-              {t({ nl: "Voor teams en groepen die:", en: "For teams and groups that:" })}
+              {t(copy["voor-teams-en-groepen-die"])}
             </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -175,19 +145,13 @@ export function SprekerContent() {
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel tone="light">
-              {t({ nl: "Resultaten die spreken", en: "Results that speak" })}
+              {t(copy["resultaten-die-spreken"])}
             </SectionLabel>
             <p className="mt-7 text-[1.0625rem] leading-[1.8] text-sage-100/85">
-              {t({
-                nl: "De impact van een keynote of workshop van Phaedra La Reine:",
-                en: "The impact of a keynote or workshop by Phaedra La Reine:",
-              })}
+              {t(copy["de-impact-van-een-keynote-of-workshop-van-phaedra-la-reine"])}
             </p>
             <p className="font-display mt-5 text-[2rem] leading-[1.25] sm:text-[2.4rem]">
-              {t({
-                nl: "Mensen luisteren niet alleen. Ze voelen wat er voor hen mogelijk is en gaan bewegen.",
-                en: "People don't just listen. They feel what's possible for them and start moving.",
-              })}
+              {t(copy["mensen-luisteren-niet-alleen-ze-voelen-wat-er-voor-hen-mogelij"])}
             </p>
           </Reveal>
           <div className="mt-12 grid gap-4 text-left sm:grid-cols-3">
@@ -205,9 +169,9 @@ export function SprekerContent() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel>{t({ nl: "Thema's", en: "Themes" })}</SectionLabel>
+          <SectionLabel>{t(copy["thema-s"])}</SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Thema's waar ik over spreek", en: "Themes I speak about" })}
+            {t(copy["thema-s-waar-ik-over-spreek"])}
           </h2>
         </div>
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
@@ -223,10 +187,7 @@ export function SprekerContent() {
         <Reveal delay={0.2}>
           <div className="mt-10 text-center">
             <p className="text-ink-soft">
-              {t({
-                nl: "Keynotes worden altijd afgestemd op het event",
-                en: "Keynotes are always tailored to the event",
-              })}
+              {t(copy["keynotes-worden-altijd-afgestemd-op-het-event"])}
             </p>
             <div className="mt-6">
               <Button href="/contact" variant="primary">
@@ -240,15 +201,12 @@ export function SprekerContent() {
       <section id="fragment" className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>{t({ nl: "Bekijk een fragment", en: "Watch a clip" })}</SectionLabel>
+            <SectionLabel>{t(copy["bekijk-een-fragment-2"])}</SectionLabel>
             <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({ nl: "Alle informatie op één plek", en: "All information in one place" })}
+              {t(copy["alle-informatie-op-een-plek"])}
             </h2>
             <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">
-              {t({
-                nl: "Download de sprekerskit van Phaedra La Reine in het Nederlands of in het Engels. Of bekijk de video om een indruk te krijgen van Phaedra als spreker / trainer.",
-                en: "Download Phaedra La Reine's speaker kit in Dutch or in English. Or watch the video to get an impression of Phaedra as a speaker / trainer.",
-              })}
+              {t(copy["download-de-sprekerskit-van-phaedra-la-reine-in-het-nederlands"])}
             </p>
           </div>
 
@@ -275,7 +233,7 @@ export function SprekerContent() {
               >
                 <FileDown size={20} className="shrink-0 text-forest" />
                 <span className="text-[15px] font-medium text-ink">
-                  {t({ nl: "Sprekerskit Nederlands", en: "Sprekerskit Nederlands" })}
+                  {t(copy["sprekerskit-nederlands"])}
                 </span>
               </a>
             </Reveal>
@@ -288,7 +246,7 @@ export function SprekerContent() {
               >
                 <PlayCircle size={20} className="shrink-0 text-forest" />
                 <span className="text-[15px] font-medium text-ink">
-                  {t({ nl: "Impressie video (NL)", en: "Impressie video (NL)" })}
+                  {t(copy["impressie-video-nl"])}
                 </span>
               </a>
             </Reveal>
@@ -317,7 +275,7 @@ export function SprekerContent() {
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Veelgestelde vragen", en: "Frequently asked questions" })}
+            {t(copy["veelgestelde-vragen"])}
           </h2>
         </div>
         <div className="mt-12 space-y-4">
@@ -335,13 +293,10 @@ export function SprekerContent() {
       <section className="bg-sage-50 py-24 text-center lg:py-32">
         <Reveal>
           <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Op zoek naar een spreker die raakt?", en: "Looking for a speaker who moves people?" })}
+            {t(copy["op-zoek-naar-een-spreker-die-raakt"])}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.8] text-ink-soft">
-            {t({
-              nl: "Laten we samen kijken wat past bij jouw event.",
-              en: "Let's look together at what fits your event.",
-            })}
+            {t(copy["laten-we-samen-kijken-wat-past-bij-jouw-event"])}
           </p>
           <div className="mt-8">
             <Button href="/contact" variant="primary">

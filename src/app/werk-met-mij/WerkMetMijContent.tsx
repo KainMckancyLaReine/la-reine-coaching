@@ -9,36 +9,30 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { CALENDLY_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["werk-met-mij"];
 
 const WAYS = [
   {
     icon: Sparkles,
-    title: { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" },
-    description: {
-      nl: "Voor als je er klaar voor bent\nom niet langer klein te blijven spelen.\n\nJe werkt één-op-één met mij aan je inner voice,\nje zichtbaarheid en hoe je spreekt.\n\nZodat je niet alleen weet wat je wilt zeggen.\nMaar het ook daadwerkelijk doet.",
-      en: "For when you're ready\nto stop playing small.\n\nYou work one-on-one with me on your inner voice,\nyour visibility and how you speak.\n\nSo you not only know what you want to say.\nBut actually do it.",
-    },
-    cta: { nl: "Werk met mij", en: "Work with me" },
+    title: copy["coaching-voice-activation"],
+    description: copy["voor-als-je-er-klaar-voor-bent-om-niet-langer-klein-te-blijven"],
+    cta: copy["werk-met-mij"],
     href: "/coaching-voice-activation",
   },
   {
     icon: Mic2,
-    title: { nl: "Spreker & Keynotes", en: "Speaker & Keynotes" },
-    description: {
-      nl: "Voor organisaties en events\ndie impact willen maken met een boodschap die blijft hangen.\n\nGeen standaard verhaal.\nMaar een keynote die raakt en in beweging zet.",
-      en: "For organizations and events\nthat want to make impact with a message that sticks.\n\nNo standard story.\nBut a keynote that moves people into action.",
-    },
-    cta: { nl: "Boek mij als spreker", en: "Book me as a speaker" },
+    title: copy["spreker-keynotes"],
+    description: copy["voor-organisaties-en-events-die-impact-willen-maken-met-een-bo"],
+    cta: copy["boek-mij-als-spreker"],
     href: "/spreker",
   },
   {
     icon: Star,
-    title: { nl: "Vibes & Voices", en: "Vibes & Voices" },
-    description: {
-      nl: "De plek waar je je stem oefent.\n\nIn een veilige, ontspannen setting krijg je de ruimte om te spreken en jezelf te laten zien.\n\nNiet perfect. Wel echt.",
-      en: "The place where you practice your voice.\n\nIn a safe, relaxed setting you get the space to speak and to show yourself.\n\nNot perfect. But real.",
-    },
-    cta: { nl: "Ontdek het event", en: "Discover the event" },
+    title: copy["vibes-voices"],
+    description: copy["de-plek-waar-je-je-stem-oefent-in-een-veilige-ontspannen-setti"],
+    cta: copy["ontdek-het-event"],
     href: "/vibes-voices",
   },
 ];
@@ -49,15 +43,9 @@ export function WerkMetMijContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({
-          nl: "Coaching · Keynotes · Events",
-          en: "Coaching · Keynotes · Events",
-        })}
-        title={t({ nl: "Werk met mij", en: "Work with me" })}
-        subtitle={t({
-          nl: "Je hoeft het niet alleen te doen.\nJe hoeft ook niet te blijven waar je nu bent.",
-          en: "You don't have to do it alone.\nAnd you don't have to stay where you are now.",
-        })}
+        eyebrow={t(copy["coaching-keynotes-events"])}
+        title={t(copy["werk-met-mij-2"])}
+        subtitle={t(copy["je-hoeft-het-niet-alleen-te-doen-je-hoeft-ook-niet-te-blijven"])}
       >
         <Button href={CALENDLY_URL} external variant="primary">
           {t(COMMON.planFirstStep)}
@@ -77,10 +65,7 @@ export function WerkMetMijContent() {
           />
           <Reveal delay={0.1}>
             <p className="max-w-lg font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
-              {t({
-                nl: "Dit zijn de manieren waarop je met mij kunt werken.",
-                en: "These are the ways you can work with me.",
-              })}
+              {t(copy["dit-zijn-de-manieren-waarop-je-met-mij-kunt-werken"])}
             </p>
           </Reveal>
         </div>
@@ -116,10 +101,7 @@ export function WerkMetMijContent() {
       <section className="bg-sage-50 py-24 text-center lg:py-32">
         <Reveal>
           <p className="mx-auto max-w-2xl whitespace-pre-line font-display text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-            {t({
-              nl: "Je hoeft niet alles in één keer te weten.\nJe hoeft alleen te beginnen.",
-              en: "You don't have to know everything at once.\nYou only have to begin.",
-            })}
+            {t(copy["je-hoeft-niet-alles-in-een-keer-te-weten-je-hoeft-alleen-te-be"])}
           </p>
           <div className="mt-8">
             <Button href={CALENDLY_URL} external variant="primary">

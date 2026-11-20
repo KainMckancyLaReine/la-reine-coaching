@@ -13,37 +13,31 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { EventShowcase } from "@/components/EventShowcase";
 import { CALENDLY_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["vibes-voices"];
 
 const CTAS = [
-  { icon: Mic, label: { nl: "Ik wil spreken", en: "I want to speak" }, href: "/contact" },
+  { icon: Mic, label: copy["ik-wil-spreken"], href: "/contact" },
   {
     icon: Eye,
-    label: { nl: "Ik wil kijken", en: "I want to watch" },
+    label: copy["ik-wil-kijken"],
     href: CALENDLY_URL,
     external: true,
   },
-  { icon: GraduationCap, label: { nl: "Ik wil leren", en: "I want to learn" }, href: "#workshop" },
+  { icon: GraduationCap, label: copy["ik-wil-leren"], href: "#workshop" },
   {
     icon: Megaphone,
-    label: { nl: "Ik zoek sprekers", en: "I'm looking for speakers" },
+    label: copy["ik-zoek-sprekers"],
     href: "/contact",
   },
 ];
 
 const WORKSHOP_LEARNINGS = [
-  { nl: "Hoe je een krachtige structuur opbouwt", en: "How to build a powerful structure" },
-  {
-    nl: "Hoe je voor interactie zorgt met het publiek",
-    en: "How to create interaction with the audience",
-  },
-  {
-    nl: "Hoe je jouw zenuwen in je voordeel gebruikt",
-    en: "How to turn your nerves to your advantage",
-  },
-  {
-    nl: "Presentatietips voor houding, stem en uitstraling",
-    en: "Presentation tips for posture, voice and presence",
-  },
+  copy["hoe-je-een-krachtige-structuur-opbouwt"],
+  copy["hoe-je-voor-interactie-zorgt-met-het-publiek"],
+  copy["hoe-je-jouw-zenuwen-in-je-voordeel-gebruikt"],
+  copy["presentatietips-voor-houding-stem-en-uitstraling"],
 ];
 
 const KEYNOTE_SPEAKERS = [
@@ -85,20 +79,17 @@ export function VibesVoicesContent() {
   return (
     <>
       <PageHero
-        eyebrow="Vibes & Voices"
+        eyebrow={t(copy["vibes-voices"])}
         title={
           <>
-            {t({ nl: "Jij brengt de Vibes,", en: "You bring the Vibes," })}
+            {t(copy["jij-brengt-de-vibes"])}
             <br />
             <span className="italic text-gold-600">
-              {t({ nl: "wij de Voices!", en: "we bring the Voices!" })}
+              {t(copy["wij-de-voices"])}
             </span>
           </>
         }
-        subtitle={t({
-          nl: "Vibes & Voices is het platform voor (beginnende) sprekers die willen groeien, verbinden en impact maken.\nClaim je plek op het podium, luister naar inspirerende verhalen of ontdek sprekers voor jouw event.",
-          en: "Vibes & Voices is the platform for (aspiring) speakers who want to grow, connect and make impact.\nClaim your spot on stage, listen to inspiring stories or discover speakers for your event.",
-        })}
+        subtitle={t(copy["vibes-voices-is-het-platform-voor-beginnende-sprekers-die-will"])}
       />
 
       <section className="mx-auto -mt-4 max-w-4xl px-6 pb-16 lg:px-8">
@@ -121,10 +112,7 @@ export function VibesVoicesContent() {
 
       <section className="mx-auto max-w-4xl px-6 pb-16 lg:px-8">
         <Testimonial
-          quote={t({
-            nl: "Vibes en Voices is een evenement waar sprekers en luisteraars samenkomen in een hele fijne, leuke cafe setting. Ik ging in eerste instantie als luisteraar en belandde toch op het podium. Gesproken over leuke nieuwe uitdagingen",
-            en: "Vibes and Voices is an event where speakers and listeners come together in a really nice, fun café setting. I initially went as a listener and still ended up on stage. Talk about fun new challenges",
-          })}
+          quote={t(copy["vibes-en-voices-is-een-evenement-waar-sprekers-en-luisteraars"])}
           name="Mandy Reemnet"
           role="Mandy PT"
         />
@@ -136,25 +124,19 @@ export function VibesVoicesContent() {
           mainAlt="Vibes & Voices pop-up café avond"
           secondarySrc={asset("/images/vibes-voices-flyer.jpg")}
           secondaryAlt="Vibes & Voices House of Speakers flyer"
-          caption={t({
-            nl: "Jij brengt de Vibes, wij de Voices!",
-            en: "You bring the Vibes, we bring the Voices!",
-          })}
+          caption={t(copy["jij-brengt-de-vibes-wij-de-voices"])}
         />
       </section>
 
       <section className="bg-forest py-16 text-cream">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel tone="light">{t({ nl: "Onze missie", en: "Our mission" })}</SectionLabel>
+            <SectionLabel tone="light">{t(copy["onze-missie"])}</SectionLabel>
             <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
-              {t({ nl: "Verbinding door verhalen", en: "Connection through stories" })}
+              {t(copy["verbinding-door-verhalen"])}
             </h2>
             <p className="mt-7 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
-              {t({
-                nl: "Vibes & Voices is er voor iedereen die wil leren spreken met impact.\nWe geloven dat echtheid meer raakt dan perfectie.\nBij ons vind je ruimte om te oefenen, geïnspireerd te raken en je stem te laten horen.",
-                en: "Vibes & Voices is there for everyone who wants to learn to speak with impact.\nWe believe authenticity moves people more than perfection.\nWith us you'll find space to practice, to get inspired and to let your voice be heard.",
-              })}
+              {t(copy["vibes-voices-is-er-voor-iedereen-die-wil-leren-spreken-met-imp"])}
             </p>
           </Reveal>
         </div>
@@ -174,22 +156,13 @@ export function VibesVoicesContent() {
           <Reveal delay={0.1}>
             <div className="space-y-5 text-[15px] leading-[1.75] text-ink-soft">
               <p>
-                {t({
-                  nl: "Als Lisa Nichols Certified Transformational Trainer wilde ik direct aan de slag als spreekster. Ik heb immers genoeg verhalen te delen en ben opgeleid door één van de beste uit de internationale sprekerswereld.",
-                  en: "As a Lisa Nichols Certified Transformational Trainer I wanted to start working as a speaker right away. After all, I have plenty of stories to share and was trained by one of the best in the international speaking world.",
-                })}
+                {t(copy["als-lisa-nichols-certified-transformational-trainer-wilde-ik-d"])}
               </p>
               <p className="font-display text-[1.5rem] leading-snug text-ink">
-                {t({
-                  nl: "Er was slechts één probleem: niemand kent mij dus niemand boekt mij.",
-                  en: "There was just one problem: nobody knows me, so nobody books me.",
-                })}
+                {t(copy["er-was-slechts-een-probleem-niemand-kent-mij-dus-niemand-boekt"])}
               </p>
               <p>
-                {t({
-                  nl: "Hoe kom je als beginnende spreker aan opdrachten? Hoe kan je meters maken als niemand je vraagt? Door je eigen event te creëren. Dus dat is wat ik deed en ik dacht, als ik een podium zoek dan zijn er vast meer die dat doen. Zo is Vibes & Voices ontstaan, een podium voor sprekers. Of je er nou een carrière van wilt maken of dat je spreken voor een groep gewoon een keer wilt proberen, bij Vibes & Voices is het mogelijk.",
-                  en: "How do you get gigs as a beginning speaker? How do you build experience when nobody asks you? By creating your own event. So that's what I did, and I thought: if I'm looking for a stage, there are probably more people like me. That's how Vibes & Voices came about, a stage for speakers. Whether you want to make a career out of it or simply want to try speaking to a group once, at Vibes & Voices it's possible.",
-                })}
+                {t(copy["hoe-kom-je-als-beginnende-spreker-aan-opdrachten-hoe-kan-je-me"])}
               </p>
               <p className="font-display text-lg italic text-forest">~ Phaedra La Reine</p>
             </div>
@@ -201,16 +174,10 @@ export function VibesVoicesContent() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({
-                nl: "Vibes & Voices - Storytelling Pop up café",
-                en: "Vibes & Voices - Storytelling Pop up café",
-              })}
+              {t(copy["vibes-voices-storytelling-pop-up-cafe"])}
             </h2>
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-sage-700">
-              {t({
-                nl: "Gezellig | Laagdrempelig | Verbindend",
-                en: "Cosy | Low-key | Connecting",
-              })}
+              {t(copy["gezellig-laagdrempelig-verbindend"])}
             </p>
           </div>
 
@@ -221,31 +188,22 @@ export function VibesVoicesContent() {
                   <Coffee size={22} />
                 </div>
                 <h3 className="font-display mt-6 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">
-                  {t({ nl: "Avondje uit", en: "A night out" })}
+                  {t(copy["avondje-uit"])}
                 </h3>
                 <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
-                    {t({
-                      nl: "Elke eerste vrijdagavond van de maand organiseren we het Vibes & Voices Pop-up Café: een open mic voor echte verhalen.",
-                      en: "Every first Friday evening of the month we host the Vibes & Voices Pop-up Café: an open mic for real stories.",
-                    })}
+                    {t(copy["elke-eerste-vrijdagavond-van-de-maand-organiseren-we-het-vibes"])}
                   </p>
                   <p>
-                    {t({
-                      nl: "In een intiem café krijgen gastsprekers 5 minuten op het podium om te inspireren, verbinden en raken.",
-                      en: "In an intimate café, guest speakers get 5 minutes on stage to inspire, connect and move people.",
-                    })}
+                    {t(copy["in-een-intiem-cafe-krijgen-gastsprekers-5-minuten-op-het-podiu"])}
                   </p>
                   <p>
-                    {t({
-                      nl: "Het publiek kan onder het genot van een drankje en een borrelmandje genieten van het meest inspirerende avondje uit.",
-                      en: "The audience can enjoy the most inspiring night out with a drink and a snack basket.",
-                    })}
+                    {t(copy["het-publiek-kan-onder-het-genot-van-een-drankje-en-een-borrelm"])}
                   </p>
                 </div>
                 <div className="mt-6">
                   <Button href={CALENDLY_URL} external variant="secondary">
-                    {t({ nl: "Bekijk volgende editie", en: "See the next edition" })}
+                    {t(copy["bekijk-volgende-editie"])}
                   </Button>
                 </div>
               </div>
@@ -257,34 +215,25 @@ export function VibesVoicesContent() {
                   5 minutes of fame
                 </p>
                 <h3 className="font-display mt-3 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">
-                  {t({ nl: "Pak je moment", en: "Take your moment" })}
+                  {t(copy["pak-je-moment"])}
                 </h3>
                 <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
-                    {t({
-                      nl: "Durf jij het aan om 5 minuten op het podium te staan? Of ben je reeds ervaren en wil je komen inspireren?",
-                      en: "Do you dare to stand on stage for 5 minutes? Or are you already experienced and want to come and inspire?",
-                    })}
+                    {t(copy["durf-jij-het-aan-om-5-minuten-op-het-podium-te-staan-of-ben-je"])}
                   </p>
                   <p>
-                    {t({
-                      nl: "Wij bieden een podium vrij van racisme, expliciete content, politiek en salespitches.",
-                      en: "We offer a stage free of racism, explicit content, politics and sales pitches.",
-                    })}
+                    {t(copy["wij-bieden-een-podium-vrij-van-racisme-expliciete-content-poli"])}
                   </p>
                   <p>
-                    {t({
-                      nl: "Meld je aan en pak je moment.",
-                      en: "Sign up and take your moment.",
-                    })}
+                    {t(copy["meld-je-aan-en-pak-je-moment"])}
                   </p>
                   <p className="font-medium text-ink">
-                    {t({ nl: "Locatie: Amsterdam Noord", en: "Location: Amsterdam Noord" })}
+                    {t(copy["locatie-amsterdam-noord"])}
                   </p>
                 </div>
                 <div className="mt-6">
                   <Button href="/contact" variant="secondary">
-                    {t({ nl: "Claim je spot", en: "Claim your spot" })}
+                    {t(copy["claim-je-spot"])}
                   </Button>
                 </div>
               </div>
@@ -298,21 +247,15 @@ export function VibesVoicesContent() {
                 <h3 className="font-display mt-3 text-[1.6rem] leading-snug tracking-[-0.01em] text-ink">Phaedra La Reine</h3>
                 <div className="mt-4 flex-1 space-y-4 text-[15px] leading-[1.75] text-ink-soft">
                   <p>
-                    {t({
-                      nl: "Tijdens de Spotlight Talk neemt Phaedra La Reine je zo’n 20 minuten mee in een inspirerende keynote.",
-                      en: "During the Spotlight Talk, Phaedra La Reine takes you along for about 20 minutes in an inspiring keynote.",
-                    })}
+                    {t(copy["tijdens-de-spotlight-talk-neemt-phaedra-la-reine-je-zo-n-20-mi"])}
                   </p>
                   <p>
-                    {t({
-                      nl: "In de ontspannen setting van het Vibes & Voices pop-up café - drankje erbij, fijne mensen om je heen - luister je naar een persoonlijk verhaal dat raakt en blijft hangen. Geen perfecte plaatjes, maar echte verhalen. Soms licht, soms scherp en altijd eerlijk. Verhalen die je laten voelen wat er gebeurt als je écht je stem pakt en waarom dat elke keer weer de moeite waard is om bij te zijn. Dus kom voor de gezelligheid en blijf voor het verhaal.",
-                      en: "In the relaxed setting of the Vibes & Voices pop-up café - a drink in hand, good people around you - you listen to a personal story that moves you and stays with you. No perfect pictures, but real stories. Sometimes light, sometimes sharp and always honest. Stories that let you feel what happens when you truly take your voice, and why that's worth being there for every single time. So come for the atmosphere and stay for the story.",
-                    })}
+                    {t(copy["in-de-ontspannen-setting-van-het-vibes-voices-pop-up-cafe-dran"])}
                   </p>
                 </div>
                 <div className="mt-6">
                   <Button href={CALENDLY_URL} external variant="secondary">
-                    {t({ nl: "Kom luisteren", en: "Come listen" })}
+                    {t(copy["kom-luisteren"])}
                   </Button>
                 </div>
               </div>
@@ -325,30 +268,21 @@ export function VibesVoicesContent() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
-              <SectionLabel tone="light">{t({ nl: "Workshop", en: "Workshop" })}</SectionLabel>
+              <SectionLabel tone="light">{t(copy["workshop"])}</SectionLabel>
               <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
-                {t({
-                  nl: "Workshop - Get ready to shine",
-                  en: "Workshop - Get ready to shine",
-                })}
+                {t(copy["workshop-get-ready-to-shine"])}
               </h2>
               <p className="mt-5 text-[1.0625rem] leading-[1.8] text-sage-100/85">
-                {t({
-                  nl: "Hulp nodig bij de voorbereiding van jouw “5 minutes of fame” in ons pop up café? We got you!",
-                  en: "Need help preparing your “5 minutes of fame” in our pop-up café? We got you!",
-                })}
+                {t(copy["hulp-nodig-bij-de-voorbereiding-van-jouw-5-minutes-of-fame-in"])}
               </p>
             </div>
 
             <div className="mx-auto mt-9 max-w-xl space-y-5 text-[15px] leading-[1.75] text-sage-100/90">
               <p>
-                {t({
-                  nl: "Sta jij binnenkort op het podium bij Vibes & Voices? Of wil je gewoon krachtiger leren spreken in het openbaar? In de online workshop “Get ready to shine” help ik je om zelfverzekerd, helder en met impact jouw verhaal te brengen in slechts 5 minuten.",
-                  en: "Are you about to take the stage at Vibes & Voices? Or do you simply want to learn to speak more powerfully in public? In the online workshop “Get ready to shine” I help you bring your story confidently, clearly and with impact in just 5 minutes.",
-                })}
+                {t(copy["sta-jij-binnenkort-op-het-podium-bij-vibes-voices-of-wil-je-ge"])}
               </p>
               <p className="font-semibold text-cream">
-                {t({ nl: "Wat je leert:", en: "What you'll learn:" })}
+                {t(copy["wat-je-leert"])}
               </p>
               <ul className="space-y-2">
                 {WORKSHOP_LEARNINGS.map((item) => (
@@ -356,22 +290,16 @@ export function VibesVoicesContent() {
                 ))}
               </ul>
               <p>
-                {t({
-                  nl: "Je hoeft niet perfect te zijn, wel echt en dat leer je hier.",
-                  en: "You don't have to be perfect, just real — and that's what you learn here.",
-                })}
+                {t(copy["je-hoeft-niet-perfect-te-zijn-wel-echt-en-dat-leer-je-hier"])}
               </p>
               <div className="whitespace-pre-line rounded-2xl border border-cream/15 bg-cream/5 p-5">
-                {t({
-                  nl: "Trainer: Phaedra La Reine\nDuur: 45 minuten\nLocatie: Online (via Zoom)\nInvestering: €37,- excl. btw",
-                  en: "Trainer: Phaedra La Reine\nDuration: 45 minutes\nLocation: Online (via Zoom)\nInvestment: €37 excl. VAT",
-                })}
+                {t(copy["trainer-phaedra-la-reine-duur-45-minuten-locatie-online-via-zo"])}
               </div>
             </div>
 
             <div className="mt-8 text-center">
               <Button href={CALENDLY_URL} external variant="ghost">
-                {t({ nl: "Meld je aan", en: "Sign up" })}
+                {t(copy["meld-je-aan"])}
               </Button>
             </div>
           </Reveal>
@@ -380,18 +308,12 @@ export function VibesVoicesContent() {
 
       <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-          <SectionLabel>{t({ nl: "Onze sprekers", en: "Our speakers" })}</SectionLabel>
+          <SectionLabel>{t(copy["onze-sprekers"])}</SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({
-              nl: "Op zoek naar nieuwe stemmen met impact?",
-              en: "Looking for new voices with impact?",
-            })}
+            {t(copy["op-zoek-naar-nieuwe-stemmen-met-impact"])}
           </h2>
           <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">
-            {t({
-              nl: "Deze sprekers stonden op het podium van Vibes & Voices. Sommige zijn reeds te boeken als ervaren sprekers, anderen stonden er eenmalig. Klik op een foto om hem groter te bekijken. Interesse in een van de sprekers? Neem contact met ons op voor meer informatie.",
-              en: "These speakers have stood on the Vibes & Voices stage. Some are already bookable as experienced speakers, others were there once. Click a photo to view it larger. Interested in one of the speakers? Get in touch with us for more information.",
-            })}
+            {t(copy["deze-sprekers-stonden-op-het-podium-van-vibes-voices-sommige-z"])}
           </p>
         </div>
         <div className="mx-auto mt-12 max-w-6xl px-6 lg:px-8">
@@ -404,7 +326,7 @@ export function VibesVoicesContent() {
         </div>
         <div className="mt-10 text-center">
           <Button href="/contact" variant="secondary">
-            {t({ nl: "Neem contact op", en: "Get in touch" })}
+            {t(copy["neem-contact-op"])}
           </Button>
         </div>
       </section>
@@ -412,13 +334,10 @@ export function VibesVoicesContent() {
       <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
           <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Blijf op de hoogte", en: "Stay updated" })}
+            {t(copy["blijf-op-de-hoogte"])}
           </h2>
           <p className="mt-4 text-[1.0625rem] leading-[1.8] text-ink-soft">
-            {t({
-              nl: "Blijf op de hoogte van nieuwe events en tips voor sprekers",
-              en: "Stay updated on new events and tips for speakers",
-            })}
+            {t(copy["blijf-op-de-hoogte-van-nieuwe-events-en-tips-voor-sprekers"])}
           </p>
           <Reveal delay={0.1} className="mt-8">
             <NewsletterForm />

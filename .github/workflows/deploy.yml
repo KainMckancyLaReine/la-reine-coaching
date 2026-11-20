@@ -30,6 +30,11 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: ""
 
+      - name: Configure website editor
+        env:
+          CMS_WORKER_URL: ${{ vars.CMS_WORKER_URL }}
+        run: node -e 'require("node:fs").writeFileSync("out/admin/config.json", JSON.stringify({ workerURL: process.env.CMS_WORKER_URL || "" }))'
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

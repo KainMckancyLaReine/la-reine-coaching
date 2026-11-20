@@ -7,51 +7,42 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["shop"];
 
 const PRODUCTS = [
   {
     image: asset("/images/products/happiness-101.png"),
-    title: "Happiness 101",
-    price: "€2,76",
-    description: { nl: "Verkrijgbaar via Amazon.", en: "Available via Amazon." },
-    cta: { nl: "Bekijk op Amazon", en: "View on Amazon" },
+    title: copy["happiness-101-titel"],
+    price: copy["happiness-101-prijs"],
+    description: copy["verkrijgbaar-via-amazon"],
+    cta: copy["bekijk-op-amazon"],
     href: "https://www.amazon.nl/dp/B0D6CXN4NT",
     external: true,
   },
   {
     image: asset("/images/products/angst-perfectie-twijfel.png"),
-    title: {
-      nl: "Kom los van Angst, Perfectie & Twijfel",
-      en: "Free Yourself from Fear, Perfection & Doubt",
-    },
-    price: { nl: "Gratis", en: "Free" },
-    description: {
-      nl: "Een gratis e-book gericht op het loslaten van angst, perfectionisme en twijfel.",
-      en: "A free e-book focused on letting go of fear, perfectionism and doubt.",
-    },
-    cta: { nl: "Download het gratis e-book", en: "Download the free e-book" },
+    title: copy["kom-los-van-angst-perfectie-twijfel"],
+    price: copy["gratis"],
+    description: copy["een-gratis-e-book-gericht-op-het-loslaten-van-angst-perfection"],
+    cta: copy["download-het-gratis-e-book"],
     href: asset("/downloads/kom-los-van-angst-perfectie-en-twijfel.pdf"),
     external: true,
   },
   {
     image: asset("/images/products/happiness-planner.png"),
-    title: { nl: "90 dagen Happiness Planner", en: "90-Day Happiness Planner" },
-    price: "€22,50",
-    description: {
-      nl: "Een planner om 90 dagen bewust aan je geluk te werken.",
-      en: "A planner to consciously work on your happiness for 90 days.",
-    },
+    title: copy["90-dagen-happiness-planner"],
+    price: copy["happiness-planner-prijs"],
+    description: copy["een-planner-om-90-dagen-bewust-aan-je-geluk-te-werken"],
     cta: COMMON.contact,
     href: "/contact",
   },
   {
     image: asset("/images/products/live-love-prosper.png"),
-    title: "LIVE.LOVE.PROSPER",
-    price: "€22,50",
-    description: {
-      nl: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. Een bundel met echte verhalen van Phaedra La Reine en 29 andere auteurs over hoe zij omgingen met verdriet, angst, pijn en tegenslag.",
-      en: "A Positive Mindset Can Make Anything Possible — by Authors Who Care. A collection of real-life stories from Phaedra La Reine and 29 other authors on how they dealt with heartbreak, anxiety, pain and struggle.",
-    },
+    title: copy["live-love-prosper-titel"],
+    price: copy["live-love-prosper-prijs"],
+    description: copy["a-positive-mindset-can-make-anything-possible-by-authors-who-c"],
     cta: COMMON.contact,
     href: "/contact",
   },
@@ -63,21 +54,18 @@ export function ShopContent() {
   return (
     <>
       <PageHero
-        eyebrow="Shop"
-        title={t({ nl: "Boeken & tools voor je groei", en: "Books & tools for your growth" })}
-        subtitle={t({
-          nl: "Kleine bronnen met een grote impact — om zelf mee verder te oefenen.",
-          en: "Small resources with a big impact — to keep practicing on your own.",
-        })}
+        eyebrow={t(copy["shop"])}
+        title={t(copy["boeken-tools-voor-je-groei"])}
+        subtitle={t(copy["kleine-bronnen-met-een-grote-impact-om-zelf-mee-verder-te-oefe"])}
       />
 
       <section className="mx-auto max-w-6xl px-6 pb-24 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((product, i) => {
-            const title = typeof product.title === "string" ? product.title : t(product.title);
-            const price = typeof product.price === "string" ? product.price : t(product.price);
+            const title = t(product.title);
+            const price = t(product.price);
             return (
-              <Reveal key={title} delay={i * 0.08}>
+              <Reveal key={product.image} delay={i * 0.08}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper transition-all hover:-translate-y-1 hover:border-sage-300 hover:shadow-[0_24px_60px_-24px_rgba(63,118,82,0.3)]">
                   <div className="relative aspect-square overflow-hidden bg-sage-50">
                     <Image
