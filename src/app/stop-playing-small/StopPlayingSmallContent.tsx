@@ -12,57 +12,42 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { CALENDLY_URL, REVIEW_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["stop-playing-small"];
 
 const RECOGNITIONS = [
-  {
-    nl: "Je denkt na voordat je iets zegt.\nJe houdt je in.\nJe kiest je woorden zorgvuldig.",
-    en: "You think before you say something.\nYou hold yourself back.\nYou choose your words carefully.",
-  },
-  {
-    nl: "Je zegt niet alles wat je eigenlijk wilt zeggen.",
-    en: "You don't say everything you actually want to say.",
-  },
-  {
-    nl: "Je wacht op het juiste moment.\nOf tot je meer zekerheid voelt.\nMaar dat moment blijft uit.",
-    en: "You wait for the right moment.\nOr until you feel more certain.\nBut that moment never comes.",
-  },
-  {
-    nl: "Je speelt kleiner dan je bent.",
-    en: "You play smaller than you are.",
-  },
+  copy["je-denkt-na-voordat-je-iets-zegt-je-houdt-je-in-je-kiest-je-wo"],
+  copy["je-zegt-niet-alles-wat-je-eigenlijk-wilt-zeggen"],
+  copy["je-wacht-op-het-juiste-moment-of-tot-je-meer-zekerheid-voelt-m"],
+  copy["je-speelt-kleiner-dan-je-bent"],
 ];
 
 const ROOT_CAUSES = [
-  { icon: "/images/icons/twijfel.png", title: { nl: "Twijfel", en: "Doubt" } },
-  { icon: "/images/icons/overtuigingen.png", title: { nl: "Overtuigingen", en: "Beliefs" } },
+  { icon: "/images/icons/twijfel.png", title: copy["twijfel"] },
+  { icon: "/images/icons/overtuigingen.png", title: copy["overtuigingen"] },
   {
     icon: "/images/icons/tegenhouden.png",
-    title: {
-      nl: "Momenten waarop je jezelf tegenhoudt",
-      en: "Moments where you hold yourself back",
-    },
+    title: copy["momenten-waarop-je-jezelf-tegenhoudt"],
   },
 ];
 
 const RESULTS = [
-  { nl: "zie je waar je jezelf tegenhoudt", en: "you see where you hold yourself back" },
-  { nl: "begrijp je wat er speelt", en: "you understand what's going on" },
-  { nl: "zet je een eerste stap die klopt", en: "you take a first step that feels right" },
+  copy["zie-je-waar-je-jezelf-tegenhoudt"],
+  copy["begrijp-je-wat-er-speelt"],
+  copy["zet-je-een-eerste-stap-die-klopt"],
 ];
 
 const TESTIMONIALS = [
   {
-    quote: { nl: "Ik hield mezelf klein. Nu niet meer.", en: "I kept myself small. Not anymore." },
+    quote: copy["ik-hield-mezelf-klein-nu-niet-meer"],
     name: "Amara Rahman",
   },
   {
-    quote: {
-      nl: "Ik spreek me uit zonder mezelf kleiner te maken.",
-      en: "I speak up without making myself smaller.",
-    },
+    quote: copy["ik-spreek-me-uit-zonder-mezelf-kleiner-te-maken"],
     name: "Marieke van Dongen",
   },
-  { quote: { nl: "Niet perfect. Wel echt.", en: "Not perfect. But real." }, name: "Isabella Rossi" },
+  { quote: copy["niet-perfect-wel-echt"], name: "Isabella Rossi" },
 ];
 
 export function StopPlayingSmallContent() {
@@ -71,15 +56,12 @@ export function StopPlayingSmallContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "De challenge", en: "The challenge" })}
-        title="Stop Playing Small"
-        subtitle={t({
-          nl: "Je weet dat er meer in je zit.\nDe vraag is: wat houdt je nog tegen?",
-          en: "You know there's more in you.\nThe question is: what's still holding you back?",
-        })}
+        eyebrow={t(copy["de-challenge"])}
+        title={t(copy["stop-playing-small"])}
+        subtitle={t(copy["je-weet-dat-er-meer-in-je-zit-de-vraag-is-wat-houdt-je-nog-teg"])}
       >
         <Button href={CALENDLY_URL} external variant="primary">
-          {t({ nl: "Start jouw eerste stap", en: "Start your first step" })}
+          {t(copy["start-jouw-eerste-stap"])}
         </Button>
         <Button href="/contact" variant="secondary">
           {t(COMMON.contact)}
@@ -90,10 +72,7 @@ export function StopPlayingSmallContent() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
             <p className="whitespace-pre-line font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
-              {t({
-                nl: "Je hebt een stem.\nMaar ergens gebruik je die nog niet volledig.",
-                en: "You have a voice.\nBut somewhere you're not using it fully yet.",
-              })}
+              {t(copy["je-hebt-een-stem-maar-ergens-gebruik-je-die-nog-niet-volledig"])}
             </p>
           </Reveal>
           <PortraitFrame
@@ -111,18 +90,12 @@ export function StopPlayingSmallContent() {
       <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>{t({ nl: "Je herkent dit", en: "You recognize this" })}</SectionLabel>
+            <SectionLabel>{t(copy["je-herkent-dit"])}</SectionLabel>
             <h2 className="text-balance font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({
-                nl: "Diep van binnen weet je: dit klopt niet.",
-                en: "Deep down you know: this isn't right.",
-              })}
+              {t(copy["diep-van-binnen-weet-je-dit-klopt-niet"])}
             </h2>
             <p className="mt-5 text-balance font-display text-[1.4rem] leading-[1.35] text-ink-soft sm:text-[1.6rem]">
-              {t({
-                nl: "Niet alleen in wat je zegt, maar ook in wat je mist.",
-                en: "Not only in what you say, but also in what you miss.",
-              })}
+              {t(copy["niet-alleen-in-wat-je-zegt-maar-ook-in-wat-je-mist"])}
             </p>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
@@ -143,10 +116,10 @@ export function StopPlayingSmallContent() {
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <SectionLabel>
-            {t({ nl: "Het ligt niet aan je stem", en: "It's not about your voice" })}
+            {t(copy["het-ligt-niet-aan-je-stem"])}
           </SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Het zit in wat eronder ligt.", en: "It's in what lies underneath." })}
+            {t(copy["het-zit-in-wat-eronder-ligt"])}
           </h2>
         </div>
         <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
@@ -173,20 +146,14 @@ export function StopPlayingSmallContent() {
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <Reveal>
             <SectionLabel tone="light">
-              {t({ nl: "Dit is waar het verandert", en: "This is where it changes" })}
+              {t(copy["dit-is-waar-het-verandert"])}
             </SectionLabel>
             <div className="mx-auto mt-7 max-w-2xl space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               <p>
-                {t({
-                  nl: "Niet door harder je best te doen…\nmaar door te zien waar je jezelf inhoudt.\nEn daar stap voor stap doorheen te bewegen.",
-                  en: "Not by trying harder…\nbut by seeing where you hold yourself back.\nAnd moving through it, step by step.",
-                })}
+                {t(copy["niet-door-harder-je-best-te-doen-maar-door-te-zien-waar-je-jez"])}
               </p>
               <p>
-                {t({
-                  nl: "Zodat wat je denkt, voelt en zegt\nweer op een lijn komt.",
-                  en: "So that what you think, feel and say\ncomes into alignment again.",
-                })}
+                {t(copy["zodat-wat-je-denkt-voelt-en-zegt-weer-op-een-lijn-komt"])}
               </p>
             </div>
           </Reveal>
@@ -194,29 +161,20 @@ export function StopPlayingSmallContent() {
           <Reveal delay={0.15}>
             <div className="mx-auto mt-12 max-w-xl rounded-3xl border border-cream/15 bg-cream/5 p-8 text-left backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
-                {t({ nl: "Begin hier", en: "Start here" })}
+                {t(copy["begin-hier"])}
               </p>
               <div className="mt-5 space-y-5 whitespace-pre-line text-[15px] leading-[1.75] text-sage-100/90">
                 <p>
-                  {t({
-                    nl: "Je hoeft het niet alleen te doen.\nEn je hoeft ook niet te blijven waar je nu bent.",
-                    en: "You don't have to do it alone.\nAnd you don't have to stay where you are now.",
-                  })}
+                  {t(copy["je-hoeft-het-niet-alleen-te-doen-en-je-hoeft-ook-niet-te-blijv"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "In mijn gratis challenge werk je 5x één-op-één met mij.\nOnline, persoonlijk en zonder druk.",
-                    en: "In my free challenge you work one-on-one with me 5 times.\nOnline, personal and without pressure.",
-                  })}
+                  {t(copy["in-mijn-gratis-challenge-werk-je-5x-een-op-een-met-mij-online"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Geen theorie.\nMaar directe begeleiding waarin je ontdekt waar jij jezelf inhoudt en wat er verandert als je je stem wél gebruikt.",
-                    en: "No theory.\nBut direct guidance in which you discover where you hold yourself back and what changes when you do use your voice.",
-                  })}
+                  {t(copy["geen-theorie-maar-directe-begeleiding-waarin-je-ontdekt-waar-j"])}
                 </p>
                 <p className="font-semibold text-cream">
-                  {t({ nl: "Na deze sessies:", en: "After these sessions:" })}
+                  {t(copy["na-deze-sessies"])}
                 </p>
               </div>
               <ul className="mt-5 space-y-3 text-[15px] leading-[1.7] text-sage-100/90">
@@ -229,10 +187,7 @@ export function StopPlayingSmallContent() {
               </ul>
               <div className="mt-6">
                 <Button href={CALENDLY_URL} external variant="ghost">
-                  {t({
-                    nl: "Stop playing small - Plan je eerste stap",
-                    en: "Stop playing small - Book your first step",
-                  })}
+                  {t(copy["stop-playing-small-plan-je-eerste-stap"])}
                 </Button>
               </div>
             </div>
@@ -240,10 +195,7 @@ export function StopPlayingSmallContent() {
 
           <Reveal delay={0.25}>
             <p className="mt-12 whitespace-pre-line font-display text-[1.6rem] italic leading-[1.4] text-gold-100 sm:text-[1.9rem]">
-              {t({
-                nl: "Je hoeft het niet perfect te doen.\nJe hoeft alleen te beginnen.",
-                en: "You don't have to do it perfectly.\nYou only have to begin.",
-              })}
+              {t(copy["je-hoeft-het-niet-perfect-te-doen-je-hoeft-alleen-te-beginnen"])}
             </p>
           </Reveal>
         </div>
@@ -253,7 +205,7 @@ export function StopPlayingSmallContent() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({ nl: "Wat anderen zeggen", en: "What others say" })}
+              {t(copy["wat-anderen-zeggen"])}
             </h2>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -268,7 +220,7 @@ export function StopPlayingSmallContent() {
           </div>
           <div className="mt-12 text-center">
             <Button href={REVIEW_URL} external={REVIEW_URL.startsWith("http")} variant="secondary">
-              {t({ nl: "Laat een review achter", en: "Leave a review" })}
+              {t(copy["laat-een-review-achter"])}
             </Button>
           </div>
         </div>

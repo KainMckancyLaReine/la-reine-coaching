@@ -1,18 +1,21 @@
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["nav"];
 export const NAV_LINKS = [
-  { label: { nl: "Home", en: "Home" }, href: "/" },
-  { label: { nl: "Stop Playing Small", en: "Stop Playing Small" }, href: "/stop-playing-small" },
-  { label: { nl: "Werk met mij", en: "Work with me" }, href: "/werk-met-mij" },
-  { label: { nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" }, href: "/coaching-voice-activation" },
-  { label: { nl: "Vibes & Voices", en: "Vibes & Voices" }, href: "/vibes-voices" },
-  { label: { nl: "Spreker", en: "Speaker" }, href: "/spreker" },
-  { label: { nl: "Over mij", en: "About me" }, href: "/over-mij" },
-  { label: { nl: "Contact", en: "Contact" }, href: "/contact" },
-  { label: { nl: "Shop", en: "Shop" }, href: "/shop" },
+  { label: copy["home"], href: "/" },
+  { label: copy["stop-playing-small"], href: "/stop-playing-small" },
+  { label: copy["werk-met-mij"], href: "/werk-met-mij" },
+  { label: copy["coaching-voice-activation"], href: "/coaching-voice-activation" },
+  { label: copy["vibes-voices"], href: "/vibes-voices" },
+  { label: copy["spreker"], href: "/spreker" },
+  { label: copy["over-mij"], href: "/over-mij" },
+  { label: copy["contact"], href: "/contact" },
+  { label: copy["shop"], href: "/shop" },
 ] as const;
 
 // Primary items always shown on one line; the rest live under the "More" menu.
 export const NAV_PRIMARY_HREFS = ["/", "/werk-met-mij", "/spreker", "/contact"];
-export const NAV_MORE_LABEL = { nl: "Meer", en: "More" };
+export const NAV_MORE_LABEL = copy["meer"];
 
 export const CALENDLY_URL =
   "https://calendly.com/lareinecoaching/even-bijpraten-clone";

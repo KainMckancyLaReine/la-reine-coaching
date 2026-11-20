@@ -1,0 +1,15 @@
+name = "la-reine-coaching-cms"
+main = "worker.mjs"
+compatibility_date = "2026-11-20"
+workers_dev = true
+preview_urls = false
+
+[vars]
+SITE_ORIGIN = "https://www.lareinecoaching.nl"
+GITHUB_REPOSITORY = "KainMckancyLaReine/la-reine-coaching"
+GITHUB_BRANCH = "main"
+
+[[ratelimits]]
+name = "LOGIN_LIMIT"
+namespace_id = "420016"
+simple = { limit = 5, period = 60 }

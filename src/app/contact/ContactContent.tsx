@@ -10,34 +10,25 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { CALENDLY_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["contact"];
 
 const OPTIONS = [
   {
     icon: Mail,
-    title: { nl: "Stuur me een bericht", en: "Send me a message" },
-    description: {
-      nl: "Ik lees alles persoonlijk en kom bij je terug.",
-      en: "I read everything personally and will get back to you.",
-    },
+    title: copy["stuur-me-een-bericht"],
+    description: copy["ik-lees-alles-persoonlijk-en-kom-bij-je-terug"],
   },
   {
     icon: MessageCircleHeart,
-    title: { nl: "Korte vraag?", en: "Quick question?" },
-    description: {
-      nl: "Bekijk de veelgestelde vragen in de chat rechtsonder.",
-      en: "Check the frequently asked questions in the chat at the bottom right.",
-    },
+    title: copy["korte-vraag"],
+    description: copy["bekijk-de-veelgestelde-vragen-in-de-chat-rechtsonder"],
   },
   {
     icon: CalendarClock,
-    title: {
-      nl: "Direct een vrijblijvende sessie plannen?",
-      en: "Book a no-obligation session right away?",
-    },
-    description: {
-      nl: "Gebruik de knop Plan je eerste stap.",
-      en: "Use the Book your first step button.",
-    },
+    title: copy["direct-een-vrijblijvende-sessie-plannen"],
+    description: copy["gebruik-de-knop-plan-je-eerste-stap"],
   },
 ];
 
@@ -47,15 +38,9 @@ export function ContactContent() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title={t({
-          nl: "Heb je een vraag?\nOf twijfel je waar je moet beginnen?",
-          en: "Do you have a question?\nOr are you unsure where to start?",
-        })}
-        subtitle={t({
-          nl: "Je hoeft het niet alleen uit te zoeken.",
-          en: "You don't have to figure it out alone.",
-        })}
+        eyebrow={t(copy["contact"])}
+        title={t(copy["heb-je-een-vraag-of-twijfel-je-waar-je-moet-beginnen"])}
+        subtitle={t(copy["je-hoeft-het-niet-alleen-uit-te-zoeken"])}
       >
         <Button href={CALENDLY_URL} external variant="primary">
           {t(COMMON.planFirstStep)}
@@ -92,20 +77,14 @@ export function ContactContent() {
           <div>
             <Reveal>
               <h2 className="font-display text-[2rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.4rem]">
-                {t({ nl: "Stuur me een bericht", en: "Send me a message" })}
+                {t(copy["stuur-me-een-bericht-2"])}
               </h2>
               <div className="mt-5 space-y-5 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
                 <p>
-                  {t({
-                    nl: "Ik lees alles persoonlijk en kom bij je terug.",
-                    en: "I read everything personally and will get back to you.",
-                  })}
+                  {t(copy["ik-lees-alles-persoonlijk-en-kom-bij-je-terug-2"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Vertel me waar je tegenaan loopt\nof waar je meer over wilt weten.",
-                    en: "Tell me what you're running into\nor what you'd like to know more about.",
-                  })}
+                  {t(copy["vertel-me-waar-je-tegenaan-loopt-of-waar-je-meer-over-wilt-wet"])}
                 </p>
               </div>
             </Reveal>

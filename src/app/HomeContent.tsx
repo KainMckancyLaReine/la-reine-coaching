@@ -14,124 +14,91 @@ import { HomeSignatureMoment } from "@/components/HomeSignatureMoment";
 import { CALENDLY_URL, REVIEW_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["home"];
 
 const VOICES = [
   {
     icon: Heart,
-    title: { nl: "Inner Voice", en: "Inner Voice" },
-    description: {
-      nl: "Dit is waar het begint.\n\nDe gedachten die je tegenhouden.\nDe twijfel.\nDe overtuigingen die je klein houden.\n\nHier doorbreek je de patronen waardoor je jezelf blijft inhouden.",
-      en: "This is where it begins.\n\nThe thoughts that hold you back.\nThe doubt.\nThe beliefs that keep you small.\n\nThis is where you break the patterns that keep you holding yourself back.",
-    },
+    title: copy["inner-voice"],
+    description: copy["dit-is-waar-het-begint-de-gedachten-die-je-tegenhouden-de-twij"],
   },
   {
     icon: Megaphone,
-    title: { nl: "Public Voice", en: "Public Voice" },
-    description: {
-      nl: "Dit is waar je zichtbaar wordt.\n\nJe durft te spreken.\nJe zegt wat je echt wilt zeggen.\nJe laat jezelf zien, zonder jezelf kleiner te maken.\n\nNiet perfect.\nWel echt.",
-      en: "This is where you become visible.\n\nYou dare to speak.\nYou say what you really want to say.\nYou show yourself, without making yourself smaller.\n\nNot perfect.\nBut real.",
-    },
+    title: copy["public-voice"],
+    description: copy["dit-is-waar-je-zichtbaar-wordt-je-durft-te-spreken-je-zegt-wat"],
   },
   {
     icon: Users2,
-    title: { nl: "Collective Voice", en: "Collective Voice" },
-    description: {
-      nl: "Dit is waar je impact maakt.\n\nJe gebruikt je stem om anderen te raken,\nte verbinden en beweging te creëren.\n\nOmdat jouw stem verder reikt dan jij.",
-      en: "This is where you make impact.\n\nYou use your voice to move others,\nto connect and to create momentum.\n\nBecause your voice reaches further than you.",
-    },
+    title: copy["collective-voice"],
+    description: copy["dit-is-waar-je-impact-maakt-je-gebruikt-je-stem-om-anderen-te"],
   },
 ];
 
 const METHOD_STEPS = [
   {
     letter: "V",
-    word: { nl: "Voice awareness", en: "Voice awareness" },
-    detail: {
-      nl: "Je wordt je bewust van waar en waarom je jezelf inhoudt. Zonder oordeel. Met helderheid.",
-      en: "You become aware of where and why you hold yourself back. Without judgment. With clarity.",
-    },
+    word: copy["voice-awareness"],
+    detail: copy["je-wordt-je-bewust-van-waar-en-waarom-je-jezelf-inhoudt-zonder"],
   },
   {
     letter: "O",
-    word: { nl: "Own your story", en: "Own your story" },
-    detail: {
-      nl: "Je stopt met aanpassen. En neemt eigenaarschap over wat je denkt, voelt en te zeggen hebt.",
-      en: "You stop adjusting yourself. And take ownership of what you think, feel and have to say.",
-    },
+    word: copy["own-your-story"],
+    detail: copy["je-stopt-met-aanpassen-en-neemt-eigenaarschap-over-wat-je-denk"],
   },
   {
     letter: "I",
-    word: { nl: "Inner alignment", en: "Inner alignment" },
-    detail: {
-      nl: "Wat je denkt, voelt en zegt komt op één lijn. Zodat je niet meer twijfelt aan jezelf.",
-      en: "What you think, feel and say comes into alignment. So you stop doubting yourself.",
-    },
+    word: copy["inner-alignment"],
+    detail: copy["wat-je-denkt-voelt-en-zegt-komt-op-een-lijn-zodat-je-niet-meer"],
   },
   {
     letter: "C",
-    word: { nl: "Confidence", en: "Confidence" },
-    detail: {
-      nl: "Je spreekt. Duidelijk. Rustig. Zonder jezelf kleiner te maken.",
-      en: "You speak. Clearly. Calmly. Without making yourself smaller.",
-    },
+    word: copy["confidence"],
+    detail: copy["je-spreekt-duidelijk-rustig-zonder-jezelf-kleiner-te-maken"],
   },
   {
     letter: "E",
-    word: { nl: "Embodied presence", en: "Embodied presence" },
-    detail: {
-      nl: "Je bent wat je zegt. Je aanwezigheid draagt je woorden, zonder dat je harder hoeft te werken.",
-      en: "You are what you say. Your presence carries your words, without you having to work harder.",
-    },
+    word: copy["embodied-presence"],
+    detail: copy["je-bent-wat-je-zegt-je-aanwezigheid-draagt-je-woorden-zonder-d"],
   },
 ];
 
 const OFFERS = [
   {
     icon: Compass,
-    title: { nl: "Start hier", en: "Start here" },
-    description: {
-      nl: "Een eerste stap, zonder druk.\n\nJe ontdekt waar jij jezelf nog inhoudt.\nEn wat er verandert als je je stem wél gebruikt.\n\nKlein. Persoonlijk.\nDirect toepasbaar.",
-      en: "A first step, without pressure.\n\nYou discover where you still hold yourself back.\nAnd what changes when you do use your voice.\n\nSmall. Personal.\nImmediately applicable.",
-    },
+    title: copy["start-hier"],
+    description: copy["een-eerste-stap-zonder-druk-je-ontdekt-waar-jij-jezelf-nog-inh"],
     href: CALENDLY_URL,
-    cta: { nl: "Start hier", en: "Start here" },
+    cta: copy["start-hier-2"],
     external: true,
   },
   {
     icon: Sparkles,
-    title: { nl: "Werk met mij", en: "Work with me" },
-    description: {
-      nl: "Voor als je er klaar voor bent om niet langer klein te blijven spelen.\n\nWe werken samen aan je inner voice, je zichtbaarheid en je manier van spreken.\n\nZodat je niet alleen weet wat je wilt zeggen.\nMaar het ook daadwerkelijk doet.",
-      en: "For when you're ready to stop playing small.\n\nTogether we work on your inner voice, your visibility and the way you speak.\n\nSo you not only know what you want to say.\nBut actually do it.",
-    },
+    title: copy["werk-met-mij"],
+    description: copy["voor-als-je-er-klaar-voor-bent-om-niet-langer-klein-te-blijven"],
     href: "/werk-met-mij",
-    cta: { nl: "Werk met mij", en: "Work with me" },
+    cta: copy["werk-met-mij-2"],
   },
   {
     icon: Star,
-    title: { nl: "Vibes & Voices", en: "Vibes & Voices" },
-    description: {
-      nl: "De plek waar je je stem oefent.\n\nIn een veilige, ontspannen setting krijg je de ruimte om te spreken, te groeien en jezelf te laten zien.\n\nNiet perfect. Wel echt.",
-      en: "The place where you practice your voice.\n\nIn a safe, relaxed setting you get the space to speak, to grow and to show yourself.\n\nNot perfect. But real.",
-    },
+    title: copy["vibes-voices"],
+    description: copy["de-plek-waar-je-je-stem-oefent-in-een-veilige-ontspannen-setti"],
     href: "/vibes-voices",
-    cta: { nl: "Ontdek het event", en: "Discover the event" },
+    cta: copy["ontdek-het-event"],
   },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: { nl: "Ik hield mezelf klein. Nu niet meer.", en: "I kept myself small. Not anymore." },
+    quote: copy["ik-hield-mezelf-klein-nu-niet-meer"],
     name: "Amara Rahman",
   },
   {
-    quote: {
-      nl: "Ik spreek me uit zonder mezelf kleiner te maken.",
-      en: "I speak up without making myself smaller.",
-    },
+    quote: copy["ik-spreek-me-uit-zonder-mezelf-kleiner-te-maken"],
     name: "Marieke van Dongen",
   },
-  { quote: { nl: "Niet perfect. Wel echt.", en: "Not perfect. But real." }, name: "Isabella Rossi" },
+  { quote: copy["niet-perfect-wel-echt"], name: "Isabella Rossi" },
 ];
 
 export function HomeContent() {
@@ -140,21 +107,18 @@ export function HomeContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "Voice Activation Coaching", en: "Voice Activation Coaching" })}
+        eyebrow={t(copy["voice-activation-coaching"])}
         title={
           <>
-            Stop Playing Small
+            {t(copy["stop-playing-small"])}
             <br />
-            <span className="italic text-gold-600">Use your voice</span>
+            <span className="italic text-gold-600">{t(copy["use-your-voice"])}</span>
           </>
         }
-        subtitle={t({
-          nl: "Je hebt een stem.\nGebruik je die, of houd je jezelf nog tegen?",
-          en: "You have a voice.\nDo you use it, or are you still holding yourself back?",
-        })}
+        subtitle={t(copy["je-hebt-een-stem-gebruik-je-die-of-houd-je-jezelf-nog-tegen"])}
       >
         <Button href={CALENDLY_URL} external variant="primary">
-          {t({ nl: "Start hier", en: "Start here" })}
+          {t(copy["start-hier-3"])}
         </Button>
         <Button href="/werk-met-mij" variant="secondary">
           {t(COMMON.workWithMe)}
@@ -174,42 +138,24 @@ export function HomeContent() {
           />
           <Reveal delay={0.1}>
             <h2 className="text-balance font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
-              {t({
-                nl: "Je weet dat er meer in je zit",
-                en: "You know there's more in you",
-              })}
+              {t(copy["je-weet-dat-er-meer-in-je-zit"])}
             </h2>
             <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
-              <p>{t({ nl: "Je voelt het al een tijd.", en: "You've been feeling it for a while." })}</p>
+              <p>{t(copy["je-voelt-het-al-een-tijd"])}</p>
               <p>
-                {t({
-                  nl: "Dat je dingen niet zegt die je wél denkt.\nDat je kleiner speelt dan je eigenlijk bent.",
-                  en: "That you don't say the things you do think.\nThat you play smaller than you really are.",
-                })}
+                {t(copy["dat-je-dingen-niet-zegt-die-je-wel-denkt-dat-je-kleiner-speelt"])}
               </p>
               <p>
-                {t({
-                  nl: "Niet omdat je niets te vertellen hebt,\nmaar omdat je het nog niet volledig durft te laten zien.",
-                  en: "Not because you have nothing to tell,\nbut because you don't yet fully dare to show it.",
-                })}
+                {t(copy["niet-omdat-je-niets-te-vertellen-hebt-maar-omdat-je-het-nog-ni"])}
               </p>
               <p>
-                {t({
-                  nl: "Misschien wacht je op het juiste moment.\nMeer zekerheid.\nMeer zelfvertrouwen.",
-                  en: "Maybe you're waiting for the right moment.\nMore certainty.\nMore confidence.",
-                })}
+                {t(copy["misschien-wacht-je-op-het-juiste-moment-meer-zekerheid-meer-ze"])}
               </p>
               <p>
-                {t({
-                  nl: "Maar ondertussen…\nblijf je op de achtergrond.",
-                  en: "But in the meantime…\nyou stay in the background.",
-                })}
+                {t(copy["maar-ondertussen-blijf-je-op-de-achtergrond"])}
               </p>
               <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
-                {t({
-                  nl: "En diep vanbinnen weet je: dit ben ik niet.",
-                  en: "And deep down you know: this isn't me.",
-                })}
+                {t(copy["en-diep-vanbinnen-weet-je-dit-ben-ik-niet"])}
               </p>
             </div>
           </Reveal>
@@ -218,24 +164,18 @@ export function HomeContent() {
 
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel>{t({ nl: "Drie lagen", en: "Three layers" })}</SectionLabel>
+          <SectionLabel>{t(copy["drie-lagen"])}</SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Je stem werkt op drie niveaus", en: "Your voice works on three levels" })}
+            {t(copy["je-stem-werkt-op-drie-niveaus"])}
           </h2>
           <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
-              {t({
-                nl: "Als je jezelf inhoudt, zit dat niet op één plek.",
-                en: "When you hold yourself back, it doesn't sit in one place.",
-              })}
+              {t(copy["als-je-jezelf-inhoudt-zit-dat-niet-op-een-plek"])}
             </p>
             <p>
-              {t({
-                nl: "Het zit in hoe je denkt.\nHoe je spreekt.\nEn in hoe je jezelf laat zien.",
-                en: "It's in how you think.\nHow you speak.\nAnd in how you show yourself.",
-              })}
+              {t(copy["het-zit-in-hoe-je-denkt-hoe-je-spreekt-en-in-hoe-je-jezelf-laa"])}
             </p>
-            <p>{t({ nl: "Daarom werk ik met drie lagen.", en: "That's why I work with three layers." })}</p>
+            <p>{t(copy["daarom-werk-ik-met-drie-lagen"])}</p>
           </div>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -258,14 +198,11 @@ export function HomeContent() {
         <Reveal delay={0.2}>
           <div className="mx-auto mt-14 max-w-2xl text-center">
             <p className="font-display whitespace-pre-line text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-              {t({
-                nl: "Als je deze drie lagen samenbrengt,\nverandert niet alleen hoe je spreekt,\nmaar hoe je jezelf laat zien.",
-                en: "When you bring these three layers together,\nnot only how you speak changes,\nbut how you show yourself.",
-              })}
+              {t(copy["als-je-deze-drie-lagen-samenbrengt-verandert-niet-alleen-hoe-j"])}
             </p>
             <div className="mt-8">
               <Button href={CALENDLY_URL} external variant="primary">
-                {t({ nl: "Gebruik je stem", en: "Use your voice" })}
+                {t(copy["gebruik-je-stem"])}
               </Button>
             </div>
           </div>
@@ -276,52 +213,34 @@ export function HomeContent() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel tone="light">
-              {t({ nl: "De V.O.I.C.E. methode", en: "The V.O.I.C.E. method" })}
+              {t(copy["de-v-o-i-c-e-methode"])}
             </SectionLabel>
             <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-cream sm:text-[3rem]">
-              {t({ nl: "Dit is hoe je je stem terugpakt", en: "This is how you take your voice back" })}
+              {t(copy["dit-is-hoe-je-je-stem-terugpakt"])}
             </h2>
             <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
-              <p>{t({ nl: "Je hoeft jezelf niet te fixen.", en: "You don't have to fix yourself." })}</p>
+              <p>{t(copy["je-hoeft-jezelf-niet-te-fixen"])}</p>
               <p>
-                {t({
-                  nl: "Je hebt al een stem.\nJe gebruikt die alleen nog niet volledig.",
-                  en: "You already have a voice.\nYou're just not using it fully yet.",
-                })}
+                {t(copy["je-hebt-al-een-stem-je-gebruikt-die-alleen-nog-niet-volledig"])}
               </p>
               <p>
-                {t({
-                  nl: "Daarom werkt de V.O.I.C.E. methode.",
-                  en: "That's why the V.O.I.C.E. method works.",
-                })}
+                {t(copy["daarom-werkt-de-v-o-i-c-e-methode"])}
               </p>
               <p>
-                {t({
-                  nl: "Een praktische manier om van je inhouden\nnaar zichtbaar en hoorbaar zijn te bewegen.",
-                  en: "A practical way to move from holding back\nto being visible and audible.",
-                })}
+                {t(copy["een-praktische-manier-om-van-je-inhouden-naar-zichtbaar-en-hoo"])}
               </p>
             </div>
           </div>
           <Reveal delay={0.1}>
             <div className="mx-auto mt-14 max-w-2xl space-y-6 whitespace-pre-line text-center font-display text-[1.5rem] leading-[1.4] text-cream sm:text-[1.75rem]">
               <p>
-                {t({
-                  nl: "Je stem zit niet alleen in wat je zegt.",
-                  en: "Your voice isn't only in what you say.",
-                })}
+                {t(copy["je-stem-zit-niet-alleen-in-wat-je-zegt"])}
               </p>
               <p>
-                {t({
-                  nl: "Het zit in hoe je jezelf laat zien.\nHoe je binnenkomt.",
-                  en: "It's in how you show yourself.\nHow you walk in.",
-                })}
+                {t(copy["het-zit-in-hoe-je-jezelf-laat-zien-hoe-je-binnenkomt"])}
               </p>
               <p>
-                {t({
-                  nl: "En in wat je uitstraalt, nog voordat je iets zegt.",
-                  en: "And in what you radiate, before you even say a word.",
-                })}
+                {t(copy["en-in-wat-je-uitstraalt-nog-voordat-je-iets-zegt"])}
               </p>
             </div>
           </Reveal>
@@ -337,11 +256,11 @@ export function HomeContent() {
           <Reveal delay={0.25}>
             <div className="mx-auto mt-14 max-w-2xl text-center">
               <p className="font-display text-[2rem] leading-[1.25] text-cream">
-                {t({ nl: "Klaar om je stem te gebruiken?", en: "Ready to use your voice?" })}
+                {t(copy["klaar-om-je-stem-te-gebruiken"])}
               </p>
               <div className="mt-6">
                 <Button href={CALENDLY_URL} external variant="ghost">
-                  {t({ nl: "Gebruik je stem", en: "Use your voice" })}
+                  {t(copy["gebruik-je-stem-2"])}
                 </Button>
               </div>
             </div>
@@ -352,39 +271,30 @@ export function HomeContent() {
       <HomeSignatureMoment
         src={asset("/images/foto-2-portret.jpg")}
         alt="Phaedra La Reine"
-        eyebrow={t({ nl: "In haar eigen woorden", en: "In her own words" })}
+        eyebrow={t(copy["in-haar-eigen-woorden"])}
         words={[
-          t({ nl: "Stem", en: "Voice" }),
-          t({ nl: "Kracht", en: "Strength" }),
-          t({ nl: "Impact", en: "Impact" }),
+          t(copy["stem"]),
+          t(copy["kracht"]),
+          t(copy["impact"]),
         ]}
-        statement={t({
-          nl: "Je stem verandert meer dan alleen wat je zegt.\nHet verandert hoe je jezelf laat zien.\nHoe je binnenkomt en hoeveel ruimte je jezelf geeft.",
-          en: "Your voice changes more than just what you say.\nIt changes how you show yourself.\nHow you walk in and how much space you give yourself.",
-        })}
+        statement={t(copy["je-stem-verandert-meer-dan-alleen-wat-je-zegt-het-verandert-ho"])}
       >
         <Button href="/over-mij" variant="secondary">
-          {t({ nl: "Lees mijn verhaal", en: "Read my story" })}
+          {t(copy["lees-mijn-verhaal"])}
         </Button>
       </HomeSignatureMoment>
 
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Werk met mij", en: "Work with me" })}
+            {t(copy["werk-met-mij-3"])}
           </h2>
           <div className="mt-7 space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
-              {t({
-                nl: "Je hoeft het niet alleen te doen.\nJe hoeft ook niet te blijven waar je nu bent.",
-                en: "You don't have to do it alone.\nAnd you don't have to stay where you are now.",
-              })}
+              {t(copy["je-hoeft-het-niet-alleen-te-doen-je-hoeft-ook-niet-te-blijven"])}
             </p>
             <p>
-              {t({
-                nl: "Of je nu net begint,\nof klaar bent om je stem écht te laten horen,\ner is een manier die bij jou past.",
-                en: "Whether you're just starting out,\nor ready to truly let your voice be heard,\nthere is a way that fits you.",
-              })}
+              {t(copy["of-je-nu-net-begint-of-klaar-bent-om-je-stem-echt-te-laten-hor"])}
             </p>
           </div>
         </div>
@@ -405,10 +315,7 @@ export function HomeContent() {
         <Reveal delay={0.2}>
           <div className="mx-auto mt-14 max-w-2xl text-center">
             <p className="font-display whitespace-pre-line text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-              {t({
-                nl: "Je hoeft niet alles in één keer te weten.\nJe hoeft alleen te beginnen.",
-                en: "You don't have to know everything at once.\nYou only have to begin.",
-              })}
+              {t(copy["je-hoeft-niet-alles-in-een-keer-te-weten-je-hoeft-alleen-te-be"])}
             </p>
             <div className="mt-8">
               <Button href={CALENDLY_URL} external variant="primary">
@@ -423,7 +330,7 @@ export function HomeContent() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({ nl: "Wat anderen ervaren", en: "What others experience" })}
+              {t(copy["wat-anderen-ervaren"])}
             </h2>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -441,7 +348,7 @@ export function HomeContent() {
               {t(COMMON.planFirstStep)}
             </Button>
             <Button href={REVIEW_URL} external={REVIEW_URL.startsWith("http")} variant="secondary">
-              {t({ nl: "Laat een review achter", en: "Leave a review" })}
+              {t(copy["laat-een-review-achter"])}
             </Button>
           </div>
         </div>

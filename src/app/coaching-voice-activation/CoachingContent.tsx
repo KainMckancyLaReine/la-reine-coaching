@@ -11,27 +11,24 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { CALENDLY_URL } from "@/lib/nav";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["coaching-voice-activation"];
 
 const APPROACH = [
-  { icon: Heart, label: { nl: "je inner voice", en: "your inner voice" } },
-  { icon: Eye, label: { nl: "je zichtbaarheid", en: "your visibility" } },
-  { icon: Repeat, label: { nl: "je patronen", en: "your patterns" } },
+  { icon: Heart, label: copy["je-inner-voice"] },
+  { icon: Eye, label: copy["je-zichtbaarheid"] },
+  { icon: Repeat, label: copy["je-patronen"] },
   {
     icon: HeartHandshake,
-    label: {
-      nl: "hoe je spreekt vanuit rust en vertrouwen",
-      en: "how you speak from calm and confidence",
-    },
+    label: copy["hoe-je-spreekt-vanuit-rust-en-vertrouwen"],
   },
 ];
 
 const CHALLENGE_RESULTS = [
-  { nl: "waar jij jezelf inhoudt", en: "where you hold yourself back" },
-  { nl: "wat je tegenhoudt", en: "what's stopping you" },
-  {
-    nl: "wat er verandert als je je stem wél gebruikt",
-    en: "what changes when you do use your voice",
-  },
+  copy["waar-jij-jezelf-inhoudt"],
+  copy["wat-je-tegenhoudt"],
+  copy["wat-er-verandert-als-je-je-stem-wel-gebruikt"],
 ];
 
 export function CoachingContent() {
@@ -40,12 +37,9 @@ export function CoachingContent() {
   return (
     <>
       <PageHero
-        eyebrow={t({ nl: "Eén-op-één traject", en: "One-on-one programme" })}
-        title={t({ nl: "Coaching & Voice Activation", en: "Coaching & Voice Activation" })}
-        subtitle={t({
-          nl: "Voor vrouwen die voelen dat ze zichzelf nog inhouden.",
-          en: "For women who feel they're still holding themselves back.",
-        })}
+        eyebrow={t(copy["een-op-een-traject"])}
+        title={t(copy["coaching-voice-activation"])}
+        subtitle={t(copy["voor-vrouwen-die-voelen-dat-ze-zichzelf-nog-inhouden"])}
       >
         <Button href={CALENDLY_URL} external variant="primary">
           {t(COMMON.planFirstStep)}
@@ -57,22 +51,13 @@ export function CoachingContent() {
           <Reveal>
             <div className="max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p className="font-display text-[2.15rem] leading-[1.2] tracking-[-0.015em] text-ink sm:text-[2.6rem]">
-                {t({
-                  nl: "Je hebt al veel gedaan.\nVeel gedragen.\nVeel opgelost.",
-                  en: "You've already done a lot.\nCarried a lot.\nSolved a lot.",
-                })}
+                {t(copy["je-hebt-al-veel-gedaan-veel-gedragen-veel-opgelost"])}
               </p>
               <p>
-                {t({
-                  nl: "Maar ergens voel je dat je jezelf nog kleiner maakt dan nodig is.",
-                  en: "But somewhere you feel you're still making yourself smaller than necessary.",
-                })}
+                {t(copy["maar-ergens-voel-je-dat-je-jezelf-nog-kleiner-maakt-dan-nodig"])}
               </p>
               <p>
-                {t({
-                  nl: "Niet altijd zichtbaar voor anderen.\nMaar wel voelbaar voor jou.",
-                  en: "Not always visible to others.\nBut very noticeable to you.",
-                })}
+                {t(copy["niet-altijd-zichtbaar-voor-anderen-maar-wel-voelbaar-voor-jou"])}
               </p>
             </div>
           </Reveal>
@@ -92,32 +77,20 @@ export function CoachingContent() {
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
             <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-              {t({
-                nl: "Je hoeft niet harder je best te doen",
-                en: "You don't have to try harder",
-              })}
+              {t(copy["je-hoeft-niet-harder-je-best-te-doen"])}
             </h2>
             <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p>
-                {t({
-                  nl: "Veel vrouwen denken dat ze sterker moeten worden.\nZelfverzekerder.\nBeter in spreken.",
-                  en: "Many women think they need to become stronger.\nMore confident.\nBetter at speaking.",
-                })}
+                {t(copy["veel-vrouwen-denken-dat-ze-sterker-moeten-worden-zelfverzekerd"])}
               </p>
               <p>
-                {t({
-                  nl: "Maar vaak zit het probleem niet in vaardigheden.",
-                  en: "But often the problem isn't in skills.",
-                })}
+                {t(copy["maar-vaak-zit-het-probleem-niet-in-vaardigheden"])}
               </p>
               <p>
-                {t({
-                  nl: "Het zit in het voortdurend aanpassen.\nTwijfelen.\nJezelf inhouden.",
-                  en: "It's in constantly adapting.\nDoubting.\nHolding yourself back.",
-                })}
+                {t(copy["het-zit-in-het-voortdurend-aanpassen-twijfelen-jezelf-inhouden"])}
               </p>
               <p className="font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
-                {t({ nl: "En dat kost energie.", en: "And that costs energy." })}
+                {t(copy["en-dat-kost-energie"])}
               </p>
             </div>
           </Reveal>
@@ -126,14 +99,11 @@ export function CoachingContent() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionLabel>{t({ nl: "Mijn aanpak", en: "My approach" })}</SectionLabel>
+          <SectionLabel>{t(copy["mijn-aanpak"])}</SectionLabel>
           <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({
-              nl: "Niet alleen wat je zegt. Maar hoe je jezelf laat zien.",
-              en: "Not only what you say. But how you show yourself.",
-            })}
+            {t(copy["niet-alleen-wat-je-zegt-maar-hoe-je-jezelf-laat-zien"])}
           </h2>
-          <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">{t({ nl: "We kijken naar:", en: "We look at:" })}</p>
+          <p className="mt-7 text-[1.0625rem] leading-[1.8] text-ink-soft">{t(copy["we-kijken-naar"])}</p>
         </div>
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {APPROACH.map((item, i) => (
@@ -149,20 +119,14 @@ export function CoachingContent() {
         </div>
         <Reveal delay={0.2}>
           <p className="mx-auto mt-12 max-w-2xl whitespace-pre-line text-center font-display text-[2rem] leading-[1.25] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-            {t({
-              nl: "Zodat wat je denkt, voelt en zegt\nweer met elkaar klopt.",
-              en: "So that what you think, feel and say\nadds up again.",
-            })}
+            {t(copy["zodat-wat-je-denkt-voelt-en-zegt-weer-met-elkaar-klopt"])}
           </p>
         </Reveal>
         <Reveal delay={0.25}>
           <div className="mx-auto mt-14 max-w-xl">
             <Image
               src={asset("/images/voice-methode.png")}
-              alt={t({
-                nl: "De V.O.I.C.E. methode: Voice awareness, Own your story, Inner alignment, Confidence, Embodied presence",
-                en: "The V.O.I.C.E. method: Voice awareness, Own your story, Inner alignment, Confidence, Embodied presence",
-              })}
+              alt={t(copy["de-v-o-i-c-e-methode-voice-awareness-own-your-story-inner-alig"])}
               width={937}
               height={1000}
               className="h-auto w-full"
@@ -175,29 +139,20 @@ export function CoachingContent() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
-              <SectionLabel tone="light">{t({ nl: "Begin hier", en: "Start here" })}</SectionLabel>
+              <SectionLabel tone="light">{t(copy["begin-hier"])}</SectionLabel>
               <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
-                {t({
-                  nl: "Start met de Stop Playing Small Challenge",
-                  en: "Start with the Stop Playing Small Challenge",
-                })}
+                {t(copy["start-met-de-stop-playing-small-challenge"])}
               </h2>
             </div>
             <div className="mx-auto mt-9 max-w-xl space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-sage-100/85">
               <p>
-                {t({
-                  nl: "Soms hoef je niet meteen het hele antwoord te hebben.\nJe hoeft alleen een eerste stap te zetten.",
-                  en: "Sometimes you don't need the whole answer right away.\nYou only have to take a first step.",
-                })}
+                {t(copy["soms-hoef-je-niet-meteen-het-hele-antwoord-te-hebben-je-hoeft"])}
               </p>
               <p>
-                {t({
-                  nl: "In deze gratis challenge werk je vijf keer één-op-één met mij.\nOnline, persoonlijk en zonder druk.",
-                  en: "In this free challenge you work one-on-one with me five times.\nOnline, personal and without pressure.",
-                })}
+                {t(copy["in-deze-gratis-challenge-werk-je-vijf-keer-een-op-een-met-mij"])}
               </p>
               <p className="font-semibold text-cream">
-                {t({ nl: "Zo ontdek je:", en: "This is how you discover:" })}
+                {t(copy["zo-ontdek-je"])}
               </p>
             </div>
             <ul className="mx-auto mt-5 max-w-xl space-y-3 text-[15px] leading-[1.7] text-sage-100/90">
@@ -210,10 +165,7 @@ export function CoachingContent() {
             </ul>
             <div className="mt-8 text-center">
               <Button href={CALENDLY_URL} external variant="ghost">
-                {t({
-                  nl: "Stop playing small - Plan je eerste stap",
-                  en: "Stop playing small - Book your first step",
-                })}
+                {t(copy["stop-playing-small-plan-je-eerste-stap"])}
               </Button>
             </div>
           </Reveal>
@@ -223,37 +175,25 @@ export function CoachingContent() {
       <section className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
         <Reveal>
           <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Klaar voor de volgende stap?", en: "Ready for the next step?" })}
+            {t(copy["klaar-voor-de-volgende-stap"])}
           </h2>
           <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
-              {t({
-                nl: "Voor vrouwen die dieper willen werken,\nbied ik persoonlijke coachingtrajecten aan.",
-                en: "For women who want to go deeper,\nI offer personal coaching programmes.",
-              })}
+              {t(copy["voor-vrouwen-die-dieper-willen-werken-bied-ik-persoonlijke-coa"])}
             </p>
             <p>
-              {t({
-                nl: "Geen standaard methode.\nMaar begeleiding afgestemd op waar jij nu staat.",
-                en: "No standard method.\nBut guidance tailored to where you are now.",
-              })}
+              {t(copy["geen-standaard-methode-maar-begeleiding-afgestemd-op-waar-jij"])}
             </p>
             <p>
-              {t({
-                nl: "Voor vrouwen die niet langer alleen willen begrijpen wat hen tegenhoudt,\nmaar daar daadwerkelijk doorheen willen bewegen.",
-                en: "For women who no longer only want to understand what's holding them back,\nbut actually want to move through it.",
-              })}
+              {t(copy["voor-vrouwen-die-niet-langer-alleen-willen-begrijpen-wat-hen-t"])}
             </p>
             <p>
-              {t({
-                nl: "Coaching is mogelijk online en op locatie.",
-                en: "Coaching is available online and on location.",
-              })}
+              {t(copy["coaching-is-mogelijk-online-en-op-locatie"])}
             </p>
           </div>
           <div className="mt-8">
             <Button href={CALENDLY_URL} external variant="primary">
-              {t({ nl: "Plan een kennismaking", en: "Book an intro call" })}
+              {t(copy["plan-een-kennismaking"])}
             </Button>
           </div>
         </Reveal>
@@ -262,36 +202,24 @@ export function CoachingContent() {
       <section className="bg-sage-50 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <Reveal>
-            <SectionLabel>{t({ nl: "Wat er verandert", en: "What changes" })}</SectionLabel>
+            <SectionLabel>{t(copy["wat-er-verandert"])}</SectionLabel>
             <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
               <p>
-                {t({
-                  nl: "Je gaat jezelf niet ineens veranderen in iemand anders.",
-                  en: "You're not suddenly going to turn into someone else.",
-                })}
+                {t(copy["je-gaat-jezelf-niet-ineens-veranderen-in-iemand-anders"])}
               </p>
               <p className="font-display text-[1.9rem] leading-[1.3] text-ink">
-                {t({
-                  nl: "Maar je gaat jezelf wel minder tegenhouden.",
-                  en: "But you will hold yourself back less.",
-                })}
+                {t(copy["maar-je-gaat-jezelf-wel-minder-tegenhouden"])}
               </p>
               <p>
-                {t({
-                  nl: "Je spreekt duidelijker.\nVoelt meer rust.\nNeemt meer ruimte in.",
-                  en: "You speak more clearly.\nFeel more calm.\nTake up more space.",
-                })}
+                {t(copy["je-spreekt-duidelijker-voelt-meer-rust-neemt-meer-ruimte-in"])}
               </p>
               <p>
-                {t({
-                  nl: "Niet omdat je harder wordt.\nMaar omdat je dichter bij jezelf blijft.",
-                  en: "Not because you get harder.\nBut because you stay closer to yourself.",
-                })}
+                {t(copy["niet-omdat-je-harder-wordt-maar-omdat-je-dichter-bij-jezelf-bl"])}
               </p>
             </div>
             <div className="mt-8">
               <Button href={CALENDLY_URL} external variant="primary">
-                {t({ nl: "Plan een kennismaking", en: "Book an intro call" })}
+                {t(copy["plan-een-kennismaking-2"])}
               </Button>
             </div>
           </Reveal>
@@ -300,25 +228,16 @@ export function CoachingContent() {
 
       <section className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
         <Reveal>
-          <SectionLabel>{t({ nl: "Je investering", en: "Your investment" })}</SectionLabel>
+          <SectionLabel>{t(copy["je-investering"])}</SectionLabel>
           <p className="font-display mt-5 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({
-              nl: "Coachingtrajecten starten vanaf €1.997",
-              en: "Coaching programmes start from €1,997",
-            })}
+            {t(copy["coachingtrajecten-starten-vanaf-1-997"])}
           </p>
           <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.8] text-ink-soft">
-            {t({
-              nl: "Omdat ieder traject persoonlijk maatwerk is, bespreken we samen wat past bij waar jij nu staat.",
-              en: "Because every programme is personal and tailor-made, we discuss together what fits where you are now.",
-            })}
+            {t(copy["omdat-ieder-traject-persoonlijk-maatwerk-is-bespreken-we-samen"])}
           </p>
           <div className="mt-8">
             <Button href={CALENDLY_URL} external variant="primary">
-              {t({
-                nl: "Stop playing small - Plan je eerste stap",
-                en: "Stop playing small - Book your first step",
-              })}
+              {t(copy["stop-playing-small-plan-je-eerste-stap-2"])}
             </Button>
           </div>
         </Reveal>

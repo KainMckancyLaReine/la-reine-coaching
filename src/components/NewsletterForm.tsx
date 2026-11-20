@@ -4,6 +4,9 @@ import { useState, type FormEvent } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { sendForm } from "@/lib/forms";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["NewsletterForm"];
 
 export function NewsletterForm() {
   const t = useT();
@@ -40,10 +43,7 @@ export function NewsletterForm() {
       <div className="flex items-center gap-3 rounded-2xl border border-sage-300 bg-sage-50 p-5 text-forest">
         <CheckCircle2 size={20} />
         <p className="text-sm font-medium">
-          {t({
-            nl: "Dankjewel en welkom bij Vibes & Voices!",
-            en: "Thank you and welcome to Vibes & Voices!",
-          })}
+          {t(copy["dankjewel-en-welkom-bij-vibes-voices"])}
         </p>
       </div>
     );
@@ -57,20 +57,20 @@ export function NewsletterForm() {
       <input
         name="voornaam"
         required
-        placeholder={t({ nl: "Voornaam", en: "First name" })}
+        placeholder={t(copy["voornaam"])}
         className="rounded-full border border-line bg-paper px-4 py-2.5 text-sm outline-none focus:border-sage-500"
       />
       <input
         name="achternaam"
         required
-        placeholder={t({ nl: "Achternaam", en: "Last name" })}
+        placeholder={t(copy["achternaam"])}
         className="rounded-full border border-line bg-paper px-4 py-2.5 text-sm outline-none focus:border-sage-500"
       />
       <input
         name="email"
         required
         type="email"
-        placeholder={t({ nl: "E-mailadres", en: "Email address" })}
+        placeholder={t(copy["e-mailadres"])}
         className="rounded-full border border-line bg-paper px-4 py-2.5 text-sm outline-none focus:border-sage-500"
       />
       <button
@@ -78,14 +78,11 @@ export function NewsletterForm() {
         disabled={sending}
         className="rounded-full bg-forest px-6 py-2.5 text-sm font-medium text-cream transition-transform hover:-translate-y-0.5 disabled:opacity-60"
       >
-        {sending ? "…" : t({ nl: "Aanmelden", en: "Subscribe" })}
+        {sending ? "…" : t(copy["aanmelden"])}
       </button>
       {error && (
         <p role="alert" className="text-sm text-red-700 sm:col-span-4">
-          {t({
-            nl: "Aanmelden lukte niet. Probeer het later opnieuw.",
-            en: "Subscribing failed. Please try again later.",
-          })}
+          {t(copy["aanmelden-lukte-niet-probeer-het-later-opnieuw"])}
         </p>
       )}
     </form>

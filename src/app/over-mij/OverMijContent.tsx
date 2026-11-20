@@ -10,6 +10,9 @@ import { PortraitFrame } from "@/components/PortraitFrame";
 import { CertificationShowcase } from "@/components/CertificationShowcase";
 import { useT } from "@/lib/i18n";
 import { COMMON } from "@/lib/common-dict";
+import siteContent from "@/content/site.json";
+
+const copy = siteContent["over-mij"];
 
 const TRAITS = [
   {
@@ -50,12 +53,9 @@ export function OverMijContent() {
   return (
     <>
       <PageHero
-        eyebrow="Phaedra La Reine"
-        title={t({ nl: "Over mij", en: "About me" })}
-        subtitle={t({
-          nl: "Ik help mensen stoppen met zichzelf klein houden,\nzodat ze hun stem durven gebruiken.",
-          en: "I help people stop keeping themselves small,\nso they dare to use their voice.",
-        })}
+        eyebrow={t(copy["phaedra-la-reine"])}
+        title={t(copy["over-mij"])}
+        subtitle={t(copy["ik-help-mensen-stoppen-met-zichzelf-klein-houden-zodat-ze-hun"])}
         align="left"
       />
 
@@ -73,19 +73,13 @@ export function OverMijContent() {
             </div>
             <div className="space-y-5 text-[15px] leading-[1.75] text-ink-soft">
               <h2 className="font-display text-[1.75rem] leading-snug tracking-[-0.01em] text-ink">
-                {t({ nl: "Mijn naam is Phaedra La Reine.", en: "My name is Phaedra La Reine." })}
+                {t(copy["mijn-naam-is-phaedra-la-reine"])}
               </h2>
               <p>
-                {t({
-                  nl: "Ik ben spreker, voice activation coach en de enige Lisa Nichols Certified Transformational Trainer in Nederland.",
-                  en: "I'm a speaker, voice activation coach and the only Lisa Nichols Certified Transformational Trainer in the Netherlands.",
-                })}
+                {t(copy["ik-ben-spreker-voice-activation-coach-en-de-enige-lisa-nichols"])}
               </p>
               <p>
-                {t({
-                  nl: "Maar boven alles ben ik iemand die weet hoe het voelt om jezelf kwijt te raken, terwijl je probeert alles bij elkaar te houden.",
-                  en: "But above all I'm someone who knows how it feels to lose yourself, while trying to keep everything together.",
-                })}
+                {t(copy["maar-boven-alles-ben-ik-iemand-die-weet-hoe-het-voelt-om-jezel"])}
               </p>
             </div>
           </div>
@@ -102,19 +96,10 @@ export function OverMijContent() {
             photoSrc={asset("/images/lisa-nichols-badge.png")}
             photoAlt="Lisa Nichols Certified Transformational Trainer badge — Phaedra La Reine"
             verifyHref="https://motivatingthemasses.com/portfolio-item/phaedra-la-reine/"
-            verifyLabel={t({
-              nl: "Bekijk officiële verificatie",
-              en: "View official verification",
-            })}
-            extraLine={t({
-              nl: "De enige in Nederland",
-              en: "The only one in the Netherlands",
-            })}
-            eyebrow={t({ nl: "Erkenning", en: "Recognition" })}
-            title={t({
-              nl: "Lisa Nichols Certified Transformational Trainer",
-              en: "Lisa Nichols Certified Transformational Trainer",
-            })}
+            verifyLabel={t(copy["bekijk-officiele-verificatie"])}
+            extraLine={t(copy["de-enige-in-nederland"])}
+            eyebrow={t(copy["erkenning"])}
+            title={t(copy["lisa-nichols-certified-transformational-trainer"])}
           />
         </div>
       </section>
@@ -133,59 +118,38 @@ export function OverMijContent() {
           <div>
             <Reveal>
               <SectionLabel>
-                {t({ nl: "Het moment waarop alles veranderde", en: "The moment everything changed" })}
+                {t(copy["het-moment-waarop-alles-veranderde"])}
               </SectionLabel>
               <h2 className="font-display mt-4 text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-                {t({ nl: "Ik dacht dat ik alles wel aankon.", en: "I thought I could handle anything." })}
+                {t(copy["ik-dacht-dat-ik-alles-wel-aankon"])}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
                 <p>
-                  {t({
-                    nl: "Ik was tienermoeder geweest.\nIk had schulden gehad.\nEen burn-out.\nGebroken relaties.",
-                    en: "I had been a teenage mother.\nI had been in debt.\nA burnout.\nBroken relationships.",
-                  })}
+                  {t(copy["ik-was-tienermoeder-geweest-ik-had-schulden-gehad-een-burn-out"])}
                 </p>
-                <p>{t({ nl: "En toch bleef ik doorgaan.", en: "And still I kept going." })}</p>
+                <p>{t(copy["en-toch-bleef-ik-doorgaan"])}</p>
                 <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
-                  {t({ nl: "Tot ik hoorde: “Ik wil scheiden.”", en: "Until I heard: “I want a divorce.”" })}
+                  {t(copy["tot-ik-hoorde-ik-wil-scheiden"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Dat was het moment waarop ik besefte dat ik jarenlang vooral had overleefd.",
-                    en: "That was the moment I realized I had mostly been surviving for years.",
-                  })}
+                  {t(copy["dat-was-het-moment-waarop-ik-besefte-dat-ik-jarenlang-vooral-h"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Ik was bezig met zorgen, oplossen en doorgaan,\nmaar niet meer met mezelf.",
-                    en: "I was busy caring, solving and pushing on,\nbut no longer with myself.",
-                  })}
+                  {t(copy["ik-was-bezig-met-zorgen-oplossen-en-doorgaan-maar-niet-meer-me"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Ik wilde niet alleen doorgaan.\nIk wilde leven.",
-                    en: "I didn't just want to keep going.\nI wanted to live.",
-                  })}
+                  {t(copy["ik-wilde-niet-alleen-doorgaan-ik-wilde-leven"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "In mijn zoektocht naar geluk, rust en richting ontdekte ik de science of happiness en kwam ik in aanraking met het werk van Lisa Nichols.",
-                    en: "In my search for happiness, calm and direction I discovered the science of happiness and came across the work of Lisa Nichols.",
-                  })}
+                  {t(copy["in-mijn-zoektocht-naar-geluk-rust-en-richting-ontdekte-ik-de-s"])}
                 </p>
                 <p>
-                  {t({
-                    nl: "Wat begon als persoonlijke groei, werd uiteindelijk mijn missie.",
-                    en: "What began as personal growth eventually became my mission.",
-                  })}
+                  {t(copy["wat-begon-als-persoonlijke-groei-werd-uiteindelijk-mijn-missie"])}
                 </p>
                 <p className="statement font-display text-2xl leading-snug text-forest sm:text-[1.75rem]">
-                  {t({
-                    nl: "Ik besloot mezelf niet langer klein te houden.",
-                    en: "I decided to stop keeping myself small.",
-                  })}
+                  {t(copy["ik-besloot-mezelf-niet-langer-klein-te-houden"])}
                 </p>
               </div>
             </Reveal>
@@ -196,32 +160,20 @@ export function OverMijContent() {
       <section className="mx-auto max-w-3xl px-6 py-24 lg:px-8 lg:py-32">
         <Reveal>
           <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] text-ink sm:text-[3rem]">
-            {t({ nl: "Wat ik nu doe", en: "What I do now" })}
+            {t(copy["wat-ik-nu-doe"])}
           </h2>
           <div className="mt-7 max-w-[62ch] space-y-6 whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
             <p>
-              {t({
-                nl: "Vandaag werk ik als spreker en coach met mensen die voelen dat ze zichzelf nog inhouden.",
-                en: "Today I work as a speaker and coach with people who feel they're still holding themselves back.",
-              })}
+              {t(copy["vandaag-werk-ik-als-spreker-en-coach-met-mensen-die-voelen-dat"])}
             </p>
             <p>
-              {t({
-                nl: "Niet omdat ze niets te zeggen hebben.\nMaar omdat ze zijn gaan twijfelen aan hun eigen stem.",
-                en: "Not because they have nothing to say.\nBut because they've started doubting their own voice.",
-              })}
+              {t(copy["niet-omdat-ze-niets-te-zeggen-hebben-maar-omdat-ze-zijn-gaan-t"])}
             </p>
             <p>
-              {t({
-                nl: "In mijn werk combineer ik persoonlijke ontwikkeling, voice activation en transformatie.",
-                en: "In my work I combine personal development, voice activation and transformation.",
-              })}
+              {t(copy["in-mijn-werk-combineer-ik-persoonlijke-ontwikkeling-voice-acti"])}
             </p>
             <p>
-              {t({
-                nl: "Zodat mensen zichzelf niet langer kleiner maken dan nodig is.",
-                en: "So people stop making themselves smaller than they need to be.",
-              })}
+              {t(copy["zodat-mensen-zichzelf-niet-langer-kleiner-maken-dan-nodig-is"])}
             </p>
           </div>
         </Reveal>
@@ -231,7 +183,7 @@ export function OverMijContent() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Reveal>
             <h2 className="font-display text-[2.4rem] leading-[1.12] tracking-[-0.015em] sm:text-[3rem]">
-              {t({ nl: "Dit ben ik ook", en: "This is also me" })}
+              {t(copy["dit-ben-ik-ook"])}
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
@@ -258,16 +210,10 @@ export function OverMijContent() {
       <section className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-8">
         <Reveal>
           <p className="whitespace-pre-line font-display text-[2rem] italic leading-[1.25] text-ink sm:text-[2.4rem]">
-            {t({
-              nl: "Je stem verandert meer\ndan alleen wat je zegt.",
-              en: "Your voice changes more\nthan only what you say.",
-            })}
+            {t(copy["je-stem-verandert-meer-dan-alleen-wat-je-zegt"])}
           </p>
           <p className="mx-auto mt-5 max-w-xl whitespace-pre-line text-[1.0625rem] leading-[1.8] text-ink-soft">
-            {t({
-              nl: "Het verandert hoe je jezelf laat zien.\nHoe je binnenkomt en hoeveel ruimte je jezelf geeft.",
-              en: "It changes how you show yourself.\nHow you walk in and how much space you give yourself.",
-            })}
+            {t(copy["het-verandert-hoe-je-jezelf-laat-zien-hoe-je-binnenkomt-en-hoe"])}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button href="/werk-met-mij" variant="primary">
