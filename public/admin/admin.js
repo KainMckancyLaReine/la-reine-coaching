@@ -17,6 +17,7 @@ const labels = {
 const languages = { nl: "Nederlands", en: "Engels" };
 const maxImageBytes = 768 * 1024;
 const login = document.querySelector("#login");
+const loginView = document.querySelector("#login-view");
 const editor = document.querySelector("#editor");
 const status = document.querySelector("#status");
 const pages = document.querySelector("#pages");
@@ -131,6 +132,7 @@ function hasChanges() {
 function update() {
   const dirty = Boolean(content && hasChanges());
   draftStatus.textContent = dirty ? "Ongepubliceerde wijzigingen" : "Geen wijzigingen";
+  draftStatus.toggleAttribute("data-dirty", dirty);
   publish.disabled = busy || !token || !dirty;
   fields.disabled = busy;
   logout.disabled = busy;
@@ -150,7 +152,7 @@ async function api(path, body) {
   if (!response.ok) {
     if (response.status === 401 && path !== "/login") {
       token = undefined;
-      login.hidden = false;
+      loginView.hidden = false;
       setEditing(false);
       login.elements.username.focus();
     }
@@ -331,7 +333,7 @@ login.addEventListener("submit", async (event) => {
       currentPage = "home";
     }
     login.reset();
-    login.hidden = true;
+    loginView.hidden = true;
     setEditing(true);
     renderPages();
     selectSection(displayedSection);
@@ -355,7 +357,7 @@ logout.addEventListener("click", () => {
   publishedPreviews.clear();
   entries.replaceChildren();
   setEditing(false);
-  login.hidden = false;
+  loginView.hidden = false;
   login.elements.username.focus();
   message("Je bent uitgelogd.");
 });
@@ -420,7 +422,7 @@ try {
     throw new Error("De publicatieservice heeft een beveiligde URL nodig.");
   }
   imageLabels = images;
-  login.hidden = false;
+  loginView.hidden = false;
   message("");
 } catch (error) {
   message(error.message, true);

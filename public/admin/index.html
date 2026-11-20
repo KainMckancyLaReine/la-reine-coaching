@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Websitebeheer | La Reine Coaching</title>
-  <link rel="stylesheet" href="./admin.css">
-  <script type="module" src="./admin.js"></script>
+  <link rel="stylesheet" href="./admin.css?v=2">
+  <script type="module" src="./admin.js?v=2"></script>
 </head>
 <body>
   <header class="toolbar">
     <div class="identity">
-      <a class="brand" href="../">La Reine Coaching</a>
-      <span>Websitebeheer</span>
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true">LR</span>
+        <span class="brand-name">La Reine Coaching</span>
+      </a>
+      <span class="workspace-label">Websitebeheer</span>
     </div>
     <div class="actions">
       <span id="draft-status" hidden>Geen wijzigingen</span>
@@ -24,12 +27,17 @@
   <main>
     <p id="status" role="status" aria-live="polite">Beheer laden…</p>
 
-    <form id="login" class="panel login" hidden>
-      <h1>Websitebeheer</h1>
-      <label>Gebruikersnaam <input name="username" autocomplete="username" required></label>
-      <label>Wachtwoord <input name="password" type="password" autocomplete="current-password" required></label>
-      <button>Inloggen</button>
-    </form>
+    <div id="login-view" class="login-view" hidden>
+      <div class="login-art" aria-hidden="true">
+        <img src="../images/foto-1-hero.jpg" alt="">
+      </div>
+      <form id="login" class="login">
+        <h1>Websitebeheer</h1>
+        <label>Gebruikersnaam <input name="username" autocomplete="username" required></label>
+        <label>Wachtwoord <input name="password" type="password" autocomplete="current-password" required></label>
+        <button>Inloggen</button>
+      </form>
+    </div>
 
     <section id="editor" aria-label="Inhoud bewerken" hidden>
       <nav class="sidebar" id="pages" aria-label="Pagina’s en onderdelen"></nav>
@@ -38,8 +46,8 @@
           <div><h1 id="page-title">Home</h1><span>Websitevoorbeeld</span></div>
           <div class="preview-controls">
             <div class="segmented" aria-label="Schermformaat" role="group">
-              <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
-              <button type="button" data-device="mobile" aria-pressed="false">Mobiel</button>
+              <button type="button" data-device="desktop" aria-pressed="true"><span class="device-icon desktop-icon" aria-hidden="true"></span>Desktop</button>
+              <button type="button" data-device="mobile" aria-pressed="false"><span class="device-icon mobile-icon" aria-hidden="true"></span>Mobiel</button>
             </div>
             <div class="segmented" aria-label="Taal van het voorbeeld" role="group">
               <button type="button" data-lang="nl" aria-pressed="true">NL</button>
@@ -52,10 +60,13 @@
         </div>
       </section>
       <fieldset id="fields" class="inspector" aria-label="Website-inhoud">
-        <h2 id="inspector-title">Teksten</h2>
-        <label id="search-label">Zoeken
-          <input id="search" type="search" placeholder="Zoek een woord of zin">
-        </label>
+        <div class="inspector-head">
+          <h2 id="inspector-title">Teksten</h2>
+          <label id="search-label">
+            <span class="sr-only">Zoeken</span>
+            <input id="search" type="search" placeholder="Zoek een woord of zin">
+          </label>
+        </div>
         <div id="entries" class="entries"></div>
       </fieldset>
     </section>
